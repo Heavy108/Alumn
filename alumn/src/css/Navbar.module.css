@@ -1,4 +1,4 @@
-.Nav {
+/* .Nav {
     display: flex;
     padding: 0.2rem 1rem 0.5rem 1rem;
   }
@@ -55,7 +55,6 @@
     flex-direction: column;
     padding: 0.5rem 0rem 0.5rem 0.5rem;
     
-    /* border: 1px solid black; */
   }
   
   .Nav ul li:hover .Menu {
@@ -93,6 +92,227 @@
     border-radius: 0.2rem;
     font-weight: 600;
   }
-
+.menuIcon , .sideMenu{
+    display: none;
+} */
 
   
+   
+.Nav {
+    display: flex;
+    padding: 0.2rem 1rem 0.5rem 1rem;
+    justify-content: space-between;
+  }
+  .list {
+    display: flex;
+    align-items: center;
+    
+    gap: 1rem;
+    width: 14rem;
+  }
+  .opt {
+    list-style-type: none;
+    margin: 0.8rem 0rem 0.8rem 0rem;
+    padding: 0rem;
+    width: 100%;
+    
+  }
+  .opt a{
+    text-decoration: none;
+    color: #050505;
+    
+  }
+  .sideMenu ul li{
+    list-style-type: none;
+    
+  }
+  .Menu{
+    display: none;
+  }
+  .Menu ul li{
+    margin: 0.5rem 0rem 0.5rem 0rem;
+  }
+  
+  .sideMenu{
+    /* border: 2px solid #c9c9c9; */
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    z-index: 5;
+    background-color: white;
+  }
+  .sideMenu  li:hover .Menu{
+    display: block;
+    position: relative;
+  }
+
+  .container{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+    .container{
+        display: none;
+    }
+    .menuIcon {
+        display: contents;
+    }
+    .menuIcon span{
+        align-content: center;
+
+    }
+   
+    .active{
+        display: contents;
+    }
+    .opt2{
+        display:flex;
+        justify-content: space-between;
+    }
+    .opt2 svg{
+        transform: rotate(-90deg);
+    }
+    .contact{
+    background-color: black;
+    color: white;
+    border-radius: 0.2rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    }
+
+   @media only screen and (min-width:1440px){
+    .menuIcon{
+        display: none;
+    }
+    .container{
+        display: contents;
+        
+    }
+    .list {
+        display: flex;
+        align-items: center;
+        
+        gap: 1rem;
+        width: 14rem;
+      }
+      
+      
+      .list1 ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+      }
+      
+      .list1 ul li a {
+        text-decoration: none;
+        color: #050505;
+      }
+      
+      .list1 ul li {
+        margin: 0rem 0.5rem 0rem 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+      
+      .list1 ul li:hover {
+        background-color: #ece9e9;
+      }
+      .opt svg{
+        transform:rotate(0deg) ;
+      }
+      .opt:hover .opt2 svg {
+        transform: rotate(180deg);
+      }
+      
+      .Menu {
+        margin-top: 0.5rem;
+        display: none;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+        z-index: 2;
+      }
+      
+      .Menu ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0rem 0.5rem 0.5rem;
+        
+      }
+      
+      .Nav ul li:hover .Menu {
+        display: block;
+        position: absolute;
+        
+      }
+      
+      .list2 ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+      }
+      
+      .list2 ul li a {
+        text-decoration: none;
+        color: #050505;
+      }
+      
+      .list2 ul li {
+        margin: 0rem 0.5rem 0rem 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+      
+      .list2 ul li:hover {
+        background-color: #d9d9d9;
+      }
+      
+       
+      
+      .list2 button {
+        background-color: black;
+        color: white;
+        border-radius: 0.2rem;
+        font-weight: 600;
+      }
+    .list1{
+        margin-left: -30rem;
+    }
+    .sideMenu{
+        display: none;
+    }
+    .opt2 svg{
+        margin-left: 0.5rem;
+    }
+      
+   }
+   @media only screen and (min-width:2560px){
+    .opt a{
+        font-size: 2rem;
+        
+    }
+    .list2 li{
+        font-size: 2rem;
+    }
+    .list2 button{
+        font-size: 2rem;
+        padding: 0.8rem 1rem 0.8rem 1rem;
+        border-radius: 0.5rem;
+    }
+    .Nav h4{
+        font-size: 2rem;
+        
+    }
+    .list{
+        width: 25rem;
+    }
+    .list img{
+        width: 80px;
+        height: 80px;
+    }
+    .list1{
+        padding: 0rem;
+        
+    }
+    .container{
+        align-content: center;
+    }
+   }
