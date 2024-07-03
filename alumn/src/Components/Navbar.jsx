@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { useState } from "react";
 function Navbar() {
-   const [active ,setactive] =useState(true);
+   const [active ,setactive] =useState(false);
 
    const handleClick =() =>{
     setactive(!active);

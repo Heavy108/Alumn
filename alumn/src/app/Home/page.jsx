@@ -1,3 +1,4 @@
+import Carasoul from "@/Components/Carousels";
 import Navbar from "@/Components/Navbar";
 
 function Home (){
@@ -5,6 +6,7 @@ function Home (){
         return(
             <>
             <Navbar/>
+            <Carasoul/>
             </>
         )
 }
