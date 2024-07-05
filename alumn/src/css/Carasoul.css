@@ -45,7 +45,7 @@
   }
   
   li {
-    padding: 50px;
+    padding: 2rem;
     text-align: center;
     width: calc(var(--cardWidth) - var(--card-margin) * 2);
     box-sizing: border-box;
@@ -89,13 +89,11 @@
 
 .card {
     box-shadow: 0px 1px 2px 0px var(--card-shadow);
-    border-radius: 4px;
+    border-radius: 0.5rem;
     margin: var(--card-margin);
     background:var(--color-white);
   
-    .material-icons {
-      font-size: 4.8rem;
-    }
+   
   
     p {
       font-family: 'Open Sans Condensed', sans-serif;
@@ -119,5 +117,79 @@
   }
   to {
     transform:translateX(calc(0px - var(--cardWidth)));
+  }
+}
+.card img{
+  position: relative;
+  width: 100%;
+  height: 25rem;
+  filter: grayscale();
+}
+.Introduction{
+  /* padding: 2rem; */
+  position: absolute;
+  height: 25rem;
+  /* margin: var(--card-margin); */
+  width: calc(var(--cardWidth) - var(--card-margin)*6);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Introduction h2 ,p {
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  
+}
+
+@media only screen and (min-width : 320px){
+.Introduction p{
+  padding: 0;
+  font-size: 1rem;
+  padding: 0.8rem;
+  margin: 0;
+}
+.Introduction h2{
+  padding: 0;
+  font-size: 2rem;
+}
+.carousel li{
+  padding: 1rem;
+}
+}
+@media only screen and (min-width:768px){
+  .carousel li{
+    padding: 2rem;
+  }
+  .Introduction p{
+    padding: 0;
+    font-size: 1.5rem;
+    padding: 1rem;
+    /* margin: 0; */
+  }
+  .Introduction h2{
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width:2560px){
+  .card img{
+    height: 40rem;
+  }
+  .Introduction{
+    height: 40rem;
+  }
+  .carousel li{
+    padding: 3rem;
+  }
+  .Introduction p{
+    padding: 0;
+    font-size: 3rem;
+    padding: 3rem;
+    /* margin: 0; */
+  }
+  .Introduction h2{
+    font-size: 6rem;
   }
 }

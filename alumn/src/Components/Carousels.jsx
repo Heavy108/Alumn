@@ -1,35 +1,48 @@
 'use client'
 import { useState ,useEffect } from "react";
 import "@/css/Carasoul.css"
+import Image from "next/image";
+
 
 const items = [
     {
-        icon:"face",
-        copy:'01. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    },{
-        icon:"pets",
-        copy:'02. Sed do eiusmod tempor incididunt ut labore.'
-    },{
-        icon:"stars",
-        copy:'03. Consectetur adipiscing elit.'
-    },{
-        icon:"invert_colors",
-        copy:'04. Ut enim ad minim veniam, quis nostrud exercitation.'
-    },{
-        icon:"psychology",
-        copy:'05. Llamco nisi ut aliquip ex ea commodo consequat.'
-    },{
-        icon:"brightness_7",
-        copy:'06. Misi ut aliquip ex ea commodo consequat.'
+        image:"/1.jpeg",
+       
+    },
+    {
+      image:"/2.jpeg",
+       
+    },
+    {
+      image:'/3.jpeg',
+       
     }
+    
 ];
 
 const Card = (props) => {
-  return (
+  return (<>
+  <li className="card">
+    <div className="Introduction">
+    <h2>Together Again!</h2>
+    <p>Welcome back, brilliant minds of 0s and 1s! As CSE alumni, you're the architects of the digital future. Reconnect, reminisce, and inspire. Together, let's code unforgettable memories!</p>
+    </div>
+    {console.log(props)}
+    <Image src={props.image} width={1200} height={1200} alt="Univeristy Image"></Image>
+
+  </li>
+{/*     
     <li className="card">
-      <span class="material-icons">{props.icon}</span>
+    <Image
+    src={props.image}
+    width="10rem"
+    height="5rem"
+    alt="University Image"
+    />
+      
       <p>{props.copy}</p>
-    </li>
+    </li> */}
+    </>
   )
 }
 
@@ -40,6 +53,17 @@ const Carasoul = () => {
   useEffect(() => {
     document.documentElement.style.setProperty('--num', carouselItems.length);
   }, [carouselItems])
+  useEffect(() => {
+    const interval = setInterval(
+      () => {
+        setMoveClass("prev");
+      },
+
+      5000
+    );
+
+    return () => clearInterval(interval);
+  }, []);
   
   const handleAnimationEnd = () => {
     if(moveClass === 'prev'){
@@ -74,7 +98,7 @@ const Carasoul = () => {
       </div>
       <ul onAnimationEnd={handleAnimationEnd} className={`${moveClass} carousel`}>
         {carouselItems.map((t, index) => 
-          <Card key={t.copy + index} icon={t.icon} copy={t.copy} />
+          <Card key={ index} image={t.image}  />
         )}
       </ul>
     </div>
