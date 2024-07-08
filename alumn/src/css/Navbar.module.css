@@ -1,100 +1,3 @@
-/* .Nav {
-    display: flex;
-    padding: 0.2rem 1rem 0.5rem 1rem;
-  }
-  
-  .container{
-    display:flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .list {
-    display: flex;
-    align-items: center;
-    
-    gap: 1rem;
-    width: 14rem;
-  }
-  
-  
-  .list1 ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-  }
-  
-  .list1 ul li a {
-    text-decoration: none;
-    color: #050505;
-  }
-  
-  .list1 ul li {
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-  }
-  
-  .list1 ul li:hover {
-    background-color: #ece9e9;
-  }
-  
-  .opt:hover .opt2 svg {
-    transform: rotate(180deg);
-  }
-  
-  .Menu {
-    margin-top: 0.5rem;
-    display: none;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-    z-index: 2;
-  }
-  
-  .Menu ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem 0rem 0.5rem 0.5rem;
-    
-  }
-  
-  .Nav ul li:hover .Menu {
-    display: block;
-    position: absolute;
-    
-  }
-  
-  .list2 ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-  }
-  
-  .list2 ul li a {
-    text-decoration: none;
-    color: #050505;
-  }
-  
-  .list2 ul li {
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-  }
-  
-  .list2 ul li:hover {
-    background-color: #d9d9d9;
-  }
-  
-   
-  
-  .list2 button {
-    background-color: black;
-    color: white;
-    border-radius: 0.2rem;
-    font-weight: 600;
-  }
-.menuIcon , .sideMenu{
-    display: none;
-} */
 
   
    
@@ -128,6 +31,7 @@
   }
   .Menu{
     display: none;
+    z-index: 66;
   }
   .Menu ul li{
     margin: 0.5rem 0rem 0.5rem 0rem;
@@ -227,8 +131,9 @@
         margin-top: 0.5rem;
         display: none;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    
-        z-index: 2;
+        background-color: white;
+        position: relative;
+        z-index: 99;
       }
       
       .Menu ul {
