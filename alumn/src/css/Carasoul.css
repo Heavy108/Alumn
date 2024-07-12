@@ -89,7 +89,8 @@
 
 .card {
     box-shadow: 0px 1px 2px 0px var(--card-shadow);
-    border-radius: 0.5rem;
+    /* border: 2px solid #c9c9c9; */
+    border-radius: 0.8rem;
     margin: var(--card-margin);
     background:var(--color-white);
   

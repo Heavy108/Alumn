@@ -1,0 +1,23 @@
+.title h1{
+    font-size: 1.4rem;
+ border: 2px solid #ccceff;
+ padding:  0.75rem 1rem 0.75rem 1rem ;
+ border-radius: 1rem;  
+ margin: 2rem; 
+ width: fit-content;
+}
+@media only  screen and (min-width:1024px){
+    .title h1{
+        padding:  1.5rem 2rem 1.5rem 2rem ;
+    }
+}
+@media only screen and (min-width:1440px){
+    .title  h1{
+        font-size: 2rem;
+    }
+}
+@media only screen and (min-width:2560px){
+    .title h1{
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,142 @@
+.wrapper{
+    /* border:2px solid yellow */
+     margin: 2rem;
+     
+
+}
+.card{
+    border: 2px solid #c9c9c9;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+.upper img{
+width: 7.5rem;
+height: 7.5rem;
+}
+.upper{
+    display: flex;
+    gap: 1rem;
+
+}
+.card p{
+    color: black;
+    font-size: 0.6rem;
+    padding: 0;
+    margin: 1rem 0rem 1rem 0rem;
+}
+.Introduction h4{
+    margin: 0;
+    font-size: 0.6rem;
+}
+.Introduction{
+    align-content: end;
+}
+@media only screen and (min-width:375px){
+    .Introduction h4{
+        font-size: 0.8rem;
+    }
+    
+}
+@media only screen and (min-width:425px){
+   
+   
+   .card{
+        width: 80%;
+        margin-left: 1.5rem;
+    }
+    .upper{
+        gap: 2rem;
+        width: fit-content;
+    }
+    .upper p{
+        font-size: 0.8rem;
+    }
+   
+}
+@media only screen and (min-width:768px){
+    .wrapper{
+        display: flex;
+        margin: 1rem;
+        gap: 0.5rem;
+    }
+    .upper img{
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+    .Introduction h4{
+        font-size: 0.6rem;
+    }
+    .Introduction h3{
+        font-size:0.8rem ;
+    }
+    .upper{
+        gap: 1rem;
+    }  
+    .card{
+        margin-left: 0rem;
+    }
+}
+@media only screen and (min-width:1024px){
+
+    .upper img{
+        width: 7.5rem;
+        height:7.5rem;
+    }
+    .card{
+        padding: 1.5rem ;
+    }
+    .Introduction h4{
+        font-size: 0.8rem;
+    }
+    .Introduction h3{
+        font-size: 1.2rem;
+        margin-bottom: 1remrem;
+    }
+    .card p{
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (min-width:1440px){
+    .wrapper{
+        padding: 0rem 5rem 0rem 5rem;
+        gap: 1.5rem;
+    }
+    .Introduction h3{
+        font-size: 1.25rem;
+    }
+    .Introduction h4{
+        font-size: 1rem;
+    }
+    .card p{
+        font-size: 0.8rem;
+    }
+    .card{
+        width: 50%;
+    }
+}
+@media only screen and (min-width:2560px){
+    .wrapper{
+        padding: 0rem 5rem 0rem 5rem;
+        gap: 3rem;
+    }
+    .Introduction h3{
+        font-size: 2.5rem;
+    }
+    .Introduction h4{
+        font-size: 2rem;
+    }
+    .card p{
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .upper img{
+        width: 15rem;
+        height: 15rem;
+    }
+    .card{
+        padding: 3rem;
+    }
+   
+}
