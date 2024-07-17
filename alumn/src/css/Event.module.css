@@ -1,0 +1,151 @@
+.card img {
+  width: 100%;
+  height: 10rem;
+  /* border: 2px solid #dbdbdb; */
+  border-radius: 0.5rem;
+}
+.card {
+  border: 2px solid #dbdbdb;
+  border-radius: 1.5rem;
+  /* padding: 1rem; */
+  overflow: hidden;
+  background-color: #fafafa;
+  margin-bottom: 1rem;
+}
+
+.Time p {
+  color: black;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+.container {
+  display: none;
+}
+.container_1 {
+  margin: 2rem;
+}
+.container_2 {
+  display: none;
+}
+.Introductio {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: auto;
+}
+.Introductio h3 {
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+.Introductio h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+.Intro {
+  margin: 0 0 1rem 0;
+}
+.Introductio h5 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6rem;
+}
+.Introductio p {
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.subtitle {
+  color: #484646;
+  padding: 0rem;
+  margin: 0rem 0rem 0rem 3rem;
+}
+
+@media only screen and (min-width: 425px) {
+  .card {
+    width: 80%;
+    margin: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container_1 {
+    display: flex;
+  }
+  .card {
+    width: 100%;
+    margin: 0.5rem;
+  }
+  .container_2 {
+    display: flex;
+    margin: 2rem;
+  }
+  .container {
+    display: block;
+    color: #575050;
+    padding: 0rem;
+    margin: 0rem 0rem 0rem 3rem;
+  }
+}
+@media only screen and (min-width:1024px){
+    .container_1 ,.container_2{
+        margin: 2rem 5rem 3rem 5rem;
+    }
+    .subtitle , .container {
+        margin-left: 5rem;
+    }
+    .Introductio h3{
+        font-size: 1.25rem;
+    }
+    .Introductio h4{
+        font-size: 1rem;
+    }
+    .Introductio h5 {
+        font-size: 0.8rem;
+    }
+    .Introductio p{
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (min-width:1440px){
+    .subtitle , .container {
+        font-size: 1.25rem;
+    }
+    .Introductio h3{
+        font-size: 1.5rem;
+    }
+    .Introductio h4{
+        font-size: 1.25rem;
+    }
+    .Introductio h5 {
+        font-size: 1rem;
+    }
+    .Introductio p{
+        font-size: 1rem;
+    }
+}
+@media  only screen and (min-width:2560px){
+    .subtitle , .container {
+        font-size: 2.5rem;
+    }
+    .Introductio h3{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    .Introductio h4{
+        font-size: 2.5rem;
+    }
+    .Intro{
+        margin-bottom: 2rem;
+    }
+    .Introductio h5 {
+        font-size: 2rem;
+    }
+    .Introductio p{
+        font-size: 2rem;
+    }
+   .card img{
+    height: 20rem;
+   }
+}

@@ -3,7 +3,7 @@ import Carasoul from "@/Components/Carousels";
 import Footer from "@/Components/Footer";
 import GiveBack from "@/Components/giveback";
 import Navbar from "@/Components/Navbar";
-
+import Events from "@/Components/Events";
 function Home (){
 
         return(
@@ -13,6 +13,7 @@ function Home (){
             
             <Achievement/>
             <GiveBack/>
+            <Events/>
             <Footer/>
             </>
         )

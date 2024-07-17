@@ -25,7 +25,8 @@ const Card = (props) => {
   <li className="card">
     <div className="Introduction">
     <h2>Together Again!</h2>
-    <p>Welcome back, brilliant minds of 0s and 1s! As CSE alumni, you're the architects of the digital future. Reconnect, reminisce, and inspire. Together, let's code unforgettable memories!</p>
+    <p 
+    >Welcome back, brilliant minds of 0s and 1s! As CSE alumni, you're the architects of the digital future. Reconnect, reminisce, and inspire. Together, let's code unforgettable memories!</p>
     </div>
     
     <Image src={props.image} width={1200} height={1200} alt="Univeristy Image"></Image>

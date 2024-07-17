@@ -140,7 +140,7 @@
 .Introduction h2 ,p {
   color: white;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
   font-weight: 600;
   
 }
