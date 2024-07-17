@@ -1,0 +1,77 @@
+.card img{
+    border-radius: 50%;
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    align-items: center;
+    /* margin: -3rem 25% 0rem ; */
+    margin: -3rem auto 0rem ;
+
+    border: 2px solid #d9d9d9;
+
+
+}
+.card{
+    display: flex;
+    justify-content: center;
+    border: 2px solid #d9d9d9;
+    border-radius: 1.5rem;
+    /* padding: 1.5rem; */
+    background-color: #fafafa;
+}
+.container{
+margin: 4rem 2rem 2rem 2rem;
+
+}
+.Introduction{
+    padding: 1.5rem;
+}
+.Introduction p{
+    color:black;
+    padding: 0;
+    font-size: 0.6rem;
+    
+}
+.Introduction h4{
+    margin-top: 3rem;
+    
+}
+@media only screen and (min-width:320px){
+    .card{
+     margin-bottom: 5rem;  
+    }
+    }
+@media only screen and (min-width:425px){
+    .card img{
+        width: 8rem;
+        height: 8rem;
+        margin-top: -4rem;
+    }
+    .container{
+        margin-top: 6rem;
+    }
+    .card{
+        width: 80%;
+        margin-left: 2rem;
+    }
+}
+@media  only screen and (min-width:768px){
+    .container{
+        display: flex;
+
+    }
+    .card img{
+        width: 5rem;
+        height: 5rem;
+    margin: -2.5rem auto 0rem ;
+
+
+    }
+    .card{
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    .Introduction{
+        padding: 0rem;
+    }
+}

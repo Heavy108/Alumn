@@ -14,10 +14,13 @@
 @media only screen and (min-width:1440px){
     .title  h1{
         font-size: 2rem;
+        margin-bottom: 4rem;
     }
 }
 @media only screen and (min-width:2560px){
     .title h1{
         font-size: 4rem;
+        margin-bottom: 8rem;
+
     }
 }
