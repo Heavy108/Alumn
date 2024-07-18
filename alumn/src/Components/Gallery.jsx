@@ -10,15 +10,14 @@ function Gallery(){
         <Title title="Memories"/>
         <div className={style.gallery_container}>
         {imagePaths.map((path,index) => (
-            <div className={style.img_card}   key={path +  index}>
+            
         <Image
-        
+          key={path +  index}
           src={path}
           width={220}
           height={220}
           alt="Memories"
         />
-        </div>
       ))}
 
         </div>
