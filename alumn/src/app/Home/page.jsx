@@ -4,7 +4,8 @@ import Footer from "@/Components/Footer";
 import GiveBack from "@/Components/giveback";
 import Navbar from "@/Components/Navbar";
 import Events from "@/Components/Events";
-function Home (){
+import Gallery from "@/Components/Gallery";
+function Home1 (){
 
         return(
             <>
@@ -14,8 +15,9 @@ function Home (){
             <Achievement/>
             <GiveBack/>
             <Events/>
+            <Gallery/>
             <Footer/>
             </>
         )
 }
-export default Home;
+export default Home1;

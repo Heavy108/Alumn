@@ -19,7 +19,7 @@ function Event_Card(props) {
           </div>
           <div className={styles.Time}>
             <p>Venue: {props.venue}</p>
-            <p>Time: {props.Time} </p>
+            <p>Time: {props.time} </p>
           </div>
         </div>
       </div>
@@ -27,65 +27,67 @@ function Event_Card(props) {
   );
 }
 
+const eventsData = [
+  {
+    img: Machine,
+    head: "Virtual Startup",
+    name: "Akhilesh Kumar Yadav",
+    position: "SDE at Amazon",
+    venue: "KBR Auditorium",
+    time: "6:30 PM, 10/11/2024",
+  },
+  {
+    img: DataSci,
+    head: "Data Science",
+    name: "Akhilesh Kumar Yadav",
+    position: "SDE at Amazon",
+    venue: "KBR Auditorium",
+    time: "6:30 PM, 10/11/2024",
+  },
+  {
+    img: Alumn,
+    head: "Alumni Talks",
+    name: "Akhilesh Kumar Yadav",
+    position: "SDE at Amazon",
+    venue: "KBR Auditorium",
+    time: "6:30 PM, 10/11/2024",
+  },
+];
+
 function Events() {
   return (
     <>
       <Title title="Events" />
-      <p className={styles.subtitle}>Upcomming Events</p>
+      <p className={styles.subtitle}>Upcoming Events</p>
       <div className={styles.container_1}>
-        <Event_Card
-          img={Machine}
-          head="Virtual Startup"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
-        <Event_Card
-          img={DataSci}
-          head="Data Science"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
-        <Event_Card
-          img={Alumn}
-          head="Alumni Talks"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
+        {eventsData.map((event, index) => (
+          <Event_Card
+            key={index}
+            img={event.img}
+            head={event.head}
+            name={event.name}
+            position={event.position}
+            venue={event.venue}
+            time={event.time}
+          />
+        ))}
       </div>
-      <p className={`${styles.container}`}>Past Events</p>
+      <p className={styles.container}>Past Events</p>
       <div className={styles.container_2}>
-        <Event_Card
-          img={Machine}
-          head="Virtual Startup"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
-        <Event_Card
-          img={DataSci}
-          head="Data Science"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
-        <Event_Card
-          img={Alumn}
-          head="Alumni Talks"
-          name="Akhilesh kumar yadav"
-          position="SDE at Amazon"
-          venue="KBR Audotorium"
-          Time="6:30 PM ,10/11/2024"
-        />
+        {eventsData.map((event, index) => (
+          <Event_Card
+            key={index}
+            img={event.img}
+            head={event.head}
+            name={event.name}
+            position={event.position}
+            venue={event.venue}
+            time={event.time}
+          />
+        ))}
       </div>
     </>
   );
 }
+
 export default Events;
