@@ -25,7 +25,7 @@ function Navbar() {
         width={40}
         height={40}
         alt="University Logo"/></span>
-        <h4>Alumni Connect</h4>
+        <Link href="/"><h4>Alumni Connect</h4></Link>
         {/* <span> <GiHamburgerMenu/></span> */}
         </div>
         
@@ -126,7 +126,7 @@ function Navbar() {
             <ul>
         <li ><Link href="#">Connect </Link></li>
         <li>
-          <Link href="#">Gallery</Link>
+          <Link href="/Gallery">Gallery</Link>
         </li>
         <button>Contact Us</button>
         </ul>
@@ -239,7 +239,7 @@ function Navbar() {
             <li className={style.opt}><Link href="#">Connect </Link></li>
             <hr  className={style.horizontal}/>
         <li className={style.opt}>
-          <Link href="#">Gallery</Link>
+          <Link href="/Gallery">Gallery</Link>
         </li>
         <hr  className={style.horizontal}/>
         <button className={style.contact}>Contact Us</button>

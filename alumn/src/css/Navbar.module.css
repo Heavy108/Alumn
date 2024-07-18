@@ -13,6 +13,10 @@
     gap: 1rem;
     width: 14rem;
   }
+  .list a{
+    text-decoration: none;
+    color: black;
+  }
   .opt {
     list-style-type: none;
     margin: 0.8rem 0rem 0.8rem 0rem;

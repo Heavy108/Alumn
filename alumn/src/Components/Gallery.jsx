@@ -3,8 +3,8 @@ import Image from "next/image";
 import Title from "./Title";
 
 
-function Gallery(){
-    const imagePaths = Array.from({ length: 8 }, (_, i) => `/Gallery/${i + 1}.jpg`);
+function Gallery(props){
+    const imagePaths = Array.from({ length: props.len }, (_, i) => `/Gallery/${i + 1}.jpg`);
     return(
         <>
         <Title title="Memories"/>

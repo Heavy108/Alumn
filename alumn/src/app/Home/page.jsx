@@ -1,22 +1,22 @@
 import Achievement from "@/Components/Achievements";
 import Carasoul from "@/Components/Carousels";
-import Footer from "@/Components/Footer";
+// import Footer from "@/Components/Footer";
 import GiveBack from "@/Components/giveback";
-import Navbar from "@/Components/Navbar";
+// import Navbar from "@/Components/Navbar";
 import Events from "@/Components/Events";
 import Gallery from "@/Components/Gallery";
 function Home1 (){
 
         return(
             <>
-            <Navbar/>
+            {/* <Navbar/> */}
             <Carasoul/>
             
             <Achievement/>
             <GiveBack/>
             <Events/>
-            <Gallery/>
-            <Footer/>
+            <Gallery len ={8}/>
+            {/* <Footer/> */}
             </>
         )
 }
