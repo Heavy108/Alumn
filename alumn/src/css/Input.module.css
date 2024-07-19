@@ -1,0 +1,11 @@
+.Input_field{
+    border: 2px solid #d9d9d9;
+    padding: 0.5rem;
+}
+.Input_field label{
+    font-weight: 700;
+}
+.Input_field input{
+    border: 2px solid purple;
+    border-radius: 0.5rem;
+}
