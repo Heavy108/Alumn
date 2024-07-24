@@ -1,11 +1,58 @@
 .Input_field{
+    margin-bottom: 1rem  ;
     border: 2px solid #d9d9d9;
     padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1.5rem;
+    background-color: #fafafa;
 }
 .Input_field label{
     font-weight: 700;
+    align-content: center;
+    font-size: 0.8rem;
 }
-.Input_field input{
-    border: 2px solid purple;
-    border-radius: 0.5rem;
+.Input_field input {
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.2rem 0.2rem 0.2rem 0.8rem;
+    width: 60%;
+}
+.Input_field textarea{
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.2rem 0.2rem 0.2rem 1rem;
+    align-content: center;
+    width: 60%;
+}
+.container{
+    margin: 1rem;
+}
+.img_conatiner{
+    display: none;
+}
+
+@media only screen and (min-width:768px){
+    .img_conatiner{
+        display: block;
+        width: 45%;
+        /* height: 100%;  */
+    }
+    .img_conatiner img{
+        width: 25rem;
+        filter: grayscale();
+    }
+    .form{
+        width: 45%;
+    }
+    .container{
+        display: flex;
+        margin: 2rem;
+        gap: 1rem;
+        
+       
+
+    }
 }

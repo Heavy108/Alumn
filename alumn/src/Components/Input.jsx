@@ -4,18 +4,18 @@ export function Input(props){
         <>
         <div className={style.Input_field}>
             <label htmlFor={props.label}>{props.label}</label>
-            <input type="text" placeholder={props.placeholder}/>
+            <input type={props.type} placeholder={props.placeholder}/>
         </div>
         </>
     )
 }
 
-export function Textarea(){
+export function Textarea(props){
     return(
         <>
-        <div className={style.Textarea_field}>
-            <label htmlFor=""></label>
-            <textarea type="text" placeholder='#'/>
+        <div className={style.Input_field}>
+            <label htmlFor="">{props.label}</label>
+            <textarea type="text" placeholder={props.placeholder}/>
         </div>
         </>
     )
