@@ -3,16 +3,16 @@ import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
 import Image from "next/image";
-import opportunities from "@/Assets/opportunities.svg"
+import Achi from "@/Assets/achivement.svg"
 
-function Opportunities() {
+function Achievements() {
   return (
     <>
       <Title title="GiveBack" />
       <div className={style.container}>
         
         <form action="" className={style.form}>
-        <h4>Share Opportunity</h4>
+        <h4>Share Achievements</h4>
           <Input 
             label="Name" 
             type="text" 
@@ -26,7 +26,7 @@ function Opportunities() {
             type="email" 
             placeholder="Enter your Email" />
           <Input
-            label="Opportunity Type"
+            label="Title"
             type="text"
             placeholder="Enter text here"
           />
@@ -35,16 +35,12 @@ function Opportunities() {
             type="text"
             placeholder="Enter text here"
           />
-          <Input
-            label="Attachments"
-            type="file"
-            placeholder="Enter text here"
-          />
+         
           <Button text="Submit" />
         </form>
         <div className={style.img_conatiner}>
         <Image 
-            src={opportunities}
+            src={Achi}
             alt="share opportunities"
             />
             </div>
@@ -52,4 +48,4 @@ function Opportunities() {
     </>
   );
 }
-export default Opportunities;
+export default Achievements;

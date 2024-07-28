@@ -39,13 +39,13 @@ function Navbar() {
               <div className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Share Achievement</Link>
+                    <Link href="/Share_Achievements">Share Achievement</Link>
                   </li>
                   <li>
                     <Link href="">Be A Mentor</Link>
                   </li>
                   <li>
-                    <Link href="">Share opportunity</Link>
+                    <Link href="/Share_Opportunities">Share opportunity</Link>
                   </li>
                   <li>
                     <Link href="">PayBack</Link>
@@ -151,13 +151,13 @@ function Navbar() {
               <div className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Share Achievement</Link>
+                    <Link href="/Share_Achievements">Share Achievement</Link>
                   </li>
                   <li>
                     <Link href="">Be A Mentor</Link>
                   </li>
                   <li>
-                    <Link href="">Share opportunity</Link>
+                    <Link href="/Share_Opportunities">Share opportunity</Link>
                   </li>
                   <li>
                     <Link href="">PayBack</Link>
