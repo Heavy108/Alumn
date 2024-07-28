@@ -3,7 +3,7 @@ import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
 import Image from "next/image";
-// import opportunities from "@/Assets/opportunities.svg"
+import opportunities from "@/Assets/Opportunities.svg"
 
 function Opportunities() {
   return (
@@ -43,10 +43,10 @@ function Opportunities() {
           <Button text="Submit" />
         </form>
         <div className={style.img_conatiner}>
-        {/* <Image 
+        <Image 
             src={opportunities}
             alt="share opportunities"
-            /> */}
+            />
             </div>
       </div>
     </>
