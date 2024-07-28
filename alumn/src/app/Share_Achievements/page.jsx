@@ -3,7 +3,7 @@ import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
 import Image from "next/image";
-import Achi from "@/Assets/achivement.svg"
+// import Achi from "@/Assets/achivement.svg";
 
 function Achievements() {
   return (
@@ -39,10 +39,10 @@ function Achievements() {
           <Button text="Submit" />
         </form>
         <div className={style.img_conatiner}>
-        <Image 
+        {/* <Image 
             src={Achi}
             alt="share opportunities"
-            />
+            /> */}
             </div>
       </div>
     </>
