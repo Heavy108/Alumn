@@ -63,7 +63,7 @@ function Navbar() {
                     <Link href="">Alumni Achievement</Link>
                   </li>
                   <li>
-                    <Link href="">Alumni Family</Link>
+                    <Link href="/Alumni_Family">Alumni Family</Link>
                   </li>
                 </ul>
               </div>
@@ -112,7 +112,7 @@ function Navbar() {
               <div   className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Relation</Link>
+                    <Link href="/About">Relation</Link>
                   </li>
                   <li>
                     <Link href="">Admin</Link>
@@ -176,7 +176,7 @@ function Navbar() {
                     <Link href="">Alumni Achievement</Link>
                   </li>
                   <li>
-                    <Link href="">Alumni Family</Link>
+                    <Link href="/Alumni_Family">Alumni Family</Link>
                   </li>
                 </ul>
               </div>
@@ -228,7 +228,7 @@ function Navbar() {
               <div   className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Relation</Link>
+                    <Link href="/About">Relation</Link>
                   </li>
                   <li>
                     <Link href="">Admin</Link>

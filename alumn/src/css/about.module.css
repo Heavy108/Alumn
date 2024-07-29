@@ -1,0 +1,67 @@
+/* styles/about.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .heading h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .description p,
+  .missionVision p,
+  .whyJoin h4 {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  .keyFeatures h2,
+  .missionVision h2,
+  .whyJoin h2 {
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .keyFeatures ul,
+  .whyJoin ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .keyFeatures li,
+  .whyJoin li {
+    margin-bottom: 10px;
+  }
+  
+  .keyFeatures span,
+  .whyJoin span {
+    font-weight: bold;
+  }
+  
+  .callToAction {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .callToAction h4 {
+    margin-bottom: 10px;
+  }
+  
+  .ctaButton {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .ctaButton:hover {
+    background-color: #005bb5;
+  }
+  
