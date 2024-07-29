@@ -115,7 +115,7 @@ function Navbar() {
                     <Link href="/About">Relation</Link>
                   </li>
                   <li>
-                    <Link href="">Admin</Link>
+                    <Link href="/Admin">Admin</Link>
                   </li>
                 </ul>
               </div>
@@ -231,7 +231,7 @@ function Navbar() {
                     <Link href="/About">Relation</Link>
                   </li>
                   <li>
-                    <Link href="">Admin</Link>
+                    <Link href="/Admin">Admin</Link>
                   </li>
                 </ul>
               </div>
