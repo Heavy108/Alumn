@@ -42,13 +42,13 @@ function Navbar() {
                     <Link href="/Share_Achievements">Share Achievement</Link>
                   </li>
                   <li>
-                    <Link href="">Be A Mentor</Link>
+                    <Link href="/Mentor">Be A Mentor</Link>
                   </li>
                   <li>
                     <Link href="/Share_Opportunities">Share opportunity</Link>
                   </li>
                   <li>
-                    <Link href="">PayBack</Link>
+                    <Link href="/Payback">PayBack</Link>
                   </li>
                 </ul>
               </div>
@@ -154,13 +154,13 @@ function Navbar() {
                     <Link href="/Share_Achievements">Share Achievement</Link>
                   </li>
                   <li>
-                    <Link href="">Be A Mentor</Link>
+                    <Link href="/Mentor">Be A Mentor</Link>
                   </li>
                   <li>
                     <Link href="/Share_Opportunities">Share opportunity</Link>
                   </li>
                   <li>
-                    <Link href="">PayBack</Link>
+                    <Link href="/Payback">PayBack</Link>
                   </li>
                 </ul>
               </div>

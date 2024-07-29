@@ -3,16 +3,16 @@ import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
 import Image from "next/image";
-import Achi from "@/Assets/achivement.svg";
+import mentor from "@/Assets/Mentor.svg";
 
-function Achievements() {
+function BeAMentor() {
   return (
     <>
       <Title title="GiveBack" />
       <div className={style.container}>
         
         <form action="" className={style.form}>
-        <h4>Share Achievements</h4>
+        <h4>Be a Mentor</h4>
           <Input 
             label="Name" 
             type="text" 
@@ -26,7 +26,7 @@ function Achievements() {
             type="email" 
             placeholder="Enter your Email" />
           <Input
-            label="Title"
+            label="Eligibility"
             type="text"
             placeholder="Enter text here"
           />
@@ -40,12 +40,12 @@ function Achievements() {
         </form>
         <div className={style.img_conatiner}>
         <Image 
-            src={Achi}
-            alt="share Achievements"
+            src={mentor}
+            alt="Be a Mentor"
             />
             </div>
       </div>
     </>
   );
 }
-export default Achievements;
+export default BeAMentor;
