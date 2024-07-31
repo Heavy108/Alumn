@@ -28,8 +28,12 @@
     align-content: center;
     width: 60%;
 }
-.container{
+.container {
     margin: 1rem;
+}
+.texts{
+    margin: 1rem;
+    font-size: 0.6rem;
 }
 .img_conatiner{
     display: none;
@@ -75,6 +79,10 @@
         
         filter: grayscale();
     }
+    .texts{
+        font-size: 0.8rem;
+        margin: 0rem 2rem 0rem 2rem;
+    }
     .form{
         width: 45%;
     }
@@ -89,6 +97,10 @@
 @media only  screen and (min-width:1024px){
     .container{
         margin: 5rem;
+    }
+    .texts{
+        margin: 0rem 5rem 0rem 5rem;
+        font-size: 1rem;
     }
     .Input_field input{
         font-size:1rem;
@@ -115,10 +127,14 @@
     .container{
         margin: 0rem 10rem 5rem 10rem;
     }
+    .texts{
+        margin: 0rem 10rem 2rem 10rem;
+    }
     .Input_field textarea{
         font-size:1rem;
         
     }
+    
     .form h4{
         font-size: 1.5rem;
     }
@@ -127,8 +143,9 @@
     } */
 }
 @media only screen and (min-width:2560px){
-    .container{
-        margin: 5rem;
+    .texts{
+        font-size: 2rem;
+        margin: 0rem 20rem 4rem 20rem;
     }
     .Input_field input{
         font-size:2rem;

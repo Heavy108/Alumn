@@ -100,7 +100,7 @@ function Navbar() {
                     <Link href="/Digital_Card">Digital Alumni Card</Link>
                   </li>
                   <li>
-                    <Link href="">Transcript</Link>
+                    <Link href="/Transcript">Transcript</Link>
                   </li>
                 </ul>
               </div>
@@ -215,7 +215,7 @@ function Navbar() {
                     <Link href="/Digital_Card">Digital Alumni Card</Link>
                   </li>
                   <li>
-                    <Link href="">Transcript</Link>
+                    <Link href="/Transcript">Transcript</Link>
                   </li>
                 </ul>
               </div>
