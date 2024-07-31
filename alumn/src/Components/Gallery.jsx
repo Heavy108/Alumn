@@ -1,6 +1,7 @@
 import style from "@/css/Gallery.module.css";
 import Image from "next/image";
 import Title from "./Title";
+import Button from "./Button";
 
 
 function Gallery(props){
@@ -21,6 +22,7 @@ function Gallery(props){
       ))}
 
         </div>
+      
         </>
     )
 }

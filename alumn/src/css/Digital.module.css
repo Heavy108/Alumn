@@ -1,0 +1,97 @@
+.container4{
+    margin: 1rem;
+}
+.img_container3{
+    margin: 1rem;
+}
+.piclabel{
+    font-weight: 700;
+    align-content: center;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.image_preview{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    border: 2px solid #d9d9d9;
+    padding: 2rem 3rem;
+    border-radius: 1.5rem;
+    background-color: #fafafa;
+}
+.text{
+    margin: 1rem;
+    font-size: 0.6rem;
+}
+@media only screen and (min-width:768px){
+    .form{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .text{
+        margin: 0rem 4rem 2rem 4rem;
+        font-size: 0.8rem;
+
+    }
+    .container4{
+        margin: 0rem 4rem 2rem 4rem;
+    }
+}
+@media only screen and (min-width:1024px){
+    .text{
+        margin: 0rem 6rem 2rem 6rem;
+    }
+    .form{
+        justify-content: space-between;
+    }
+    .container4{
+        margin: 0rem 6rem 2rem 6rem;
+    }
+    .half{
+        width: 45%;
+    }
+    .image_preview{
+        width: 45%;
+    }
+
+}
+@media only screen and (min-width:1440px){
+    .text{
+        margin: 0rem 10rem 5rem 10rem;
+        font-size: 1rem;
+    }
+    
+    .container4{
+        margin: 0rem 10rem 5rem 10rem;
+    }
+    .half{
+        width: 45%;
+    }
+    .piclabel{
+        font-size: 1rem;
+    }
+    
+}
+@media only screen and (min-width:2560px){
+    .text{
+        margin: 0rem 20rem 10rem 20rem;
+        font-size: 2rem;
+    }
+    
+    .container4{
+        margin: 0rem 20rem 10rem 20rem;
+
+    }
+    .half{
+        width: 65%;
+    }
+    .piclabel{
+        font-size: 2rem;
+    }
+    .form h4{
+        font-size: 3rem;
+    }
+    
+}

@@ -97,7 +97,7 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Digital Alumni Card</Link>
+                    <Link href="/Digital_Card">Digital Alumni Card</Link>
                   </li>
                   <li>
                     <Link href="">Transcript</Link>
@@ -212,7 +212,7 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Digital Alumni Card</Link>
+                    <Link href="/Digital_Card">Digital Alumni Card</Link>
                   </li>
                   <li>
                     <Link href="">Transcript</Link>
