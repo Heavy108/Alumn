@@ -1,9 +1,13 @@
+import Footer from '@/Components/Footer';
+import Navbar from '@/Components/Navbar';
 import Link from 'next/link';
 
 const schools = ['SOE', 'SOM', 'SOL', 'SOP'];
 
 export default function Home() {
   return (
+    <>
+    <Navbar/>
     <div>
       <h1>Select a School</h1>
       <ul>
@@ -14,5 +18,7 @@ export default function Home() {
         ))}
       </ul>
     </div>
+    <Footer/>
+    </>
   );
 }

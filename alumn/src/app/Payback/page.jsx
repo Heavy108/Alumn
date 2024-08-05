@@ -5,10 +5,13 @@ import style from "@/css/Input.module.css";
 import Image from "next/image";
 import Don from "@/Assets/donation.svg";
 import qr from "@/Assets/QR.svg";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 function Donation() {
   return (
     <>
+    <Navbar/>
       <Title title="GiveBack" />
       <div className={style.container}>
         
@@ -52,6 +55,7 @@ UPI Reference ID"
             />
             </div>
       </div>
+      <Footer/>
     </>
   );
 }

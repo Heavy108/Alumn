@@ -1,6 +1,8 @@
 "use client"
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Navbar from '@/Components/Navbar';
+import Footer from '@/Components/Footer';
 
 const years = ['2021', '2022', '2023', '2024'];
 
@@ -9,6 +11,8 @@ export default function Course() {
   const { school, program, course } = params;
 
   return (
+    <>
+    <Navbar/>
     <div>
       <h1>Years for {course} in {program} at {school}</h1>
       <ul>
@@ -19,5 +23,7 @@ export default function Course() {
         ))}
       </ul>
     </div>
+    <Footer/>
+    </>
   );
 }

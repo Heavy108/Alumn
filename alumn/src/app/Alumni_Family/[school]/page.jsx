@@ -1,4 +1,6 @@
 "use client"
+import Footer from '@/Components/Footer';
+import Navbar from '@/Components/Navbar';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
@@ -14,6 +16,8 @@ export default function School() {
   const programs = schoolPrograms[school] || [];
 
   return (
+    <>
+    <Navbar/>
     <div>
       <h1>Programs offered by {school}</h1>
       <ul>
@@ -24,5 +28,7 @@ export default function School() {
         ))}
       </ul>
     </div>
+    <Footer/>
+    </>
   );
 }

@@ -4,10 +4,13 @@ import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
 import Image from "next/image";
 import Achi from "@/Assets/achivement.svg";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 function Achievements() {
   return (
     <>
+    <Navbar/>
       <Title title="GiveBack" />
       <div className={style.container}>
         
@@ -45,6 +48,7 @@ function Achievements() {
             />
             </div>
       </div>
+      <Footer/>
     </>
   );
 }

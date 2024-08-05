@@ -1,10 +1,13 @@
 
+import Footer from '@/Components/Footer';
+import Navbar from '@/Components/Navbar';
 import Title from '@/Components/Title';
 import styles from '@/css/about.module.css';
 import Link from 'next/link';
 export default function About() {
   return (
     <>
+    <Navbar/>
     <Title title ="Relation"/>
     <div>
      
@@ -54,7 +57,7 @@ export default function About() {
           <h4>Ready to embark on this exciting journey?</h4>
           <h4>Register now and become a vital part of our thriving alumni community.</h4>
           <h4>Your unique Alumni ID awaits!</h4>
-          <Link href="#">
+          <Link href="/Digital_Card">
             <button className={styles.ctaButton}>Register Now</button>
           </Link>
         </div>
@@ -62,6 +65,7 @@ export default function About() {
 
     
     </div>
+    <Footer/>
     </>
   );
 }

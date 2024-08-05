@@ -4,10 +4,13 @@ import Image from 'next/image';
 import styles from '@/css/Admin.module.css';
 import Title from '@/Components/Title';
 import Link from 'next/link';
+import Navbar from '@/Components/Navbar';
+import Footer from '@/Components/Footer';
 
 export default function Alumni() {
   return (
     <>
+    <Navbar/>
     <Title title="Admin"/>
     <div className={styles.container}>
       <h3>Alumni Members</h3>
@@ -34,6 +37,7 @@ export default function Alumni() {
         })}
       </div>
     </div>
+    <Footer/>
     </>
   );
 }

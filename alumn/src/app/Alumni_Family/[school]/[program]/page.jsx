@@ -1,6 +1,8 @@
 "use client"
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Navbar from '@/Components/Navbar';
+import Footer from '@/Components/Footer';
 
 const schoolPrograms = {
   SOE: {
@@ -30,6 +32,8 @@ export default function Program() {
   const courses = schoolPrograms[school][program] || [];
 
   return (
+    <>
+    <Navbar/>
     <div>
       <h1>Courses in {program} at {school}</h1>
       <ul>
@@ -40,5 +44,7 @@ export default function Program() {
         ))}
       </ul>
     </div>
+    <Footer/>
+    </>
   );
 }
