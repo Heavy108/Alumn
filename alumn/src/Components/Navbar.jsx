@@ -124,7 +124,7 @@ function Navbar() {
         </div>
         <div className={style.list2}>
             <ul>
-        <li ><Link href="#">Connect </Link></li>
+        <li ><Link href="/login">Connect </Link></li>
         <li>
           <Link href="/Gallery">Gallery</Link>
         </li>
@@ -236,7 +236,7 @@ function Navbar() {
                 </ul>
               </div>
             </li>
-            <li className={style.opt}><Link href="#">Connect </Link></li>
+            <li className={style.opt}><Link href="/login">Connect </Link></li>
             <hr  className={style.horizontal}/>
         <li className={style.opt}>
           <Link href="/Gallery">Gallery</Link>
