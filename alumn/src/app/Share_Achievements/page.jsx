@@ -1,3 +1,4 @@
+'use client'
 import Button from "@/Components/Button";
 import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
@@ -6,24 +7,99 @@ import Image from "next/image";
 import Achi from "@/Assets/achivement.svg";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import { useState, useEffect } from "react";
 
 function Achievements() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [alumniId, setAlumniId] = useState("");
+  const [alumniIdValid, setAlumniIdValid] = useState(false); // null: not checked, true: valid, false: invalid
+  const [debounceTimeout, setDebounceTimeout] = useState(null);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const formData = new FormData(e.target);
+      const response = await fetch('/api/Achievements', {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("Form submitted successfully!");
+      } else {
+        alert("Submission failed. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const checkAlumniId = async (id) => {
+    try {
+      const response = await fetch(`/api/CheckId?alumniId=${id}`);
+      const data = await response.json();
+      setAlumniIdValid(data.exists);
+    } catch (error) {
+      console.error(error);
+      setAlumniIdValid(false);
+    }
+  };
+
+  const handleAlumniIdChange = (e) => {
+    const id = e.target.value;
+    setAlumniId(id);
+    setAlumniIdValid(null);
+
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    setDebounceTimeout(setTimeout(() => {
+      if (id) {
+        checkAlumniId(id);
+      }
+    }, 1000)); // 5 seconds debounce
+  };
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimeout) {
+        clearTimeout(debounceTimeout);
+      }
+    };
+  }, [debounceTimeout]);
+
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Title title="GiveBack" />
       <div className={style.container}>
-        
-        <form action="" className={style.form}>
-        <h4>Share Achievements</h4>
+        <form onSubmit={onSubmit} className={style.form}>
+          <h4>Share Achievements</h4>
           <Input 
             label="Name" 
             type="text" 
             placeholder="Enter your name" />
-          <Input 
-            label="Alumni ID" 
-            type="text" 
-            placeholder="Enter your ID" />
+          <div className={style.Input_field}>
+            <label htmlFor="Alumni ID">Alumni ID
+            {alumniIdValid === true && <span className={style.valid}>✔️</span>}
+            {alumniIdValid === false && <span className={style.invalid}>❌</span>}
+            </label>
+            <input 
+              name="Alumni ID" 
+              type="text" 
+              placeholder="Enter your ID" 
+              value={alumniId}
+              onChange={handleAlumniIdChange} />
+            
+          </div>
           <Input 
             label="Email" 
             type="email" 
@@ -38,18 +114,22 @@ function Achievements() {
             type="text"
             placeholder="Enter text here"
           />
-         
-          <Button text="Submit" />
+          <div className={style.Button}>
+            <button type="submit" disabled={isLoading || alumniIdValid !== true}>
+              {isLoading ? 'Submitting...' : 'Submit'}
+            </button>
+          </div>
         </form>
         <div className={style.img_conatiner}>
-        <Image 
+          <Image 
             src={Achi}
             alt="share Achievements"
-            />
-            </div>
+          />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
+
 export default Achievements;

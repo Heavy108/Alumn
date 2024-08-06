@@ -175,3 +175,59 @@
         margin: 5rem 20rem 5rem 20rem;
     }
 }
+
+.Button{
+    display: flex;
+    justify-content: flex-end;
+}
+.Button button{
+    color: white;
+    background-color: black;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+@media only screen and (min-width:1024px) {
+    .Button button{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width:2560px){
+    .Button button{
+        font-size: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 2rem;
+    }
+    .Button{
+      
+        margin-top: 3rem;
+
+    }
+}
+/* .inputWithValidation {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputWithValidation input {
+    width: 100%;
+  }
+  
+  .inputWithValidation span {
+    margin-left: 8px;
+    font-size: 1em;
+    align-items: flex-end;
+  } */
+  
+  .valid {
+    color: green;
+    margin: 0;
+    
+  }
+  
+  .invalid {
+    color: red;
+  }
+  

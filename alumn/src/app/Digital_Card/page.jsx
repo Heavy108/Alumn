@@ -89,10 +89,14 @@ function Digital_AlumniCard() {
               style={{ display: 'none' }}
             />
           </div>
-          <button type="submit" disabled={isLoading}>
+          <div className={style.Button}>
+          <button type="submit" >
             {isLoading ? 'Submitting...' : 'Submit'}
           </button>
+          </div>
         </form>
+        
+      
       </div>
       <Footer />
     </>

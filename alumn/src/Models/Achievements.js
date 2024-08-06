@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const Achivements_Schema = new mongoose.Schema({
-  Name: String,
-  Alumni_id: String,
-  Email:String,
-  Title: String,
-  Description: String,
+  Name: {type:String , required:true},
+  Alumni_ID: {type:String },
+  Email:{type:String , required:true},
+  Title: {type:String , required:true},
+  Description: {type:String , required:true},
   // image: String,
 //   image: { type: Buffer, required: true },
 //   Para1 : String,

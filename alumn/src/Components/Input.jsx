@@ -4,7 +4,7 @@ export function Input(props){
         <>
         <div className={style.Input_field}>
             <label htmlFor={props.label}>{props.label}</label>
-            <input type={props.type} name={props.label} placeholder={props.placeholder}/>
+            <input type={props.type} name={props.label} placeholder={props.placeholder} />
         </div>
         </>
     )

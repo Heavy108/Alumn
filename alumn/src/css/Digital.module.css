@@ -95,3 +95,32 @@
     }
     
 }
+.Button{
+    display: flex;
+    justify-content: flex-end;
+}
+.Button button{
+    color: white;
+    background-color: black;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+@media only screen and (min-width:1024px) {
+    .Button button{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width:2560px){
+    .Button button{
+        font-size: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 2rem;
+    }
+    .Button{
+      
+        margin-top: 3rem;
+
+    }
+}

@@ -1,41 +1,40 @@
 import { NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
-import Carasoul from "@/Models/CarasoulModel";
+import Achivements from "@/Models/Achievements";
+
 
 export async function POST(request) {
   try {
     await connect();
     const data = await request.formData();
-    const file = data.get("image");
-    let buffer;
-    if (file) {
-      const bytes = await file.arrayBuffer();
-      buffer = Buffer.from(bytes);
+    console.log(data)
+   
+
+    const Name = data.get("Name");
+    const Alumni_Id = data.get("Alumni ID");
+    console.log(Alumni_Id)
+    const Email = data.get("Email");
+    const Title = data.get("Title");
+    const Description = data.get("Description");
+
+    if (!Name || !Alumni_Id || !Email || !Title || !Description) {
+      return NextResponse.json(
+        { success: false, error: "All fields are required." },
+        { status: 400 }
+      );
     }
-
-    const id = data.get("_id");
-    const CarasoulItems = await Carasoul.find({ _id: id });
-
-    const img = buffer || CarasoulItems.image;
-    const title = data.get("title") || CarasoulItems.title;
-    const text = data.get("text") || CarasoulItems.text;
-    const address = data.get("address") || CarasoulItems.address;
-    const bgColor = data.get("bg_color") || CarasoulItems.bgColor;
-console.log("near the update call")
-    await Carasoul.findOneAndUpdate(
-      { _id: id },
-      {
-        image: img, // Store the binary data directly in the image field
-        title: title,
-        text: text,
-        address: address,
-        bg_color: bgColor,
-      }
-    );
+    // Save data to the database
+    await Achivements.create({
+      Name: Name,
+      Alumni_ID: Alumni_Id,
+      Email: Email,
+      Title: Title,
+      Description: Description
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error updating document:", error);
+    console.error("Error saving document:", error);
     return NextResponse.json(
       { success: false, error: error.message },
       { status: 500 }
