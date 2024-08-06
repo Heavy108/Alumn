@@ -4,7 +4,7 @@ export function Input(props){
         <>
         <div className={style.Input_field}>
             <label htmlFor={props.label}>{props.label}</label>
-            <input type={props.type} placeholder={props.placeholder}/>
+            <input type={props.type} name={props.label} placeholder={props.placeholder}/>
         </div>
         </>
     )
@@ -15,7 +15,7 @@ export function Textarea(props){
         <>
         <div className={style.Input_field}>
             <label htmlFor="">{props.label}</label>
-            <textarea type="text" placeholder={props.placeholder}/>
+            <textarea type="text" placeholder={props.placeholder}  name={props.label}/>
         </div>
         </>
     )

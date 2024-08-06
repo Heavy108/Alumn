@@ -3,7 +3,7 @@ function Button(props){
     return(
         <>
         <div className={style.Button}>
-            <button >{props.text}</button>
+            <button type={props.type}>{props.text} </button>
         </div>
         </>
     )
