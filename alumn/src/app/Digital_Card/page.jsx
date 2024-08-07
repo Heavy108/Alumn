@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/Components/Button";
 import Footer from "@/Components/Footer";
 import { Input } from "@/Components/Input";
 import Navbar from "@/Components/Navbar";
@@ -85,7 +84,7 @@ function Digital_AlumniCard() {
               type="file"
               accept="image/*"
               ref={fileInputRef}
-              onChange={handleFileInputChange}
+             
               style={{ display: 'none' }}
             />
           </div>

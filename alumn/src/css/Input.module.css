@@ -59,9 +59,9 @@
     background-color: #fafafa;
 
 }
-.Input_field input[type='file']{
+/* .Input_field input[type='file']{
     display: none;
-}
+} */
 @media only screen and (min-width:768px){
     .img_conatiner{
         display: block;

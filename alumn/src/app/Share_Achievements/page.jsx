@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 function Achievements() {
   const [isLoading, setIsLoading] = useState(false);
   const [alumniId, setAlumniId] = useState("");
-  const [alumniIdValid, setAlumniIdValid] = useState(false); // null: not checked, true: valid, false: invalid
+  const [alumniIdValid, setAlumniIdValid] = useState(null); // null: not checked, true: valid, false: invalid
   const [debounceTimeout, setDebounceTimeout] = useState(null);
 
   const onSubmit = async (e) => {
@@ -29,7 +29,7 @@ function Achievements() {
       const data = await response.json();
       console.log(data);
       if (data.success) {
-        alert("Form submitted successfully!");
+        alert("Your Achivements submitted successfully!");
       } else {
         alert("Submission failed. Please try again later.");
       }
@@ -65,7 +65,7 @@ function Achievements() {
       if (id) {
         checkAlumniId(id);
       }
-    }, 1000)); // 5 seconds debounce
+    }, 3000)); // 3 seconds debounce
   };
 
   useEffect(() => {
@@ -87,6 +87,7 @@ function Achievements() {
             label="Name" 
             type="text" 
             placeholder="Enter your name" />
+
           <div className={style.Input_field}>
             <label htmlFor="Alumni ID">Alumni ID
             {alumniIdValid === true && <span className={style.valid}>✔️</span>}
