@@ -5,7 +5,7 @@ import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import style from "@/css/Family.module.css"
 import Title from '@/Components/Title';
-const years = ['2021', '2022', '2023', '2024'];
+const years = ['2024', '2023', '2022', '2021','2020','2019','2018','2017','2016','2015','2014'];
 
 export default function Course() {
   const params = useParams();
@@ -16,11 +16,11 @@ export default function Course() {
     <Navbar/>
     <Title title="Alumni Family"/>
     <div className={style.Family}>
-      <h1>Years for {course} in {program} at {school}</h1>
+      <h1>Select the years </h1>
       <ul className={style.list}>
         {years.map((year) => (
          
-            <Link key={year} href={`/Alumni_Family/${school}/${program}/${course}/${year}`}> <li >{year} </li></Link>
+            <Link key={year} href={`/Alumni_Family/${school}/${program}/${course}/${year}`}> <li >Class of {year} </li></Link>
          
         ))}
       </ul>

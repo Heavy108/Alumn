@@ -7,10 +7,10 @@ import style from "@/css/Family.module.css"
 import Title from '@/Components/Title';
 const schoolPrograms = {
   SOE: {
-    CSE: ['BTech', 'MTech', 'PhD'],
-    ME: ['BTech', 'MTech'],
-    EE: ['BTech', 'PhD'],
-    ECE: ['BTech', 'MTech', 'MCA']
+    CSE: ['CSB', 'CSM', 'PhD'],
+    ME:['CSB', 'CSM', 'PhD'],
+    EE:['CSB', 'CSM', 'PhD'],
+    ECE: ['CSB', 'CSM', 'PhD'],
   },
   SOM: {
     MBA: ['Full-time', 'Part-time'],
@@ -37,7 +37,7 @@ export default function Program() {
     <Navbar/>
     <Title title="Alumni Family"/>
     <div className={style.Family}> 
-      <h1>Courses in {program} at {school}</h1>
+      <h1>Select your Programme ID</h1>
       <ul className={style.list}>
         {courses.map((course) => (
        

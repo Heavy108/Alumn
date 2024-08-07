@@ -22,7 +22,7 @@ export default function School() {
     <Navbar/>
     <Title title="Alumni Family"/>
     <div className={style.Family}>
-      <h1>Programs offered by {school}</h1>
+      <h1>Department at {school}</h1>
       <ul className={style.list}>
         {programs.map((program) => (
         

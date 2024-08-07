@@ -60,7 +60,7 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Alumni Achievement</Link>
+                    <Link href="/CommingSoon">Alumni Achievement</Link>
                   </li>
                   <li>
                     <Link href="/Alumni_Family">Alumni Family</Link>
@@ -76,16 +76,16 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">UpComing Events</Link>
+                    <Link href="/CommingSoon">UpComing Events</Link>
                   </li>
                   <li>
-                    <Link href="">Past Events</Link>
+                    <Link href="/CommingSoon">Past Events</Link>
                   </li>
                   <li>
-                    <Link href="">Past Committee</Link>
+                    <Link href="/CommingSoon">Past Committee</Link>
                   </li>
                   <li>
-                    <Link href="">Reunion</Link>
+                    <Link href="/CommingSoon">Reunion</Link>
                   </li>
                 </ul>
               </div>
@@ -173,7 +173,7 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">Alumni Achievement</Link>
+                    <Link href="/CommingSoon">Alumni Achievement</Link>
                   </li>
                   <li>
                     <Link href="/Alumni_Family">Alumni Family</Link>
@@ -190,16 +190,16 @@ function Navbar() {
               <div  className={style.Menu}>
                 <ul>
                   <li>
-                    <Link href="">UpComing Events</Link>
+                    <Link href="/CommingSoon">UpComing Events</Link>
                   </li>
                   <li>
-                    <Link href="">Past Events</Link>
+                    <Link href="/CommingSoon">Past Events</Link>
                   </li>
                   <li>
-                    <Link href="">Past Committee</Link>
+                    <Link href="/CommingSoon">Past Committee</Link>
                   </li>
                   <li>
-                    <Link href="">Reunion</Link>
+                    <Link href="/CommingSoon">Reunion</Link>
                   </li>
                 </ul>
               </div>
