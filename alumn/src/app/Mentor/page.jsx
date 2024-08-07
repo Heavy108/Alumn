@@ -64,7 +64,7 @@ function BeAMentor() {
       if (id) {
         checkAlumniId(id);
       }
-    }, 3000)); // 3 seconds debounce
+    }, 2000)); // 2 seconds debounce
   };
 
   useEffect(() => {

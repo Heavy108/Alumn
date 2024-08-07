@@ -7,14 +7,12 @@ import style from "@/css/Digital.module.css";
 import Image from "next/image";
 import { useState, useRef } from "react";
 
-
 function Digital_AlumniCard() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
+  const formRef = useRef(null); // Reference to the form
   const [isLoading, setIsLoading] = useState(false);
-  
- 
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
@@ -46,10 +44,22 @@ function Digital_AlumniCard() {
 
       const data = await response.json();
       console.log(data);
+      if (data.success) {
+        alert(" submitted successfully!");
+      } else {
+        alert("Submission failed. Please try again later.");
+      }
     } catch (error) {
       console.error(error);
+      alert("An error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleButtonClick = () => {
+    if (formRef.current) {
+      formRef.current.requestSubmit(); // Programmatically submit the form
     }
   };
 
@@ -61,7 +71,7 @@ function Digital_AlumniCard() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </center>
       <div className={style.container4}>
-        <form onSubmit={onSubmit} className={style.form}>
+        <form onSubmit={onSubmit} className={style.form} ref={formRef}>
           <div className={style.half}>
             <h4>Digital Alumni Card</h4>
             <Input label="Name" type="text" placeholder="Enter your name"  />
@@ -84,18 +94,16 @@ function Digital_AlumniCard() {
               type="file"
               accept="image/*"
               ref={fileInputRef}
-             
+             onChange={handleFileInputChange}
               style={{ display: 'none' }}
             />
           </div>
-          <div className={style.Button}>
-          <button type="submit" >
+        </form>
+        <div className={style.Button}>
+          <button type="button" onClick={handleButtonClick} disabled={isLoading}>
             {isLoading ? 'Submitting...' : 'Submit'}
           </button>
-          </div>
-        </form>
-        
-      
+        </div>
       </div>
       <Footer />
     </>

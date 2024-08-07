@@ -1,4 +1,4 @@
-import Button from "@/Components/Button";
+"use client"
 import { Input, Textarea } from "@/Components/Input";
 import Title from "@/Components/Title";
 import style from "@/css/Input.module.css";
@@ -6,8 +6,73 @@ import Image from "next/image";
 import Transcrip from "@/Assets/Transcript.svg"
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
-
+import { useState ,useEffect} from "react";
 function Transcript() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [alumniId, setAlumniId] = useState("");
+  const [alumniIdValid, setAlumniIdValid] = useState(null); // null: not checked, true: valid, false: invalid
+  const [debounceTimeout, setDebounceTimeout] = useState(null);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const formData = new FormData(e.target);
+      const response = await fetch('/api/Transcript', {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        alert("submitted successfully!");
+      } else {
+        alert("Submission failed. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const checkAlumniId = async (id) => {
+    try {
+      const response = await fetch(`/api/CheckId?alumniId=${id}`);
+      const data = await response.json();
+      setAlumniIdValid(data.exists);
+    } catch (error) {
+      console.error(error);
+      setAlumniIdValid(false);
+    }
+  };
+
+  const handleAlumniIdChange = (e) => {
+    const id = e.target.value;
+    setAlumniId(id);
+    setAlumniIdValid(null);
+
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    setDebounceTimeout(setTimeout(() => {
+      if (id) {
+        checkAlumniId(id);
+      }
+    }, 2000)); // 3 seconds debounce
+  };
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimeout) {
+        clearTimeout(debounceTimeout);
+      }
+    };
+  }, [debounceTimeout]);
   return (
     <>
     <Navbar/>
@@ -15,7 +80,7 @@ function Transcript() {
       <center className={style.texts}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center>
       <div className={style.container}>
         
-        <form action="" className={style.form}>
+        <form onSubmit={onSubmit} className={style.form}>
         <h4>Transcript</h4>
           <Input 
             label="Name" 
@@ -25,10 +90,19 @@ function Transcript() {
             label="Roll No" 
             type="text" 
             placeholder="Enter your Roll no" />
-          <Input 
-            label="Alumni ID" 
-            type="text" 
-            placeholder="Enter your ID" />
+           <div className={style.Input_field}>
+            <label htmlFor="Alumni ID">Alumni ID
+            {alumniIdValid === true && <span className={style.valid}>✔️</span>}
+            {alumniIdValid === false && <span className={style.invalid}>❌</span>}
+            </label>
+            <input 
+              name="Alumni ID" 
+              type="text" 
+              placeholder="Enter your ID" 
+              value={alumniId}
+              onChange={handleAlumniIdChange} />
+            
+          </div>
           
          
           <Input
@@ -42,7 +116,11 @@ function Transcript() {
             type="text"
             placeholder="Enter your reason "
           />
-          <Button text="Submit" />
+          <div className={style.Button}>
+            <button type="submit" disabled={isLoading || alumniIdValid !== true}>
+              {isLoading ? 'Submitting...' : 'Submit'}
+            </button>
+          </div>
         </form>
         <div className={style.img_conatiner}>
         <Image 
