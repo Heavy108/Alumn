@@ -3,9 +3,11 @@ import Footer from '@/Components/Footer';
 import Navbar from '@/Components/Navbar';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import style from "@/css/Family.module.css"
+import Title from '@/Components/Title';
 
 const schoolPrograms = {
-  SOE: ['CSE', 'ME', 'EE', 'ECE'],
+  SOE: ['CSE', 'ME', 'EE', 'ECE','CEB','FET'],
   SOM: ['MBA', 'BBA'],
   SOL: ['LLB', 'LLM'],
   SOP: ['Pharmacy', 'BPharm', 'MPharm']
@@ -18,13 +20,14 @@ export default function School() {
   return (
     <>
     <Navbar/>
-    <div>
+    <Title title="Alumni Family"/>
+    <div className={style.Family}>
       <h1>Programs offered by {school}</h1>
-      <ul>
+      <ul className={style.list}>
         {programs.map((program) => (
-          <li key={program}>
-            <Link href={`/Alumni_Family/${school}/${program}`}>{program}</Link>
-          </li>
+        
+            <Link key={program} href={`/Alumni_Family/${school}/${program}`}>  <li >{program} </li></Link>
+         
         ))}
       </ul>
     </div>

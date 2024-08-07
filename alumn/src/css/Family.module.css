@@ -1,0 +1,85 @@
+.Family{
+    margin: 1rem;
+}
+.Family h1{
+    font-size: 1rem;
+}
+.list{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.list li{
+    list-style-type: none;
+    border: 2px solid #d9d9d9;
+    padding: 1rem;
+    font-size: 0.8rem;
+    background-color: #fafafa;
+    border-radius: 1rem;
+    margin: 0.5rem; 
+    transition: 3s ease-in-out;
+}
+
+.list a{
+    text-decoration: none;
+    color:black;
+    font-weight: 600;
+    width: auto;
+    
+}
+.list a:hover{
+    transform: scale(1.05);
+}
+@media only screen and (min-width:425px){
+    .Family h1{
+        margin-left: 2rem;
+    }
+}
+@media only screen and (min-width:768px){
+    .Family{
+        margin: 2rem;
+    }
+    .list{
+        margin-bottom: 5rem;
+    }
+}
+@media only screen and (min-width:1024px){
+    .Family{
+        margin: 5rem;
+    }
+    .Family h1{
+        font-size: 1.5rem;
+        margin: 2rem;
+    }
+    .list{
+        margin-bottom: 7.5rem;
+    }
+    .list li{
+        font-size: 1.25rem;
+        padding: 1.5rem;
+    }
+}
+@media only screen and (min-width:1440px){
+    .Family{
+        margin: 0rem 10rem 7.5rem 10rem;
+    }
+    .list a{
+        margin: 1.5rem;
+    }
+}
+@media only screen and (min-width:2560px){
+    .Family{
+        margin: 5rem 20rem 15rem 20rem;
+    }
+    .list a{
+        margin: 3rem;
+    }
+    .list li{
+        font-size: 2.5rem;
+    }
+    .Family h1{
+        font-size: 3rem;
+    }
+}
