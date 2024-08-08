@@ -1,0 +1,142 @@
+.Family {
+  margin: 1rem;
+}
+.Family h1 {
+  font-size: 1rem;
+}
+.card_container {
+  /* border:2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #d9d9d9;
+  border-radius: 1rem;
+  width: 80%;
+  margin-bottom: 0.5rem;
+  background-color: #fafafa;
+  transition: transform 0.3s ease;
+}
+.card p{
+    padding: 0;
+    margin: 0.4rem;
+    font-size: 0.8rem;
+    color: black;
+
+}
+.card span{
+    font-weight: 600;
+}
+.image svg{
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.emptyImage{
+    width: 10rem;
+    height: 10rem;
+    filter: grayscale();
+}
+
+@media only screen and (min-width: 425px) {
+  .Family h1 {
+    margin-left: 2rem;
+  }
+  .card{
+    margin: 0rem 1rem 0.5rem 1rem;
+    width: 60%;
+  }
+  .emptyImage{
+    width: 14rem;
+    height: 14rem;
+}
+}
+@media only screen and (min-width: 768px) {
+  .Family {
+    margin: 2rem;
+  }
+  .card_container{
+    /* align-items: normal; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0rem;
+    justify-content: center;
+    
+  }
+  .emptyImage{
+    width: 16rem;
+    height: 16rem;
+}
+  .card{
+    /* width: max-content; */
+    width: 12rem;
+    height: 12rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    justify-content: space-evenly;
+    
+    
+  }
+  .card h4{
+    width: fit-content;
+    
+    padding: 0.4rem;
+  
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .Family {
+    margin: 5rem;
+  }
+  .Family h1 {
+    font-size: 1.5rem;
+    margin: 2rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .Family {
+    margin: 0rem 10rem 7.5rem 10rem;
+  }
+  .emptyImage{
+    width: 20rem;
+    height: 20rem;
+}
+}
+@media only screen and (min-width: 2560px) {
+  .Family {
+    margin: 5rem 20rem 15rem 20rem;
+  }
+  .emptyImage{
+    width: 32rem;
+    height: 32rem;
+}
+
+  .Family h1 {
+    font-size: 3rem;
+  }
+  .card{
+    padding: 1rem;
+    margin: 1rem;
+    width: 24rem;
+    height: 22rem;
+
+  }
+  .card h4{
+    font-size: 2rem;
+
+  }
+  .card p{
+    font-size: 1.5rem;
+  }
+  .image svg{
+    font-size: 2rem;
+  }
+}
