@@ -1,15 +1,21 @@
 import styles from "@/css/Event.module.css";
 import Image from "next/image";
 import Title from "./Title";
-import Machine from "@/Assets/Machine.svg";
-import Alumn from "@/Assets/Alum.svg";
-import DataSci from "@/Assets/DataScie.svg";
-
+// import Machine from "@/Assets/Machine.svg";
+// import Alumn from "@/Assets/Alum.svg";
+// import DataSci from "@/Assets/DataScie.svg";
+import Button from "./Button";
+import Link from "next/link";
 function Event_Card(props) {
   return (
     <>
       <div className={styles.card}>
-        <Image src={props.img} />
+        <Image src={props.img}
+        width={1200}
+        height={1200}
+        alt="event"
+
+        />
         <div className={styles.Introductio}>
           <h3>{props.head}</h3>
 
@@ -21,6 +27,14 @@ function Event_Card(props) {
             <p>Venue: {props.venue}</p>
             <p>Time: {props.time} </p>
           </div>
+          <Link
+          href={{
+            pathname: "/Event_details",
+            query: { ...props }, // Spread all props into query
+          }}
+        >
+          <Button text="View Details" />
+        </Link>
         </div>
       </div>
     </>
@@ -29,28 +43,35 @@ function Event_Card(props) {
 
 const eventsData = [
   {
-    img: Machine,
+    img: '/Event/ml.jpg',
+    
     head: "Virtual Startup",
     name: "Akhilesh Kumar Yadav",
     position: "SDE at Amazon",
     venue: "KBR Auditorium",
+    Title:'Carrier  Opportunities in Data Science',
+    description:'"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.',
     time: "6:30 PM, 10/11/2024",
   },
   {
-    img: DataSci,
+    img: '/Event/data.jpg',
     head: "Data Science",
     name: "Akhilesh Kumar Yadav",
     position: "SDE at Amazon",
     venue: "KBR Auditorium",
     time: "6:30 PM, 10/11/2024",
+    Title:'Carrier  Opportunities in Data Science',
+    description:'"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.',
   },
   {
-    img: Alumn,
+    img: '/Event/Alum.svg' ,
     head: "Alumni Talks",
     name: "Akhilesh Kumar Yadav",
     position: "SDE at Amazon",
     venue: "KBR Auditorium",
     time: "6:30 PM, 10/11/2024",
+    Title:'Carrier  Opportunities in Data Science',
+    description:'"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.',
   },
 ];
 
@@ -69,6 +90,8 @@ function Events() {
             position={event.position}
             venue={event.venue}
             time={event.time}
+            title={event.Title}
+            description={event.description}
           />
         ))}
       </div>
@@ -83,6 +106,8 @@ function Events() {
             position={event.position}
             venue={event.venue}
             time={event.time}
+            title={event.Title}
+            description={event.description}
           />
         ))}
       </div>

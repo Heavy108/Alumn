@@ -1,0 +1,241 @@
+.container {
+    margin: 1rem;
+}
+.heading{
+    margin: 1rem;
+    font-size: 0.8rem;
+}
+.detail_card{
+    border-radius: 1rem;
+    border: 2px solid #d9d9d9;
+    background-color: #fafafa;
+
+   
+}
+.detail_card img{
+    width: 100%;
+    height: 10rem;
+    border-radius: 1rem; 
+    
+}
+.top img{
+    width: 3rem;
+    height: 3rem;
+}
+.top h4{
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0rem;
+    margin: 0rem;
+}
+.top h3{
+    font-size: 0.8rem;
+    color:#DDCC33;
+    margin: 0rem;
+}
+.top{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+.toptext{
+    align-content: center;
+}
+.topic{
+    font-size: 1rem;
+    padding: 1rem;  
+    text-align: center;
+    margin-bottom: 0rem;
+}
+.profile{
+    padding: 1rem;
+    text-align: center;
+    
+}
+.profile p{
+    margin: 0rem;
+    color: black;
+    font-size: 0.8rem;
+}
+.profile p:first-child{
+    font-weight: 700;
+}
+.location{
+    text-align: center;
+    padding: 0rem 1rem 0rem 1rem;
+    margin: 0rem;
+    font-size: 0.8rem;
+}
+.location span {
+    font-weight: 700;
+}
+.links svg{
+    align-content: center;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+.links{
+    padding: 1rem;
+}
+.speaker{
+    padding: 1rem 1rem 1rem 1rem;
+}
+.speaker img{
+    width: 10rem;
+    height: 10rem;
+}
+.speaker p{
+    color: #666666;
+    font-size: 0.6rem;
+}
+@media only screen and (min-width:375px){
+    .container{
+        margin: 2rem;
+    }
+    .heading{
+        margin: 1rem 2rem 1rem 2rem;
+    }
+}
+@media only screen and (min-width:425px){
+    .speaker p{
+        font-size: 0.8rem;
+    }
+}
+@media  only screen and (min-width:768px){
+    .container{
+        display: flex;
+        /* flex-direction: row; */
+        margin: 2rem 5rem 2rem 5rem;
+        gap: 2rem;
+    }
+    .heading{
+        font-size: 1rem;
+        margin: 2rem 5rem 2rem 5rem;
+    }
+    .detail_card{
+        width: 45%;
+    }
+    .speaker{
+        width: 50%;
+        display: flex;
+        padding-top:0rem ;
+        flex-direction: column;
+        justify-content: space-evenly;      
+    }
+    .speaker img{
+        width: 12rem;
+        height: 12rem;
+        margin-bottom: 2rem;
+    }
+   
+}
+@media only screen and (min-width:1024px){
+    .detail_card{
+        width: 40%;
+    }
+    .speaker p{
+        font-size: 1rem;
+    }
+    .container{
+        margin: 4rem 7.5rem 4rem 7.5rem;
+    }
+    .speaker h3{
+        font-size: 1.25rem;
+    }
+    .heading{
+        margin: 2rem 7.5rem 2rem 7.5rem;
+        font-size: 1.25rem;
+
+    }
+    @media only screen and (min-width:1440px){
+        .container{
+            margin: 5rem 10rem 5rem 10rem;
+            gap :4rem;
+        }
+        .detail_card{
+            width: 35%;
+        }
+        .speaker p{
+            font-size: 1.25rem;
+        }
+        .toptext h4{
+            font-size: 1rem;
+        }
+        .toptext h3{
+            font-size: 1rem;
+
+        }
+        .topic{
+            font-size: 1.5rem;
+        }
+        .profile p{
+            font-size: 1.25rem;
+        }
+        .location {
+            font-size: 1rem;
+        }
+        .links{
+            font-size: 2rem;
+        }
+        .speaker h3{
+            font-size: 1.5rem;
+        }
+    }
+}
+@media only screen and (min-width:2560px){
+    .container{
+        margin: 10rem 20rem 10rem 20rem;
+        gap :8rem;
+    }
+    .detail_card{
+        width: 35%;
+    }
+    .speaker p{
+        font-size: 2.5rem;
+    }
+    .toptext h4{
+        font-size: 2rem;
+    }
+    .toptext h3{
+        font-size: 2rem;
+
+    }
+    .topic{
+        font-size: 3.5rem;
+    }
+    .profile p{
+        font-size: 2.5rem;
+    }
+    .location {
+        font-size: 2rem;
+    }
+    .links svg{
+        font-size: 4rem;
+    }
+    .speaker h3{
+        font-size: 3rem;
+
+    }
+    .speaker img{
+        width: 20rem;
+        height: 20rem;
+        
+    }
+    .detail_card{
+        width: 40%;
+    }
+    .detail_card img{
+        height: 20rem;
+       
+    }
+    .top img{
+        width: 8rem;
+        height: 8rem;
+        margin: 1rem;
+    }
+    .heading{
+        font-size: 3rem;
+        margin: 10rem 20rem 10rem 20rem;
+
+    }
+}

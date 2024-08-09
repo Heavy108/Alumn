@@ -6,7 +6,7 @@ import ChatBox from './ChatBox.jsx';
 
  function Chat() {
   // Ensure the authUrl is a fully qualified URL
-  const client = new Ably.Realtime({ authUrl: `${window.location.origin}/api/chat` });
+  const client = new Ably.Realtime({ authUrl: `${window.location.origin}/api/Chat` });
 
   return (
     <AblyProvider client={client}>
