@@ -4,7 +4,7 @@ import * as Ably from 'ably';
 import { AblyProvider, ChannelProvider } from 'ably/react';
 import ChatBox from './ChatBox.jsx';
 
-export default function Chat() {
+ function Chat() {
   // Ensure the authUrl is a fully qualified URL
   const client = new Ably.Realtime({ authUrl: `${window.location.origin}/api/Chat` });
 
@@ -16,3 +16,4 @@ export default function Chat() {
     </AblyProvider>
   );
 }
+export default Chat;
