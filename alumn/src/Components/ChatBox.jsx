@@ -17,7 +17,7 @@ const stringToColor = (str) => {
   return color;
 };
 
-export default function ChatBox() {
+ function ChatBox() {
   const inputBox = useRef(null);
   const messageEnd = useRef(null);
 
@@ -127,3 +127,4 @@ export default function ChatBox() {
     </div>
   );
 }
+export default ChatBox;

@@ -18,6 +18,6 @@ export default function ChatPage() {
   if (status !== 'authenticated') {
     return null; // Or a loading spinner, or placeholder
   }
-
+  
   return <Chat />;
 }

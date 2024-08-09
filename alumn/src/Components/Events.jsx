@@ -6,6 +6,7 @@ import Title from "./Title";
 // import DataSci from "@/Assets/DataScie.svg";
 import Button from "./Button";
 import Link from "next/link";
+import  sty from "@/css/button.module.css"
 function Event_Card(props) {
   return (
     <>
@@ -49,7 +50,7 @@ const eventsData = [
     name: "Akhilesh Kumar Yadav",
     position: "SDE at Amazon",
     venue: "KBR Auditorium",
-    Title:'Carrier  Opportunities in Data Science',
+    Title:'Carrier  Opportunities in Virtual  Reality',
     description:'"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.',
     time: "6:30 PM, 10/11/2024",
   },
@@ -95,6 +96,10 @@ function Events() {
           />
         ))}
       </div>
+      <div className={sty.wrapper2}>
+        <Link href='/CommingSoon'><Button text="More" /></Link>
+      
+      </div>
       <p className={styles.container}>Past Events</p>
       <div className={styles.container_2}>
         {eventsData.map((event, index) => (
@@ -110,6 +115,10 @@ function Events() {
             description={event.description}
           />
         ))}
+      </div>
+      <div className={sty.wrapper2}>
+        <Link href='/CommingSoon'><Button text="More" /></Link>
+      
       </div>
     </>
   );

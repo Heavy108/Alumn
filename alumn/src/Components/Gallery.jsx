@@ -2,6 +2,8 @@ import style from "@/css/Gallery.module.css";
 import Image from "next/image";
 import Title from "./Title";
 import Button from "./Button";
+import sty from "@/css/button.module.css"
+import Link from "next/link";
 
 
 function Gallery(props){
@@ -22,6 +24,10 @@ function Gallery(props){
       ))}
 
         </div>
+        <div className={sty.wrapper2}>
+        <Link href='/Gallery'><Button text="More" /></Link>
+      
+      </div>
       
         </>
     )

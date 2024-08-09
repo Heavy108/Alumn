@@ -87,6 +87,7 @@
 .speaker p{
     color: #666666;
     font-size: 0.6rem;
+    padding-left:0rem ;
 }
 @media only screen and (min-width:375px){
     .container{
@@ -119,6 +120,7 @@
         width: 50%;
         display: flex;
         padding-top:0rem ;
+
         flex-direction: column;
         justify-content: space-evenly;      
     }
@@ -157,6 +159,7 @@
         }
         .speaker p{
             font-size: 1.25rem;
+            
         }
         .toptext h4{
             font-size: 1rem;
@@ -182,6 +185,7 @@
         }
     }
 }
+
 @media only screen and (min-width:2560px){
     .container{
         margin: 10rem 20rem 10rem 20rem;

@@ -1,10 +1,14 @@
 import style from "@/css/button.module.css"
+import Link from "next/link";
 function Button(props){
     return(
         <>
         <div className={style.Button}>
-            <button type={props.type}>{props.text} </button>
+          
+            <button >{props.text} </button>
+           
         </div>
+
         </>
     )
 }

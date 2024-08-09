@@ -3,6 +3,9 @@ import style from "@/css/Achievement.module.css";
 import Image from "next/image";
 import { Data } from "@/Js/Data";
 import Title from "@/Components/Title";
+import Button from "./Button";
+import sty from "@/css/button.module.css"
+import Link from "next/link";
 
 function Achievement() {
     // const imageLoader = ({ src, width, quality }) => {
@@ -36,6 +39,11 @@ function Achievement() {
           <p>{t.Detail}</p>
         </div>
       ))}
+      
+      </div>
+      <div className={sty.wrapper2}>
+        <Link href='/CommingSoon'><Button text="More" /></Link>
+      
       </div>
     </>
   );
