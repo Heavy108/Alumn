@@ -1,6 +1,6 @@
 // app/chat/page.js
 'use client';
-import Chat from "@/components/Chat";
+import Chat from "@/components/ChatHelper";
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
