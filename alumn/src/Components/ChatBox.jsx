@@ -1,10 +1,9 @@
-// components/ChatBox.jsx
 import React, { useEffect, useState, useRef } from 'react';
 import { useChannel } from 'ably/react';
 import { useRouter } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 import styles from '@/css/ChatBox.module.css';
 
-// Function to generate a unique color based on a string (username)
 const stringToColor = (str) => {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -24,28 +23,19 @@ export default function ChatBox() {
 
   const [messageText, setMessageText] = useState('');
   const [receivedMessages, setMessages] = useState([]);
-  const [username, setUsername] = useState('');
   const messageTextIsEmpty = messageText.trim().length === 0;
 
+  const { data: session } = useSession();
   const router = useRouter();
 
   useEffect(() => {
-    try {
-      const storedUsername = localStorage.getItem('username');
-      console.log('Fetched username from localStorage:', storedUsername); // Log fetched username
-      if (storedUsername) {
-        setUsername(storedUsername);
-      } else {
-        console.log('No username found, redirecting to login'); // Log redirection case
-        router.push('/login');
-      }
-
-      const storedMessages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
-      setMessages(storedMessages);
-    } catch (error) {
-      console.error('Error accessing localStorage:', error); // Log any localStorage errors
+    if (!session) {
+      router.push('/login');
     }
-  }, [router]);
+
+    const storedMessages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+    setMessages(storedMessages);
+  }, [session, router]);
 
   const { channel, ably } = useChannel('chat-demo', (message) => {
     const history = receivedMessages.slice(-199);
@@ -57,7 +47,8 @@ export default function ChatBox() {
   const sendChatMessage = (messageText) => {
     const message = {
       text: messageText,
-      username: username,
+      username: session.user.name,
+      userImage: session.user.image, // Include user image in the message
       connectionId: ably.connection.id,
       timestamp: new Date().toLocaleTimeString(),
     };
@@ -81,8 +72,7 @@ export default function ChatBox() {
 
   const handleLogout = () => {
     localStorage.removeItem('chatMessages');
-    localStorage.removeItem('username');
-    router.push('/login');
+    signOut({ callbackUrl: '/' });
   };
 
   const messages = receivedMessages.map((message, index) => {
@@ -90,6 +80,7 @@ export default function ChatBox() {
     const usernameColor = stringToColor(message.data.username);
     return (
       <div key={index} className={`${styles.message} ${styles[author]}`} data-author={author}>
+        <img src={message.data.userImage} alt={`${message.data.username}'s profile picture`} className={styles.userImage} />
         <strong className={styles.username} style={{ color: usernameColor }}>
           {message.data.username}
         </strong> [{message.data.timestamp}]: {message.data.text}
@@ -107,7 +98,8 @@ export default function ChatBox() {
     <div className={styles.chatBoxRoot}>
       <div className={styles.chatHolder}>
         <div className={styles.sidebar}>
-          <p className={styles.welcome}>Welcome to the TU Connect, <hr />{username}!</p>
+          <p className={styles.welcome}>Welcome to the TU Connect, <hr />{session?.user.name}!</p>
+          <img src={session?.user.image} alt={`${session?.user.name}'s profile picture`} className={styles.profileImage} />
           <button onClick={handleLogout} className={styles.logoutButton}>
             Logout
           </button>

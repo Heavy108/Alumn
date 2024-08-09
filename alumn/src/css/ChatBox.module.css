@@ -27,6 +27,23 @@
 
 .welcome {
   font-size: 2rem;
+  text-align: center;
+}
+
+.profileImage {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.userImage {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .logoutButton {
@@ -37,6 +54,7 @@
   cursor: pointer;
   border-radius: 1.5rem;
   transition: background-color 0.3s ease;
+  margin-top: auto;
 }
 
 .logoutButton:hover {
@@ -96,6 +114,8 @@
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .message[data-author="me"] {
@@ -106,4 +126,198 @@
 .message[data-author="other"] {
   background-color: var(--message-background-color-other);
   align-self: flex-start;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .chatHolder {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .welcome {
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  .profileImage {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+  }
+
+  .logoutButton {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+  }
+
+  .chatContent {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .chatText {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 10px;
+  }
+
+  .textarea {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .button {
+    padding: 8px 16px;
+    margin-left: 5px;
+  }
+
+  .userImage {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chatHolder {
+    height: 90vh;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .welcome {
+    font-size: 1.8rem;
+  }
+
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logoutButton {
+    padding: 8px 16px;
+  }
+
+  .chatContent {
+    padding: 15px;
+  }
+
+  .chatText {
+    padding: 15px;
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .textarea {
+    padding: 0.5rem 1rem;
+  }
+
+  .button {
+    padding: 9px 18px;
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .chatHolder {
+    height: 95vh;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .welcome {
+    font-size: 1.9rem;
+  }
+
+  .profileImage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .logoutButton {
+    padding: 9px 18px;
+  }
+
+  .chatContent {
+    padding: 18px;
+  }
+
+  .chatText {
+    padding: 18px;
+  }
+
+  .form {
+    padding: 18px;
+  }
+
+  .textarea {
+    padding: 0.55rem 1.1rem;
+  }
+
+  .button {
+    padding: 10px 20px;
+    margin-left: 9px;
+  }
+}
+
+/* Desktop (1440px and above) */
+@media (min-width: 1441px) {
+  .chatHolder {
+    height: 100vh;
+  }
+
+  .sidebar {
+    width: 250px;
+  }
+
+  .welcome {
+    font-size: 2rem;
+  }
+
+  .profileImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logoutButton {
+    padding: 10px 20px;
+  }
+
+  .chatContent {
+    padding: 20px;
+  }
+
+  .chatText {
+    padding: 20px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+
+  .textarea {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .button {
+    padding: 11px 22px;
+    margin-left: 10px;
+  }
 }
