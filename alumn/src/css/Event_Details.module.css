@@ -9,8 +9,6 @@
     border-radius: 1rem;
     border: 2px solid #d9d9d9;
     background-color: #fafafa;
-
-   
 }
 .detail_card img{
     width: 100%;
@@ -56,6 +54,7 @@
     margin: 0rem;
     color: black;
     font-size: 0.8rem;
+    padding: 0rem;
 }
 .profile p:first-child{
     font-weight: 700;
@@ -65,10 +64,12 @@
     padding: 0rem 1rem 0rem 1rem;
     margin: 0rem;
     font-size: 0.8rem;
+    color: black;
 }
 .location span {
     font-weight: 700;
 }
+
 .links svg{
     align-content: center;
     font-size: 1.5rem;
@@ -88,6 +89,7 @@
     color: #666666;
     font-size: 0.6rem;
     padding-left:0rem ;
+    font-weight: 500;
 }
 @media only screen and (min-width:375px){
     .container{
@@ -105,7 +107,7 @@
 @media  only screen and (min-width:768px){
     .container{
         display: flex;
-        /* flex-direction: row; */
+        
         margin: 2rem 5rem 2rem 5rem;
         gap: 2rem;
     }
@@ -149,6 +151,7 @@
         font-size: 1.25rem;
 
     }
+}
     @media only screen and (min-width:1440px){
         .container{
             margin: 5rem 10rem 5rem 10rem;
@@ -184,7 +187,7 @@
             font-size: 1.5rem;
         }
     }
-}
+
 
 @media only screen and (min-width:2560px){
     .container{

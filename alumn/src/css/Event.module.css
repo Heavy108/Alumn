@@ -12,6 +12,9 @@
   background-color: #fafafa;
   margin-bottom: 1rem;
 }
+.card a {
+  text-decoration: none;
+}
 
 .Time p {
   color: black;
@@ -76,6 +79,9 @@
   .card {
     width: 100%;
     margin: 0.5rem;
+  }
+  .card a{
+    margin-top: 0.5rem;
   }
   .container_2 {
     display: flex;

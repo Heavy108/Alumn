@@ -13,6 +13,10 @@
 }
 .wrapper2{
     margin: 2rem;
+
+}
+.wrapper2 a{
+    text-decoration: none;
 }
 @media only screen and (min-width:768px){
     .wrapper2{
