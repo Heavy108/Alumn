@@ -28,19 +28,28 @@ export default function VerifyEmailPage() {
             }
 
             const data = await response.json();
-            console.log(data)
+            if(data.success){
+                alert('Email Verified Successfully! Check your email for credentials.');
+            }else{
+                alert(data.error);
+            }
+            
             const { uniqueID, name, passoutYear, email } = data;
             console.log(uniqueID, passoutYear, email);
             setVerified(true);
-            alert('Email Verified Successfully! Check your email for credentials.');
-            
-            const data2 = await fetch('/api/SendCard', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ uniqueID, name, passoutYear, email }),
-            });
+           
+            if (uniqueID && name && passoutYear && email) {
+                const response = await fetch('/api/SendCard', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ uniqueID, name, passoutYear, email }),
+                });
+              } else {
+                console.error("Required data is missing:", { uniqueID, name, passoutYear, email });
+              }
+              
 
             // await SendCredentials(uniqueID, name, passoutYear, email);
         } catch (error) {
