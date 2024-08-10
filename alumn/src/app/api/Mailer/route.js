@@ -1,3 +1,6 @@
+import { connect } from "@/dbConfig/dbConfig";
+import Card from "@/Models/DigitalCard";
+import { NextResponse } from "next/server";
 export async function POST(request) {
     try {
         await connect();
