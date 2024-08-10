@@ -14,7 +14,7 @@ export const sendEmail = async ( Unique_ID, Name, Passout_Year, email ) => {
       { Alumni_ID: Unique_ID },
       {
         verifyToken: hashedToken,
-        verifyTokenExpiry: Date.now() + 3600000, // 1 hour expiry
+        // verifyTokenExpiry: Date.now() + 3600000, 
       },
       { new: true } // This option returns the updated document
     );

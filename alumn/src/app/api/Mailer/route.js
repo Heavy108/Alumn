@@ -9,7 +9,7 @@ export async function POST(request) {
     const { token } = reqBody;
     console.log("Token received:", token);
 
-    const user = await Card.findOne({ verifyToken: token, verifyTokenExpiry: { $gt: Date.now() } });
+    const user = await Card.findOne({ verifyToken: token });
     if (!user) {
       console.error("Invalid Token or Token Expired");
       return NextResponse.json({ error: "Invalid Token" }, { status: 400 });
@@ -19,7 +19,7 @@ export async function POST(request) {
 
     user.IsVerified = true;
     user.verifyToken = undefined;
-    user.verifyTokenExpiry = undefined;
+    // user.verifyTokenExpiry = undefined;
     await user.save();
 
     console.log("User verified and saved:", {
