@@ -20,27 +20,32 @@ export default function VerifyEmailPage() {
             });
 
             if (!response.ok) {
+                const errorData = await response.json();
+                if (errorData.message === 'Invalid token') {
+                    console.error('Invalid token');
+                }
                 throw new Error('Email verification failed');
             }
 
             const data = await response.json();
             console.log(data)
-            const { uniqueID, name, passoutYear,email } = data;
-            console.log(uniqueID, passoutYear,email)
+            const { uniqueID, name, passoutYear, email } = data;
+            console.log(uniqueID, passoutYear, email);
             setVerified(true);
-            alert('Email Verified Successfully! and check your email for credentials');
-            const data2 =await fetch('/api/SendCard', {
+            alert('Email Verified Successfully! Check your email for credentials.');
+            
+            const data2 = await fetch('/api/SendCard', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ uniqueID, name, passoutYear, email }),
-              });
-           
-            // await SendCredentials(uniqueID, name, passoutYear,email);
+            });
+
+            // await SendCredentials(uniqueID, name, passoutYear, email);
         } catch (error) {
             setError(true);
-            alert('Email failed. Please try again.');
+            alert('Email verification failed. Please try again.');
             console.error('Error:', error.message);
         }
     }
