@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import styles from '@/CSS/VerifyEmailPage.module.css';
+import styles from '@/css/VerifyEmailPage.module.css';
 // import { SendCredentials } from "@/Js/SendDigital";
 
 export default function VerifyEmailPage() {
