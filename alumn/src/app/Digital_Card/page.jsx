@@ -45,7 +45,7 @@ function Digital_AlumniCard() {
       const data = await response.json();
       console.log(data);
       if (data.success) {
-        alert(" submitted successfully!");
+        alert(" Check you email for Verification!");
       } else {
         alert("Submission failed. Please try again later.");
       }

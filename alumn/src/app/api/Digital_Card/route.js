@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
 import Card from "@/Models/DigitalCard";
+import { sendEmail } from "@/dbConfig/verify";
 
 const generateUniqueID = async (rollNo, passoutYear) => {
   const randomSixDigit = Math.floor(100000 + Math.random() * 900000);
@@ -35,7 +36,27 @@ export async function POST(request) {
       throw new Error("Missing required fields");
     }
 
-    const Unique_ID = await generateUniqueID(Roll, Passout_Year);
+    // Check if the email is already in the database
+    const existingCard = await Card.findOne({ Email });
+    if (existingCard) {
+      return NextResponse.json(
+        { success: false, error: "Email already exists" },
+        { status: 400 }
+      );
+    }
+
+    // Generate a unique ID that does not exist in the database
+    let Unique_ID;
+    let isUnique = false;
+
+    while (!isUnique) {
+      Unique_ID = await generateUniqueID(Roll, Passout_Year);
+      const existingID = await Card.findOne({ Alumni_ID: Unique_ID });
+      if (!existingID) {
+        isUnique = true;
+      }
+    }
+
     console.log('Generated Unique ID:', Unique_ID);
 
     // Save data to the database
@@ -47,9 +68,11 @@ export async function POST(request) {
       Programme: Programme,
       Passout_Year: Passout_Year,
       Linkedin_Profile: Linkedin_Profile,
-      Profile: buffer
+      Profile: buffer,
+      IsVerified: false,
     });
 
+    await sendEmail(Unique_ID, Name, Passout_Year,Email);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error saving document:", error);

@@ -9,16 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.109.5",
+    "@react-three/fiber": "^8.17.1",
+    "@react-three/rapier": "^1.4.0",
     "ably": "^2.3.0",
+    "bcryptjs": "^2.4.3",
     "js-cookie": "^3.0.5",
+    "meshline": "^3.3.1",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.2",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
-    "react": "^18",
-    "react-dom": "^18",
+    "nodemailer": "^6.9.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "sharp": "^0.33.4",
-    "zod": "^3.23.8"
+    "three": "^0.167.1"
   }
 }

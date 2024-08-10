@@ -8,7 +8,10 @@ const DigitalCard_Schema = new mongoose.Schema({
   Programme: { type: String, required: true },
   Passout_Year: { type: Number, required: true },
   Linkedin_Profile: { type: String, required: true },
-  Profile: { type: Buffer, required: true  }
+  Profile: { type: Buffer, required: true  },
+  IsVerified: Boolean,
+  verifyToken: String,
+  verifyTokenExpiry: Date,
 });
 
 const Card = mongoose.models.S_Card || mongoose.model("S_Card", DigitalCard_Schema);
