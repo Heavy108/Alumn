@@ -10,12 +10,13 @@ export async function POST(request) {
     console.log("Token received:", token);
 
     const user = await Card.findOne({ verifyToken: token });
+    console.log(user)
     if (!user) {
       console.error("Invalid Token or Token Expired");
       return NextResponse.json({ error: "Invalid Token" }, { status: 400 });
     }
 
-    console.log("User found:", user);
+    // console.log("User found:", user);
 
     user.IsVerified = true;
     user.verifyToken = undefined;
