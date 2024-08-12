@@ -1,23 +1,31 @@
+// app/error.js
 'use client'
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
-import { useGLTF, useTexture, Environment, Lightformer, Text, RenderTexture, PerspectiveCamera, Center } from '@react-three/drei'
+import { useGLTF, useTexture, Environment, Lightformer, Text } from '@react-three/drei'
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 
-
-
+// Extend meshline components
 extend({ MeshLineGeometry, MeshLineMaterial })
-useGLTF.preload('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb')
-// useTexture.preload('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
+
+// Preload models and textures
+useGLTF.preload('/ID4.glb')
 useTexture.preload('/band.png')
+
 export default function App() {
+  // Get URL search parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const uniqueID = urlParams.get('uniqueID') || 'CSB2999395997';
+  const name = urlParams.get('name') || 'Monkey D.Luffy';
+  const passoutYear = urlParams.get('passoutYear') || '2088';
+
   return (
     <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-        <Band name="John Doe" rollNumber="12345" />
+        <Band name={name} uniqueID={uniqueID} passoutYear={passoutYear} />
       </Physics>
       <Environment background blur={0.75}>
         <color attach="background" args={['black']} />
@@ -30,12 +38,11 @@ export default function App() {
   )
 }
 
-function Band({ maxSpeed = 50, minSpeed = 10, name = "Your Name", rollNumber = "12345" }) {
+function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef()
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3()
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
-  const { nodes, materials } = useGLTF('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb')
-  // const texture = useTexture('https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg')
+  const { nodes, materials } = useGLTF('/ID4.glb')
   const texture = useTexture('/band.png')
   const { width, height } = useThree((state) => state.size)
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]))
@@ -103,32 +110,23 @@ function Band({ maxSpeed = 50, minSpeed = 10, name = "Your Name", rollNumber = "
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
-            onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}>
+            onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}
+          >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
             
-            {/* Add Text components for name and roll number */}
-            
-            <Text
-              position={[-0.2, 0.4, 0.01]}
-              fontSize={0.05}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-            >
+            {/* Add Text components for name, uniqueID, and passoutYear */}
+            <Text position={[0, 0.5, 0.01]} fontSize={0.06} color="white" anchorX="center" anchorY="middle">
               {name}
             </Text>
-            <Text
-              position={[0, 0.3, 0.01]}
-              fontSize={0.05}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-            >
-              {rollNumber}
+            <Text position={[0, 0.40, 0.01]} fontSize={0.06} color="white" anchorX="center" anchorY="middle">
+               {uniqueID}
+            </Text>
+            <Text position={[0, 0.3, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
+              Batch: {passoutYear}
             </Text>
           </group>
         </RigidBody>
