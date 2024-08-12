@@ -6,8 +6,8 @@ import { IoMail,IoLogoLinkedin } from "react-icons/io5";
 import style from "@/css/Profile.module.css"
 import Image from 'next/image';
 import emptyimage from "@/Assets/found.svg"
-import { Suspense } from 'react';
-import Loading from '@/app/loading';
+// import { Suspense } from 'react';
+// import Loading from '@/app/loading';
 
 export default async function Year({params}) {
   
@@ -20,7 +20,7 @@ export default async function Year({params}) {
       <Title title="Alumni Family" />
       <div className={style.Family}>
         <h1>Class of {year}</h1>
-        <Suspense fallback={<Loading/>}>
+        {/* <Suspense fallback={<Loading/>}> */}
         <div className={style.card_container}>
           {Data.length > 0 ? (
             Data.map((t, index) => (
@@ -41,7 +41,7 @@ export default async function Year({params}) {
             </div>
           )}
         </div>
-        </Suspense>
+        {/* </Suspense> */}
       </div>
       <Footer />
     </>
