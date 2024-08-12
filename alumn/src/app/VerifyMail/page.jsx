@@ -6,6 +6,7 @@ import styles from '@/css/VerifyEmailPage.module.css';
 
 export default function VerifyEmailPage() {
     const [token, setToken] = useState("");
+    const [id, setId] = useState("");
     const [verified, setVerified] = useState(false);
     const [error, setError] = useState(false);
 
@@ -16,7 +17,7 @@ export default function VerifyEmailPage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ token }),
+                body: JSON.stringify({ token, id }),
             });
 
             if (!response.ok) {
@@ -30,7 +31,7 @@ export default function VerifyEmailPage() {
             const data = await response.json();
             if(data.success){
                 alert('Email Verified Successfully! Check your email for credentials.');
-            }else{
+            } else {
                 alert(data.error);
             }
             
@@ -39,7 +40,7 @@ export default function VerifyEmailPage() {
             setVerified(true);
            
             if (uniqueID && name && passoutYear && email) {
-                const response = await fetch('/api/SendCard', {
+                await fetch('/api/SendCard', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -50,8 +51,6 @@ export default function VerifyEmailPage() {
                 console.error("Required data is missing:", { uniqueID, name, passoutYear, email });
               }
               
-
-            // await SendCredentials(uniqueID, name, passoutYear, email);
         } catch (error) {
             setError(true);
             alert('Email verification failed. Please try again.');
@@ -60,15 +59,19 @@ export default function VerifyEmailPage() {
     }
 
     useEffect(() => {
-        const urlToken = window.location.search.split("=")[1];
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlToken = urlParams.get('token');
+        const urlId = urlParams.get('id');
+
         setToken(urlToken || "");
+        setId(urlId || "");
     }, []);
 
     useEffect(() => {
-        if (token.length > 0) {
+        if (token.length > 0 && id.length > 0) {
             verifyUserEmail();
         }
-    }, [token]);
+    }, [token, id]);
 
     return (
         <div className={styles.container}>

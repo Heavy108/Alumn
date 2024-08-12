@@ -47,7 +47,7 @@ function Digital_AlumniCard() {
       if (data.success) {
         alert(" Check you email for Verification!");
       } else {
-        alert("Submission failed. Please try again later.");
+        alert(`${data.error}. Please try again later.`);
       }
     } catch (error) {
       console.error(error);

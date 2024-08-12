@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import Card from "@/Models/DigitalCard";
 import bcryptjs from "bcryptjs";
 
-export const sendEmail = async ( Unique_ID, Name, Passout_Year, email ) => {
+export const sendEmail = async (Unique_ID, Name, Passout_Year, email, id) => {
   try {
     // create a hashed token
     console.log("Starting email send process for:", Unique_ID, Name, Passout_Year, email);
@@ -34,6 +34,8 @@ export const sendEmail = async ( Unique_ID, Name, Passout_Year, email ) => {
       },
     });
 
+    const verificationLink = `${process.env.DOMAIN}/VerifyMail?token=${hashedToken}&id=${id}`;
+
     const mailOptions = {
       from: process.env.EMAIL,
       to: email,
@@ -44,7 +46,7 @@ export const sendEmail = async ( Unique_ID, Name, Passout_Year, email ) => {
           <p style="font-size: 16px; color: #333;">
             We are excited to have you as part of our alumni network! To complete your registration, please verify your email by clicking the button below.
           </p>
-          <a href="${process.env.DOMAIN}/VerifyMail?token=${hashedToken}" 
+          <a href="${verificationLink}" 
              style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 16px;">
             Verify Your Email
           </a>
@@ -52,7 +54,7 @@ export const sendEmail = async ( Unique_ID, Name, Passout_Year, email ) => {
             If the button above doesn't work, please copy and paste the following link into your browser:
           </p>
           <p style="font-size: 14px; color: #555;">
-            ${process.env.DOMAIN}/VerifyMail?token=${hashedToken}
+            ${verificationLink}
           </p>
           <p style="font-size: 16px; color: #333;">
             Thank you,<br />

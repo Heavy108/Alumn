@@ -6,21 +6,22 @@ export async function POST(request) {
   try {
     await connect();
     const reqBody = await request.json();
-    const { token } = reqBody;
-    console.log("Token received:", token);
+    const { token, id } = reqBody;
+    console.log("Token and ID received:", token, id);
 
-    const user = await Card.findOne({ verifyToken: token });
-    console.log(user)
+    // Find user by both ID and token
+    const user = await Card.findOne({ _id: id, verifyToken: token });
+
     if (!user) {
-      console.error("Invalid Token or Token Expired");
-      return NextResponse.json({ error: "Invalid Token" }, { status: 400 });
+      console.error("Invalid Token, ID, or Token Expired");
+      return NextResponse.json({ error: "Invalid Token or ID" }, { status: 400 });
     }
 
-    // console.log("User found:", user);
-
+    // Update user verification status
     user.IsVerified = true;
     user.verifyToken = undefined;
-    // user.verifyTokenExpiry = undefined;
+    // user.verifyTokenExpiry = undefined; // If you have removed expiry logic
+
     await user.save();
 
     console.log("User verified and saved:", {

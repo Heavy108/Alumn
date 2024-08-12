@@ -60,7 +60,7 @@ export async function POST(request) {
     console.log('Generated Unique ID:', Unique_ID);
 
     // Save data to the database
-    await Card.create({
+    const data2 = await Card.create({
       Name: Name,
       Alumni_ID: Unique_ID,
       Roll: Roll,
@@ -72,7 +72,7 @@ export async function POST(request) {
       IsVerified: false,
     });
 
-    await sendEmail(Unique_ID, Name, Passout_Year,Email);
+    await sendEmail(Unique_ID, Name, Passout_Year,Email,data2._id);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error saving document:", error);
