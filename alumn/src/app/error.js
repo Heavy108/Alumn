@@ -1,6 +1,6 @@
 // app/error.js
 'use client'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Error({ error, reset }) {
   const router = useRouter();
