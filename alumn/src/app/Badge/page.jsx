@@ -15,16 +15,16 @@ useGLTF.preload('/ID4.glb')
 useTexture.preload('/band.png')
 
 export default function App() {
-  const [uniqueID, setUniqueID] = useState('CSB2015395997');
-  const [name, setName] = useState('Satyam Sajal');
-  const [passoutYear, setPassoutYear] = useState('2015');
+  const [uniqueID, setUniqueID] = useState('CSB9999395997');
+  const [name, setName] = useState('Monkey D.Luffy');
+  const [passoutYear, setPassoutYear] = useState('2898');
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
-      setUniqueID(urlParams.get('uniqueID') || 'CSB2015395997');
-      setName(urlParams.get('name') || 'Satyam Sajal');
-      setPassoutYear(urlParams.get('passoutYear') || '2015');
+      setUniqueID(urlParams.get('uniqueID') || 'CSB9999395997');
+      setName(urlParams.get('name') || 'Monkey D.Luffy');
+      setPassoutYear(urlParams.get('passoutYear') || '2898');
     }
   }, []);
 
@@ -129,10 +129,10 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
             <Text position={[0, 0.5, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               {name}
             </Text>
-            <Text position={[0, 0.3, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
+            <Text position={[0, 0.4, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               Alumni ID: {uniqueID}
             </Text>
-            <Text position={[0, 0.1, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
+            <Text position={[0, 0.3, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               Batch: {passoutYear}
             </Text>
           </group>
