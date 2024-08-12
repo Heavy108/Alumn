@@ -18,7 +18,7 @@
     top: 50%;
     left: 0;
     transform: translate(-5px, -50%);
-    background: linear-gradient(to right, #fff 50%, black 50%) no-repeat;
+    background: linear-gradient(to right,#7d7b7b 50%, black 50%) no-repeat;
     background-size: 200% auto;
     background-position: 100% 0;
     animation: colorBallMoveX 1.5s linear infinite alternate;
