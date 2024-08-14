@@ -96,6 +96,25 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
   curve.curveType = 'chordal'
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping
 
+  const handleTouchStart = (e) => {
+    e.preventDefault()
+    drag(true)
+    vec.set(e.touches[0].clientX, e.touches[0].clientY, 0.5).unproject(card.current)
+  }
+
+  const handleTouchMove = (e) => {
+    if (dragged) {
+      e.preventDefault()
+      vec.set(e.touches[0].clientX, e.touches[0].clientY, 0.5).unproject(card.current)
+      card.current.position.add(vec.multiplyScalar(0.1))
+    }
+  }
+
+  const handleTouchEnd = (e) => {
+    e.preventDefault()
+    drag(false)
+  }
+
   return (
     <>
       <group position={[0, 4, 0]}>
@@ -132,6 +151,9 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
                 card.current.position.add(vec.multiplyScalar(0.1));
               }
             }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
@@ -159,3 +181,4 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
     </>
   )
 }
+
