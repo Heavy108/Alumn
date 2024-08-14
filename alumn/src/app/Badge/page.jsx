@@ -116,8 +116,22 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
-            onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}
+            onPointerUp={(e) => {
+              e.stopPropagation();
+              e.target.releasePointerCapture(e.pointerId);
+              drag(false);
+            }}
+            onPointerDown={(e) => {
+              e.stopPropagation();
+              e.target.setPointerCapture(e.pointerId);
+              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
+            }}
+            onPointerMove={(e) => {
+              if (dragged) {
+                vec.set(e.unprojectedPoint.x, e.unprojectedPoint.y, e.unprojectedPoint.z).sub(card.current.position).normalize();
+                card.current.position.add(vec.multiplyScalar(0.1));
+              }
+            }}
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
