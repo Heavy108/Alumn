@@ -161,7 +161,6 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
             
-            {/* Add Text components for name, uniqueID, and passoutYear */}
             <Text position={[0, 0.5, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               {name}
             </Text>

@@ -5,7 +5,7 @@ import { sendEmail } from "@/dbConfig/verify";
 
 const generateUniqueID = async (rollNo, passoutYear) => {
   const randomSixDigit = Math.floor(100000 + Math.random() * 900000);
-  return `${rollNo.slice(0, 3)}${passoutYear}${randomSixDigit}`;
+  return `${rollNo.slice(0, 3).toUpperCase()}${passoutYear}${randomSixDigit}`;
 };
 
 export async function POST(request) {
