@@ -1,4 +1,4 @@
-// app/error.js
+
 'use client'
 import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
