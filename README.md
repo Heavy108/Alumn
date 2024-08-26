@@ -10,7 +10,7 @@ Welcome to the repository for the Alumni Association Website, built using Next.j
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [License](#license)
+
 
 ## Project Overview
 
@@ -21,6 +21,7 @@ The Alumni Association Website is designed to serve as a hub for alumni to:
 - Access a directory of alumni contact information.
 
 ## Features
+- Alumni_Digital Card: Generate alumni card
 - Event Management: View upcoming events and RSVP.
 - Photo Gallery: Upload and view photos from various events.
 - Alumni Family: Access a directory of alumni with contact details.
@@ -29,8 +30,10 @@ The Alumni Association Website is designed to serve as a hub for alumni to:
 ## Technologies Used
 
 - Frontend: Next.js, React
-- Styling: T CSS
-- Database: MongoDB 
+- Styling: CSS
+- Database: MongoDB
+- Chat : Alby
+- Email service: Nodemailer(gmail)
 - Deployment: Vercel
 
 ## Installation
