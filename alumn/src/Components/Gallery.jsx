@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Title from "./Title";
 import Button from "./Button";
@@ -34,6 +34,28 @@ function Gallery(props) {
   const movePrev = () => {
     setCurrentImageIndex((currentImageIndex + imagePaths.length - 1) % imagePaths.length);
   };
+
+  // Add keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isOpen) return; // Only handle keys when the lightbox is open
+      if (e.key === "ArrowRight") {
+        moveNext();
+      } else if (e.key === "ArrowLeft") {
+        movePrev();
+      } else if (e.key === "Escape") {
+        closeLightbox(); // Close the lightbox when Escape is pressed
+      }
+    };
+
+    // Attach the event listener to the document
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, currentImageIndex]);
 
   return (
     <>

@@ -71,7 +71,7 @@ export async function POST(request) {
       Profile: buffer,
       IsVerified: false,
     });
-
+    //send email to the user
     await sendEmail(Unique_ID, Name, Passout_Year,Email,data2._id);
     return NextResponse.json({ success: true });
   } catch (error) {
