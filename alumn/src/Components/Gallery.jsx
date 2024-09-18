@@ -10,32 +10,26 @@ import sty from "@/css/button.module.css";
 function Gallery(props) {
   const imagePaths = Array.from({ length: props.len }, (_, i) => `/Gallery/${i + 1}.jpg`);
 
-  // State for lightbox
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Function to open the lightbox on image click
   const openLightbox = (index) => {
     setCurrentImageIndex(index);
     setIsOpen(true);
   };
 
-  // Function to close the lightbox
   const closeLightbox = () => {
     setIsOpen(false);
   };
 
-  // Function to move to the next image in the lightbox
   const moveNext = () => {
     setCurrentImageIndex((currentImageIndex + 1) % imagePaths.length);
   };
 
-  // Function to move to the previous image in the lightbox
   const movePrev = () => {
     setCurrentImageIndex((currentImageIndex + imagePaths.length - 1) % imagePaths.length);
   };
 
-  // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!isOpen) return; // Only handle keys when the lightbox is open
@@ -48,10 +42,8 @@ function Gallery(props) {
       }
     };
 
-    // Attach the event listener to the document
     document.addEventListener("keydown", handleKeyDown);
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -74,7 +66,6 @@ function Gallery(props) {
         ))}
       </div>
 
-      {/* Lightbox Implementation */}
       {isOpen && (
         <div className={style.lightbox_overlay}>
           <div className={style.lightbox_content}>
