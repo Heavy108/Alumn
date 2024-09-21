@@ -128,7 +128,7 @@ function Navbar() {
         <li>
           <Link href="/Gallery">Gallery</Link>
         </li>
-        <button>Contact Us</button>
+        <button>Login</button>
         </ul>
         </div>
         </div>
@@ -139,7 +139,8 @@ function Navbar() {
           {active ?  <IoMdCloseCircleOutline/> : <GiHamburgerMenu /> }
           </span>
         </div>
-      </div>    
+      </div>   
+       
       {/* <div className={`sideMenu ${active ? 'show' : ''}`}> */}
       {active &&
       <ul className={style.sideMenu}>
@@ -242,7 +243,7 @@ function Navbar() {
           <Link href="/Gallery">Gallery</Link>
         </li>
         <hr  className={style.horizontal}/>
-        <button className={style.contact}>Contact Us</button>
+        <button className={style.contact}>Login</button>
           </ul>
           }
       
