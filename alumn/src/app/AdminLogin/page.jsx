@@ -62,6 +62,7 @@ function AdminLogin() {
             <h1>{loading ? "Processing" : "Login"}</h1>
             <hr />
             <label htmlFor="username" className={style.label}>UserName</label>
+           <form action="">
             <div className={style.input_container}>
             
             <input
@@ -85,6 +86,7 @@ function AdminLogin() {
               placeholder="password"
             />
             </div>
+            </form>
             <button
               onClick={onLogin}
               className={style.Button}
