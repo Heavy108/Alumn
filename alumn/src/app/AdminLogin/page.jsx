@@ -16,19 +16,31 @@ function AdminLogin() {
 
   const onLogin = async () => {
     try {
+      setLoading(true);
       
-      const response = await fetch("/api/AdminLogin",{
-        method:'POST',
-        body:user
-      } );
-      console.log("Login success", response.data);
-      
-      router.push("/Dashboard/Home");
+      const response = await fetch("/api/Adminlogin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log("Login success", data);
+        router.push("/DashBoard/Home"); // Redirect to Dashboard after login
+      } else {
+        console.log("Login failed", data.error);
+      }
     } catch (error) {
       console.log("Login failed", error);
-     
+    } finally {
+      setLoading(false);
     }
   };
+  
 
   useEffect(() => {
     if (user.username.length > 0 && user.password.length > 0) {
