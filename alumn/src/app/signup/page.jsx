@@ -1,5 +1,5 @@
 'use client'
-import style from "@/CSS/SignUp.module.css";
+import style from "@/css/signup.module.css";
 import { useRouter } from "next/navigation"
 import { useState, useEffect } from "react";
 
@@ -11,28 +11,39 @@ function SignupPage() {
     password: "",
     
   });
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+//   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const onSignup = async () => {
+const onSignup = async () => {
     try {
-      const response = await fetch("/api/SignUp", 
-        {method:"POST",
-            body:user
-    });
-      console.log("Signup success", response.data);
-      router.push("/Dashboard/SignUp");
+      const response = await fetch("/api/SignUp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user),  // Serialize the user object
+      });
+  
+      const data = await response.json();  // Parse the JSON response
+      console.log("Signup success", data);
+  
+      if (response.ok) {
+        router.push("/");
+      } else {
+        console.error("Signup failed", data.error);
+      }
     } catch (error) {
       console.log("Signup failed", error.message);
     }
   };
+  
 
-  useEffect(() => {
-    if (user.password.length > 0 && user.username.length > 0 && user.userType.length > 0 && user.email.length > 0) {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
-    }
-  }, [user]);
+//   useEffect(() => {
+//     if (user.password.length > 0 && user.username.length > 0 && user.userType.length > 0 && user.email.length > 0) {
+//       setButtonDisabled(false);
+//     } else {
+//       setButtonDisabled(true);
+//     }
+//   }, [user]);
 
   return (
     <div className={style.Signupframe}>
@@ -63,7 +74,7 @@ function SignupPage() {
         </div>
         
        
-        <button onClick={onSignup} disabled={buttonDisabled} className={style.button}>SignUp</button>
+        <button onClick={onSignup}  className={style.button}>SignUp</button>
       </div>
     </div>
   );
