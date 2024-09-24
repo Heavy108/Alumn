@@ -38,7 +38,7 @@ function DashBoard() {
       <div className={style.dashboardContainer}>
         <div className={style.superContainer}>
           <ul className={style.items}>
-            <li>Scripture</li>
+            <li>Alumni connect</li>
             <li
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}
@@ -48,11 +48,11 @@ function DashBoard() {
               </Link>
             </li>
             <li
-              onClick={() => handleClick('Magazine')}
-              className={activeItem === 'Magazine' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick('Events')}
+              className={activeItem === 'Events' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/Magazine" className={style.Link}>
-                <MdDashboard className={style.icons} /> Magazine
+              <Link href="/Dashboard/Add_Events" className={style.Link}>
+                <MdDashboard className={style.icons} /> Events
               </Link>
             </li>
             <li
