@@ -59,7 +59,7 @@ function DashBoard() {
               onClick={() => handleClick('Carasoul')}
               className={activeItem === 'Carasoul' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/UpdateGallery" className={style.Link}>
+              <Link href="/DashBoard/GalleryPage" className={style.Link}>
                 <BiSolidCarousel className={style.icons} /> Gallery
               </Link>
             </li>
@@ -67,15 +67,15 @@ function DashBoard() {
               onClick={() => handleClick('Email')}
               className={activeItem === 'Email' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/Subscribers" className={style.Link}>
-                <HiUserGroup className={style.icons} /> Subscribers
+              <Link href="../CommingSoon" className={style.Link}>
+                <HiUserGroup className={style.icons} /> Blog
               </Link>
             </li>
             <li
               onClick={() => handleClick('SignUp')}
               className={activeItem === 'SignUp' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/SignUp" className={style.Link}>
+              <Link href="/DashBoard/signup" className={style.Link}>
                 <RiSettings4Fill className={style.icons} /> Setting
               </Link>
             </li>

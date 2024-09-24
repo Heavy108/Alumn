@@ -18,24 +18,42 @@ function Magazine(props) {
   const handleClickDelete = async (id) => {
     try {
       console.log(id);
-      const res = await fetch("../api/DeleteEvent", {
+  
+      // Check if the URL contains "EventPage" or "GalleryPage"
+      const currentUrl = window.location.href;
+      let apiEndpoint = "";
+  
+      if (currentUrl.includes("DashBoard/EventPage")) {
+        apiEndpoint = "../api/DeleteEvent";
+      } else if (currentUrl.includes("DashBoard/GalleryPage")) {
+        apiEndpoint = "../api/DeleteGallery";
+      } else {
+        throw new Error("Invalid page for deletion request");
+      }
+  
+      // Make the fetch request based on the determined endpoint
+      const res = await fetch(apiEndpoint, {
         method: "POST",
-        body: JSON.stringify({ id }), // Correctly format the body
+        body: JSON.stringify({ id }), // Send the ID in the body
         headers: {
           "Content-Type": "application/json", // Set the content type to JSON
         },
       });
   
       if (!res.ok) {
-        throw new Error("Failed to delete event");
+        throw new Error("Failed to delete event/gallery");
       }
   
-      console.log("success", await res.json()); // Log the response
-      router.refresh(); // Refresh the page to reflect changes
+      const data = await res.json(); // Assuming the response is in JSON format
+      console.log("Deletion successful:", data);
+      router.refresh()
+      // Perform any additional actions like updating the UI here
     } catch (error) {
-      console.log(error.message);
+      console.error(error);
+      alert("An error occurred. Please try again.");
     }
   };
+  
   
 
   return (

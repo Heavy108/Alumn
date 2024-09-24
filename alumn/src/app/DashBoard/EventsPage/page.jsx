@@ -7,6 +7,7 @@ import { CiSearch } from "react-icons/ci";
 async function EventPage(){
     const data =await fetchData()
     console.log(typeof(data))
+    const total = data.length
     return(<>
     
     <div className={style.Account}>
@@ -18,7 +19,7 @@ async function EventPage(){
         </div>
         <ul className={style.items}>
           <li className={style.box}>
-            Events<span className={style.data}>3</span>
+            Events<span className={style.data}>{total}</span>
           </li>
           <li className={style.box}>
             Upcoming Events<span className={style.data}>0</span>

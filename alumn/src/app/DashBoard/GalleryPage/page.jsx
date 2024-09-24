@@ -1,24 +1,24 @@
 import Mag_Section from "@/Components/MagCluster";
 import style from "@/css/Display.module.css";
-import { fetchData } from "@/app/api/Eventdata/route";
+import { fetchGalleryData } from "@/app/api/Gallery/route";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 
-async function EventPage(){
-    const data =await fetchData()
-    console.log(typeof(data))
+async function GalleryPage(){
+    const data =await fetchGalleryData()
+    const total = data.length
     return(<>
     
     <div className={style.Account}>
         <div className={style.heading}>
-          <p className={style.p}>Magazines</p>
-          <Link href="/DashBoard/AddEvents" className={style.link}>
-            <button className={style.add}>Add Events</button>
+          <p className={style.p}>Gallery</p>
+          <Link href="/DashBoard/AddImage" className={style.link}>
+            <button className={style.add}>Add Image</button>
           </Link>
         </div>
         <ul className={style.items}>
           <li className={style.box}>
-            Number of Image<span className={style.data}>9</span>
+            Number of Image<span className={style.data}>{total}</span>
           </li>
           {/* <li className={style.box}>
             Upcoming Events<span className={style.data}>0</span>
@@ -32,7 +32,7 @@ async function EventPage(){
         </ul>
 
         <div className={style.heading}>
-          <p className={style.all}>All Events</p>
+          <p className={style.all}>All Image</p>
           <div className={style.searchContainer}>
             <input type="search" placeholder="Search" />
             <CiSearch />
@@ -45,4 +45,4 @@ async function EventPage(){
     </>
   );
 }
-export default EventPage;
+export default GalleryPage;
