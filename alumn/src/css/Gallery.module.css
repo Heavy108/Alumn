@@ -74,6 +74,10 @@
   .next_button {
     right: 0;
   }
+  .lightbox_content p{
+    text-align: center;
+    font-size: 1rem;
+  }
   
 @media only screen and (min-width:375px){
     .gallery_container img{

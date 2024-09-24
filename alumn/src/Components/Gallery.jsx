@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Title from "./Title";
@@ -7,9 +7,8 @@ import Link from "next/link";
 import style from "@/css/Gallery.module.css";
 import sty from "@/css/button.module.css";
 
-function Gallery(props) {
-  const imagePaths = Array.from({ length: props.len }, (_, i) => `/Gallery/${i + 1}.jpg`);
-
+function Gallery({ data }) {
+  console.log(typeof(data))
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -23,11 +22,11 @@ function Gallery(props) {
   };
 
   const moveNext = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % imagePaths.length);
+    setCurrentImageIndex((currentImageIndex + 1) % data.length);
   };
 
   const movePrev = () => {
-    setCurrentImageIndex((currentImageIndex + imagePaths.length - 1) % imagePaths.length);
+    setCurrentImageIndex((currentImageIndex + data.length - 1) % data.length);
   };
 
   useEffect(() => {
@@ -53,16 +52,18 @@ function Gallery(props) {
     <>
       <Title title="Memories" />
       <div className={style.gallery_container}>
-        {imagePaths.map((path, index) => (
-          <Image
-            key={path + index}
-            src={path}
-            width={220}
-            height={220}
-            alt="Memories"
-            className={style.gallery_image}
-            onClick={() => openLightbox(index)} // Open the lightbox on image click
-          />
+        {data.map((item, index) => (
+          <div key={item.id} className={style.gallery_item}>
+            <Image
+              src={`data:image/jpeg;base64,${item.image}`} // Assuming image is base64 encoded
+              width={220}
+              height={220}
+              alt={item.head}
+              className={style.gallery_image}
+              onClick={() => openLightbox(index)} // Open the lightbox on image click
+            />
+            {/* <p>{item.head}</p>  */}
+          </div>
         ))}
       </div>
 
@@ -73,10 +74,10 @@ function Gallery(props) {
               &times;
             </span>
             <Image
-              src={imagePaths[currentImageIndex]}
+              src={`data:image/jpeg;base64,${data[currentImageIndex].image}`}
               width={800}
               height={600}
-              alt="Lightbox"
+              alt={data[currentImageIndex].head}
               className={style.lightbox_image}
             />
             <button className={style.prev_button} onClick={movePrev}>
@@ -85,6 +86,7 @@ function Gallery(props) {
             <button className={style.next_button} onClick={moveNext}>
               &#10095;
             </button>
+            <p>{data[currentImageIndex].head}</p> {/* Displaying the caption */}
           </div>
         </div>
       )}

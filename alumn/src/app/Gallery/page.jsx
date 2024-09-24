@@ -1,11 +1,12 @@
 import Footer from "@/Components/Footer";
 import Gallery from "@/Components/Gallery";
 import Navbar from "@/Components/Navbar";
-
-function Gallery_page(){
+import { fetchGalleryData } from "../api/Gallery/route";
+async function Gallery_page(){
+    const data =await fetchGalleryData()
     return(<>
     <Navbar/>
-    <Gallery len={9}/>
+    <Gallery data={data}/>
     <Footer/>
     </>)
 
