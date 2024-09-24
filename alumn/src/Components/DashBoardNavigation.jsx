@@ -51,7 +51,7 @@ function DashBoard() {
               onClick={() => handleClick('Events')}
               className={activeItem === 'Events' ? `${style.activeItem}` : ''}
             >
-              <Link href="/DashBoard/AddEvents" className={style.Link}>
+              <Link href="/DashBoard/EventsPage" className={style.Link}>
                 <MdDashboard className={style.icons} /> Events
               </Link>
             </li>
@@ -59,8 +59,8 @@ function DashBoard() {
               onClick={() => handleClick('Carasoul')}
               className={activeItem === 'Carasoul' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/Carasoul" className={style.Link}>
-                <BiSolidCarousel className={style.icons} /> Carousel
+              <Link href="/Dashboard/UpdateGallery" className={style.Link}>
+                <BiSolidCarousel className={style.icons} /> Gallery
               </Link>
             </li>
             <li
