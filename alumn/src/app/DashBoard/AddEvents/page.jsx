@@ -1,5 +1,4 @@
 "use client";
-
 import Title from "@/Components/Title";
 // import style from "@/css/Digital.module.css";
 import style from "@/css/addEvent.module.css"
@@ -56,7 +55,7 @@ function AddEvents() {
         formData.append('file2', selectedFile2); // Append the second file object
       }
 
-      const response = await fetch('/api/VirtualStartup', {
+      const response = await fetch('/api/AddEvents', {
         method: "POST",
         body: formData
       });
