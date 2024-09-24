@@ -1,0 +1,96 @@
+.Magazine_Container {
+  font-family: "Inter", sans-serif;
+  width: 16rem;
+  height: 18.5rem;
+  box-shadow: rgba(0, 0, 0, 0.36) 0px 1px 4px;
+  border-radius: 8px;
+  margin: 0.87rem;
+}
+.thumbnail img {
+  width: 14rem;
+  height: 14rem;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.mag_Info {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  /* width: 20rem; */
+  margin: 0rem 1rem 0 1rem;
+}
+
+.dropdown  {
+ 
+  align-content: center;
+  
+}
+.dropdown span{
+font-weight: 700;
+font-size: 1.2rem;
+align-content: center;
+/* position: absolute; */
+}
+.dropdownContent{
+  display: flex;
+  position:relative;
+  flex-direction: column;
+  padding:1rem;
+  border: 2px solid #d9d9d9;
+  list-style-type: none;
+  border-radius: 1rem;
+  width: 7.5rem;
+  margin: 1.5rem -8rem;
+  background-color: white;
+  z-index: 99;
+
+}
+.dropdownContent li{
+  display: flex;
+  flex-direction: row;
+  margin-bottom:1rem;
+  cursor: pointer;
+}
+.edit{
+  font-size: 1.2rem;
+  margin-right:0.5rem;
+}
+.delete{
+  color:red;
+  font-size:1.2rem;
+  margin-right:0.5rem;
+}
+.dropdownContent li:last-child{
+  margin-bottom: 0rem;
+}
+.link{
+  text-decoration: none;
+  color: black;
+  margin-bottom: 0.5rem;
+
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+}

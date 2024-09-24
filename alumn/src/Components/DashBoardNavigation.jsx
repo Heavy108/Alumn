@@ -43,7 +43,7 @@ function DashBoard() {
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/Home" className={style.Link}>
+              <Link href="/DashBoard/Home" className={style.Link}>
                 <TbHomeFilled className={style.icons} /> Dashboard
               </Link>
             </li>
@@ -51,7 +51,7 @@ function DashBoard() {
               onClick={() => handleClick('Events')}
               className={activeItem === 'Events' ? `${style.activeItem}` : ''}
             >
-              <Link href="/Dashboard/Add_Events" className={style.Link}>
+              <Link href="/DashBoard/AddEvents" className={style.Link}>
                 <MdDashboard className={style.icons} /> Events
               </Link>
             </li>

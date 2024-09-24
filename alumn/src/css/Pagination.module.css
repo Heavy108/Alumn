@@ -1,0 +1,42 @@
+.Component {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 2rem 1.5rem 1.5rem;
+  
+}
+.Component p{
+  color: #bebebe;
+  font-size: 1rem;
+}
+
+.Component button {
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-color: rgb(0, 0, 0, 0);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 54px 55px,
+    rgba(0, 0, 0, 0.09) 0px -12px 30px, rgba(0, 0, 0, 0) 0px 4px 6px,
+    rgba(0, 0, 0, 0.11) 0px 12px 11px, rgba(0, 0, 0, 0.04) 0px -3px 5px;
+}
+
+.pageItem {
+  cursor: pointer;
+  list-style-type: none;
+  align-content: center;
+  margin: 0.8rem;
+  opacity: 0.6;
+  font-weight: 600;
+  
+}
+.buttonComp{
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+
+}

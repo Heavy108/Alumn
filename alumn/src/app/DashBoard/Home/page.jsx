@@ -50,15 +50,15 @@ async function Accounts() {
           </ul>
         </div>
 
-        {/* <div className={style.guidelines}>
+        <div className={style.guidelines}>
         <div className={style.heading}>
-        <h4>Scripture Admin Guidelines</h4>
+        <h4>Alumni Admin Guidelines</h4>
         <span ><ViewPDFButton pdfPath='/final.pdf'/></span>
         </div>
         <div  className={style.image}>
-        <img src={guide} alt="guide image"/>
+        <img src="/desktop.svg" alt="guide image"/>
     </div>
-    </div> */}
+    </div>
       </div>
     </>
   );

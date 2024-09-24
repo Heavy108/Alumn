@@ -1,0 +1,80 @@
+
+.Account{
+    margin: 2rem;
+    /* border:2px solid black; */
+    /* height:90vh; */
+    
+    }
+    .p{
+        font-size:1.5rem;
+        font-weight: 600;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    .items{
+    list-style-type: none;
+    display:flex;
+    padding: 0rem;
+    margin: 0rem;
+    /* justify-content: space-evenly; */
+    gap: 1rem;
+    
+    
+    
+    }
+    .box{
+        padding:1.5rem;
+        border:1px solid #d9d9d9;
+        border-radius: 1rem;
+        width: 17.5rem;
+        height: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: #595959;
+        
+    }
+    .data{
+        font-weight: 700;
+        margin-top:0.5rem;
+        color: black;
+    }
+    .heading{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0rem;
+    }
+    .all{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem 0rem 0rem 0rem;
+    }
+    .add{
+        background-color: black;
+        color: white;
+        border-radius: 0.8rem;
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    }
+    .link{
+        align-content: center;
+    }
+    .searchContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      
+      .searchContainer input {
+        
+        padding:0.5rem 0.5rem 0.5rem 0.9rem; 
+        border:2px solid #d9d9d9;
+        border-radius: 0.8rem;
+        width: 18rem;
+      }
+      
+      .searchContainer svg {
+        position: absolute;
+        right: 10px;
+        color: #111111; 
+        font-weight: 600;
+      }
