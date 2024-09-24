@@ -25,13 +25,13 @@ export async function POST(request) {
       buffer2 = Buffer.from(bytes2);
     }
 
-    const head = data.get("head");
-    const name = data.get("name");
-    const position = data.get("position");
-    const venue = data.get("venue");
+    const head = data.get("Event Headline");
+    const name = data.get("Speaker Name");
+    const position = data.get("Position");
+    const venue = data.get("Venue");
     const Title = data.get("Title");
     const description = data.get("description");
-    const time = data.get("time");
+    const time = data.get("Time");
 
     // Check for missing required fields
     // if (!head || !name || !position || !venue || !Title || !description || !time) {
@@ -40,14 +40,14 @@ export async function POST(request) {
 
     // Save data to the database
     const newEvent = await Event.create({
-      head,
-      name,
-      position,
-      venue,
-      Title,
-      description,
-      time,
-      S_Image: buffer1,
+      Head:head,
+      Name:name,
+      Position:position,
+      Venue:venue,
+      Title:Title,
+      description:description,
+      time:time,
+      S_image: buffer1,
       E_image: buffer2,
     });
 

@@ -1,4 +1,4 @@
-'use client'
+
 import style from "@/css/Event_Details.module.css";
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
@@ -6,9 +6,11 @@ import Title from "@/Components/Title";
 import Image from "next/image";
 import logo from "@/Assets/Logo.png";
 import { IoLocation, IoLogoLinkedin, IoMail } from "react-icons/io5";
+import { fetchEventData } from "../api/Events/route";
 
-function Event_detail({ searchParams }) {
-    const { img, head, name, position, venue, time, title, description } = searchParams;
+async function Event_detail({ searchParams }) {
+    const { _id } = searchParams;
+    
     
     return (
         <>

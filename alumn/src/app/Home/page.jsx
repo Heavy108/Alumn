@@ -5,19 +5,23 @@ import GiveBack from "@/Components/giveback";
 import Navbar from "@/Components/Navbar";
 import Events from "@/Components/Events";
 import Gallery from "@/Components/Gallery";
-function Home1 (){
+import { fetchEventData } from "../api/Events/route";
 
-        return(
-            <>
-            <Navbar/>
-            <Carasoul/>
-            
-            <Achievement/>
-            <GiveBack/>
-            <Events/>
-            <Gallery len ={8}/>
-            <Footer/>
-            </>
-        )
+async function Home1 () {
+    const data = await fetchEventData();  // Fetching event data dynamically
+    // console.log(data);
+
+    return (
+        <>
+            <Navbar />
+            <Carasoul />
+            <Achievement />
+            <GiveBack />
+            <Events data={data} />  {/* Passing fetched event data */}
+            <Gallery len={8} />
+            <Footer />
+        </>
+    );
 }
+
 export default Home1;
