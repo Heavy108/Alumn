@@ -12,13 +12,13 @@ async function EventPage(){
     <div className={style.Account}>
         <div className={style.heading}>
           <p className={style.p}>Magazines</p>
-          <Link href="/Dashboard/MagazineInsert" className={style.link}>
+          <Link href="/DashBoard/AddEvents" className={style.link}>
             <button className={style.add}>Add Events</button>
           </Link>
         </div>
         <ul className={style.items}>
           <li className={style.box}>
-            Events<span className={style.data}>0</span>
+            Events<span className={style.data}>3</span>
           </li>
           <li className={style.box}>
             Upcoming Events<span className={style.data}>0</span>

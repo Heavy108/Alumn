@@ -18,14 +18,25 @@ function Magazine(props) {
   const handleClickDelete = async (id) => {
     try {
       console.log(id);
-      const res = await axios.post("/api/Delete", { id });
-      console.log("success", res.data);
+      const res = await fetch("../api/DeleteEvent", {
+        method: "POST",
+        body: JSON.stringify({ id }), // Correctly format the body
+        headers: {
+          "Content-Type": "application/json", // Set the content type to JSON
+        },
+      });
+  
+      if (!res.ok) {
+        throw new Error("Failed to delete event");
+      }
+  
+      console.log("success", await res.json()); // Log the response
+      router.refresh(); // Refresh the page to reflect changes
     } catch (error) {
       console.log(error.message);
-    } finally {
-      router.push("/Dashboard/Magazine");
     }
   };
+  
 
   return (
     <>
