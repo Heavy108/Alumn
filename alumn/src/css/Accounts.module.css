@@ -1,0 +1,63 @@
+
+.Account{
+margin: 2rem;
+/* border:2px solid black; */
+/* height:90vh; */
+
+}
+.Account h4{
+    font-size:1.5rem;
+}
+.items{
+list-style-type: none;
+display:flex;
+padding: 0rem;
+/* justify-content: space-evenly; */
+gap: 1rem;
+
+
+
+}
+.box{
+    padding:1.5rem;
+    border:1px solid #d9d9d9;
+    border-radius: 1rem;
+    width: 17.5rem;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #595959;
+    
+}
+.data{
+    font-weight: 700;
+    margin-top:0.5rem;
+    color: black;
+}
+.guidelines{
+    margin: 2rem;
+    
+}
+.heading{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+.heading h4{
+font-size: 1.5rem;
+}
+
+.heading span{
+    align-content: center;
+    align-items: center;
+}
+.image{
+   height:30rem ;
+   display: flex;
+   justify-content: center;
+   border: 1px solid #d9d9d9;
+   border-radius: 1rem;
+
+}

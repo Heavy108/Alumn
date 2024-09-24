@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  .sidebarContainer {
+    flex-shrink: 0;
+    /* Add styles for the sidebar container */
+  }
+  
+  .contentContainer {
+    flex-grow: 1;
+    overflow: auto;
+    /* Add styles for the content container */
+  }
+
+
+ 
