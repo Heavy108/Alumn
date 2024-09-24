@@ -24,7 +24,7 @@ function Event_Card({ data }) {
           </div>
           <div className={styles.Time}>
             <p>Venue: {data.Venue}</p>
-            <p>Time: {new Date(data.time).toLocaleString()}</p>
+            <p>Time: {data.time}</p>
             <Link
           href={{
             pathname: "/Event_details",
@@ -41,8 +41,12 @@ function Event_Card({ data }) {
 }
 
 function Events({ data }) {
+  const eventsArray = Array.isArray(data) ? data : data ? [data] : [];
+  // console.log(data)
+
   return (
     <>
+    
       <Title title="Events" />
       <p className={styles.subtitle}>Upcoming Events</p>
       <div className={styles.container_1}>
