@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import "./writePage.css"
+import Navbar from '@/Components/Navbar';
+import Footer from '@/Components/Footer';
+import Title from '@/Components/Title';
+
 // Dynamically load ReactQuill because of Next.js SSR issue
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
@@ -10,15 +14,15 @@ const modules = {
   toolbar: {
     container: [
       [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-      [{size: []}],
+      [{ size: [] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, 
-       {'indent': '-1'}, {'indent': '+1'}],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' },
+      { 'indent': '-1' }, { 'indent': '+1' }],
       ['link', 'image'], // Add image button in toolbar
-      ['clean'] 
+      ['clean']
     ],
     handlers: {
-      image: function() { // Custom image handler
+      image: function () { // Custom image handler
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
         input.setAttribute('accept', 'image/*');
@@ -30,9 +34,6 @@ const modules = {
             const reader = new FileReader();
             reader.onload = async () => {
               const base64Image = reader.result; // Convert to base64
-              
-              // Optionally, upload the image to a server here and get the URL
-
               const range = this.quill.getSelection(); // Get the current cursor position
               this.quill.insertEmbed(range.index, 'image', base64Image); // Insert image
             };
@@ -56,13 +57,15 @@ const formats = [
 
 const NewPost = () => {
   const [title, setTitle] = useState('');
+  const [summary, setSummary] = useState(''); // New summary state
   const [content, setContent] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const postData = {
       title,
+      summary,  // Include summary in the payload
       content
     };
 
@@ -82,22 +85,44 @@ const NewPost = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Post Title"
-        required
-      />
-      <ReactQuill 
-        value={content} 
-        onChange={setContent}
-        modules={modules}
-        formats={formats}
-      />
-      <button type="submit">Create Post</button>
-    </form>
+    <>
+      <Navbar />
+
+      <Title title="Create Blog" />
+      <form onSubmit={handleSubmit}>
+        {/* Title input */}
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Post Title..."
+          required
+        />
+
+       
+
+        
+        <ReactQuill
+          value={content}
+          onChange={setContent}
+          modules={modules}
+          formats={formats}
+        />
+         {/* Summary input */}
+         <input
+          type="text"
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
+          placeholder="Post Summary..."
+          required
+        />
+
+        {/* Submit button */}
+        <button type="submit">Publish</button>
+      </form>
+
+      <Footer />
+    </>
   );
 };
 

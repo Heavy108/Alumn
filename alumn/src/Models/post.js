@@ -9,6 +9,7 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide content for the blog post'],
   },
+  summary:{type:String},
   createdAt: {
     type: Date,
     default: Date.now,

@@ -1,0 +1,140 @@
+.CardOuter{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+  }
+.Navig{
+    display: flex;
+    margin: 2rem;
+    justify-content: space-between;
+}
+.link{
+    align-content: center;
+}
+  .CardIntroduction h1{
+  font-size: 1.5rem;
+  text-align: center;
+  }
+  .CardIntroduction p{
+    font-size: 0.6rem;
+  }
+  .image{
+    filter: grayscale();
+    width: auto;
+  }
+  .Button{
+    display: flex;
+    justify-content: flex-end;
+}
+.Button button{
+    color: white;
+    background-color: black;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 0.6rem;
+}
+
+  @media only screen and (min-width:768px){
+    .CardOuter{
+      flex-direction: row;
+      margin: 4rem 5rem 4rem 5rem;
+      gap:4rem;
+    }
+    .Navig{
+        margin: 4rem 5rem 4rem 5rem;
+    }
+    .CardIntroduction{
+      width: 22rem;
+  
+    }
+    .CardIntroduction h1{
+      text-align: left;
+      font-size: 2rem;
+    }
+    .CardIntroduction p{
+      font-size: 0.7rem;
+    }
+    .image{
+      width: 55%;
+  
+    }
+    .Button button{
+        font-size: 0.8rem;
+    }
+  }
+  @media only screen and ( min-width:1024px){
+    .CardOuter{
+      margin: 5.5rem 8rem 5.5rem 8rem;
+    }
+    .Navig{
+        margin: 5.5rem 8rem 5.5rem 8rem;
+    }
+    .CardIntroduction{
+      width: 24rem;
+  
+    }
+    .CardIntroduction h1{
+      font-size: 3.5rem;
+    }
+    .CardIntroduction p{
+      font-size: 0.8rem;
+    }
+    .image{
+      width: 60%;
+  
+    }
+  }
+  @media only screen and (min-width:1440px){
+    .CardOuter{
+      margin: 7.5rem 10rem 7.5rem 10rem;
+    }
+    .Button button{
+        font-size: 1rem;
+    }
+    .Navig{
+        margin: 7.5rem 10rem 7.5rem 10rem;
+    }
+    .CardIntroduction{
+      width: 26rem;
+  
+    }
+    .CardIntroduction h1{
+      font-size: 5rem;
+    }
+    .CardIntroduction p{
+      font-size: 1rem;
+    }
+    .image{
+      /* width: 60%; */
+      width: 40rem;
+      height: 25rem;
+  
+    }
+  }
+  @media only screen and (min-width:2560px){
+    .CardOuter{
+      justify-content: center;
+      margin: 10rem 13rem 10rem 13rem;
+      gap: 12rem;
+    }
+    .Navig{
+        margin: 10rem 13rem 10rem 13rem;
+    }
+    .CardIntroduction{
+      width: 40rem;
+  
+    }
+    .CardIntroduction h1{
+      font-size: 8rem;
+    }
+    .CardIntroduction p{
+      font-size: 2rem;
+    }
+    .image{
+      /* width: 60%; */
+      width: 60rem;
+      height: 45rem;
+  
+    }
+  }
