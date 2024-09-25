@@ -21,6 +21,7 @@
   .items li {
     padding: 0.8rem;
     margin: 0.8rem 1rem 0.8rem 0rem;
+    cursor: pointer;
   }
   
   .items li:first-child {
