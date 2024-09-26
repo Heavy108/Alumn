@@ -40,13 +40,13 @@ async function Blog(){
           </Link>
         </div>
     </div>
-
+<div className={style.container2}>
     {posts.map((post) => (
-        <div tabIndex={0} className="collapse border-base-300 bg-base-200 border" key={post._id}>
-        <div className="collapse-title text-xl font-medium">{post.title}</div>
-        <div className="collapse-title text-xl font-small">{new Date(post.createdAt).toLocaleString()}</div>
-        <div className="collapse-content">
-          <p>{post.summary}</p>
+  <div tabIndex={0} className={style.collapse} key={post._id}>
+    <div className={style.collapseTitle}>{post.title}</div>
+    <div className={style.collapseDate}>{new Date(post.createdAt).toLocaleString()}</div>
+    <div className={style.collapseContent}>
+      <p>{post.summary}</p>
         </div>
         <div className={style.Button}>
         <Link href={{ pathname:"/SingleBlogPage" , query: { _id: post._id }}} className={style.link}>
@@ -54,7 +54,12 @@ async function Blog(){
           </Link>
         </div>
       </div>
+
+  
+// 
       ))}
+      </div>
+      
     <Footer/>
     </>)
 }

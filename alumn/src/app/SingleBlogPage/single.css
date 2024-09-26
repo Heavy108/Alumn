@@ -42,7 +42,7 @@
 
 /* Styling for images */
 .post-content img {
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   margin: 20px 0;
   border-radius: 8px;

@@ -14,6 +14,7 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  Alumni_id:{type:String}
 });
 
 export default mongoose.models.Post || mongoose.model('Post', PostSchema);

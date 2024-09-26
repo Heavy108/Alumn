@@ -4,8 +4,8 @@ import Post from '@/Models/post';
 export async function POST(req) {
   try {
     await connect();
-    const { title, content,summary } = await req.json();
-    const newPost = new Post({ title, content ,summary});
+    const { title, content,summary ,Alumni_id} = await req.json();
+    const newPost = new Post({ title, content ,summary,Alumni_id});
     await newPost.save();
     return new Response(JSON.stringify(newPost), { status: 201 });
   } catch (error) {

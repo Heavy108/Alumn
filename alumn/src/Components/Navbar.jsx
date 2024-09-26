@@ -124,12 +124,14 @@ function Navbar() {
         </div>
         <div className={style.list2}>
             <ul>
-            <li ><Link href="#">Blog </Link></li>
+            <li ><Link href="/Blog">Blog </Link></li>
         <li ><Link href="/login">Connect </Link></li>
         <li>
           <Link href="/Gallery">Gallery</Link>
         </li>
-        <button>Login</button>
+        <Link href="/AdminLogin">
+        <button className={style.contact}>Login</button>
+        </Link>
         </ul>
         </div>
         </div>
@@ -238,7 +240,7 @@ function Navbar() {
                 </ul>
               </div>
             </li>
-            <li className={style.opt}><Link href="#">Blog </Link></li>
+            <li className={style.opt}><Link href="/Blog">Blog </Link></li>
             <hr  className={style.horizontal}/>
             <li className={style.opt}><Link href="/login">Connect </Link></li>
             <hr  className={style.horizontal}/>
@@ -246,7 +248,9 @@ function Navbar() {
           <Link href="/Gallery">Gallery</Link>
         </li>
         <hr  className={style.horizontal}/>
+        <Link href="/AdminLogin">
         <button className={style.contact}>Login</button>
+        </Link>
           </ul>
           }
       

@@ -1,8 +1,9 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation'; // To handle redirection
 import 'react-quill/dist/quill.snow.css';
-import "./writePage.css"
+import './writePage.css';
 import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import Title from '@/Components/Title';
@@ -13,16 +14,15 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 const modules = {
   toolbar: {
     container: [
-      [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+      [{ header: '1' }, { header: '2' }, { font: [] }],
       [{ size: [] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' },
-      { 'indent': '-1' }, { 'indent': '+1' }],
+      [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
       ['link', 'image'], // Add image button in toolbar
       ['clean']
     ],
     handlers: {
-      image: function () { // Custom image handler
+      image: function () {
         const input = document.createElement('input');
         input.setAttribute('type', 'file');
         input.setAttribute('accept', 'image/*');
@@ -32,12 +32,12 @@ const modules = {
           const file = input.files[0];
           if (file) {
             const reader = new FileReader();
-            reader.onload = async () => {
-              const base64Image = reader.result; // Convert to base64
-              const range = this.quill.getSelection(); // Get the current cursor position
-              this.quill.insertEmbed(range.index, 'image', base64Image); // Insert image
+            reader.onload = () => {
+              const base64Image = reader.result;
+              const range = this.quill.getSelection();
+              this.quill.insertEmbed(range.index, 'image', base64Image);
             };
-            reader.readAsDataURL(file); // Convert image to base64
+            reader.readAsDataURL(file);
           }
         };
       }
@@ -45,7 +45,7 @@ const modules = {
   },
   clipboard: {
     matchVisual: false,
-  },
+  }
 };
 
 const formats = [
@@ -59,14 +59,38 @@ const NewPost = () => {
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState(''); // New summary state
   const [content, setContent] = useState('');
+  const [alumniId, setAlumniId] = useState(''); // Alumni ID state
+  const [alumniIdValid, setAlumniIdValid] = useState(null); // Alumni ID validation
+  const router = useRouter(); // For redirection
+
+  // Handle Alumni ID change and validate
+  const handleAlumniIdChange = async (e) => {
+    const id = e.target.value;
+    setAlumniId(id);
+
+    // Check validity of the Alumni ID
+    if (id.length > 0) {
+      const res = await fetch(`/api/CheckId?alumniId=${id}`);
+      const data = await res.json();
+      setAlumniIdValid(data.exists);
+    } else {
+      setAlumniIdValid(null);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!alumniIdValid) {
+      alert('Please enter a valid Alumni ID.');
+      return;
+    }
+
     const postData = {
       title,
-      summary,  // Include summary in the payload
-      content
+      summary, // Include summary in the payload
+      content,
+      alumniId, // Include Alumni ID in the payload
     };
 
     const res = await fetch('/api/posts', {
@@ -79,6 +103,7 @@ const NewPost = () => {
 
     if (res.ok) {
       console.log('Post created!');
+      router.push('/Blog'); // Redirect to the Blog page upon success
     } else {
       console.error('Error creating post');
     }
@@ -87,7 +112,6 @@ const NewPost = () => {
   return (
     <>
       <Navbar />
-
       <Title title="Create Blog" />
       <form onSubmit={handleSubmit}>
         {/* Title input */}
@@ -99,22 +123,38 @@ const NewPost = () => {
           required
         />
 
-       
+        {/* Alumni ID input */}
+        <div className="input-field">
+          <label htmlFor="alumni-id">
+            Alumni ID
+            {alumniIdValid === true && <span className="valid">✅</span>}
+            {alumniIdValid === false && <span className="invalid">❌</span>}
+          </label>
+          <input
+            name="alumni-id"
+            type="text"
+            placeholder="Enter your Alumni ID"
+            value={alumniId}
+            onChange={handleAlumniIdChange}
+            required
+          />
+        </div>
 
-        
-        <ReactQuill
-          value={content}
-          onChange={setContent}
-          modules={modules}
-          formats={formats}
-        />
-         {/* Summary input */}
-         <input
+        {/* Summary input */}
+        <input
           type="text"
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
           placeholder="Post Summary..."
           required
+        />
+
+        {/* Content input */}
+        <ReactQuill
+          value={content}
+          onChange={setContent}
+          modules={modules}
+          formats={formats}
         />
 
         {/* Submit button */}

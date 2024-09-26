@@ -8,6 +8,9 @@
     margin: 2rem;
     justify-content: space-between;
 }
+.container2{
+  margin: 2rem;
+}
 .link{
     align-content: center;
 }
@@ -25,6 +28,7 @@
   .Button{
     display: flex;
     justify-content: flex-end;
+    margin: 0.8rem;
 }
 .Button button{
     color: white;
@@ -35,12 +39,60 @@
     font-size: 0.6rem;
 }
 
+
+.collapse {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .collapse:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .collapseTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .collapseTitle:hover {
+    background-color: #eaeaea;
+  }
+  
+  .collapseDate {
+    font-size: 14px;
+    color: #888;
+    padding: 0 15px 15px;
+  }
+  
+  .collapseContent {
+    padding: 15px;
+    font-size: 16px;
+    color: #555;
+    background-color: #fafafa;
+  }
+  
+
   @media only screen and (min-width:768px){
     .CardOuter{
       flex-direction: row;
       margin: 4rem 5rem 4rem 5rem;
       gap:4rem;
     }
+    .container2{
+      margin: 4rem 5rem 4rem 5rem;
+    }
+    /* .collapse{
+        margin: 4rem 5rem 4rem 5rem;
+    } */
     .Navig{
         margin: 4rem 5rem 4rem 5rem;
     }
@@ -67,6 +119,10 @@
     .CardOuter{
       margin: 5.5rem 8rem 5.5rem 8rem;
     }
+    .container2{
+      margin: 5.5rem 8rem 5.5rem 8rem;
+
+    }
     .Navig{
         margin: 5.5rem 8rem 5.5rem 8rem;
     }
@@ -89,6 +145,10 @@
     .CardOuter{
       margin: 7.5rem 10rem 7.5rem 10rem;
     }
+    .container2{
+      margin: 7.5rem 10rem 7.5rem 10rem;
+
+    }
     .Button button{
         font-size: 1rem;
     }
@@ -106,7 +166,7 @@
       font-size: 1rem;
     }
     .image{
-      /* width: 60%; */
+    
       width: 40rem;
       height: 25rem;
   
@@ -117,6 +177,10 @@
       justify-content: center;
       margin: 10rem 13rem 10rem 13rem;
       gap: 12rem;
+    }
+    .container2{
+      margin: 10rem 13rem 10rem 13rem;
+
     }
     .Navig{
         margin: 10rem 13rem 10rem 13rem;
@@ -132,7 +196,7 @@
       font-size: 2rem;
     }
     .image{
-      /* width: 60%; */
+     
       width: 60rem;
       height: 45rem;
   
