@@ -15,11 +15,12 @@ export async function POST(req) {
 }
 
 export async function GET(req) {
-  const { searchParams } = new URL(req.url);
-  const id = searchParams.get('id'); // Get the ID from the query parameters
+  // Get the ID from the query parameters
 
   try {
     await connect();
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
     
     const posts = id 
       ? await Post.findById(id) // Fetch the specific post by ID
