@@ -83,6 +83,42 @@
   .collapseContent p{
     color: black;
   }
+  .collapseDate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Vertically center-aligns the items */
+    gap: 10px; /* Adds some space between the items */
+    margin-top: 0.8rem;
+  }
+  
+  .collapseDate img {
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle without distortion */
+  }
+  
+  .collapseDate h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .collapseDate h5 {
+    margin: 0;
+    font-size: 14px;
+    color: #666; /* Optional, makes the date text a bit lighter */
+  }
+  
+  .collapseDate a {
+    margin-left: 10px;
+    font-size: 20px; /* Adjusts the size of the LinkedIn icon */
+    color: #0077b5; /* LinkedIn blue color */
+    text-decoration: none;
+  }
+  
+  .collapseDate a:hover {
+    color: #005582; /* Darkens the LinkedIn icon on hover */
+  }
+  
   
 
   @media only screen and (min-width:768px){

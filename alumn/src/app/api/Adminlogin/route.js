@@ -10,13 +10,13 @@ export async function POST(request) {
     await connect();
     const reqBody = await request.json();
     const { username, password, type } = reqBody;
-    console.log(username, password, type,reqBody)
+    console.log(username, password, type, reqBody);
     let userData;
 
     if (type === "admin") {
       // Find admin in the database
-      userData = await admin.findOne({Name: username });
-      console.log(userData)
+      userData = await admin.findOne({ name: username });
+      console.log(userData);
       if (!userData) {
         return NextResponse.json({ error: "Admin not found" }, { status: 404 });
       }
@@ -37,13 +37,12 @@ export async function POST(request) {
       return NextResponse.json({ error: "Invalid password" }, { status: 400 });
     }
 
-    
+    // Include user type in the token payload
     const token = jwt.sign(
-      { id: userData._id, username: userData.username, alumniId: userData.Alumni_ID }, 
+      { id: userData._id, username: userData.username, alumniId: userData.Alumni_ID, type }, 
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-    
 
     const response = NextResponse.json(
       { message: "Login successful", type }, // Send back the user type for frontend routing
@@ -56,6 +55,7 @@ export async function POST(request) {
 
     return response;
   } catch (error) {
+    console.error("Login error:", error); // Log the error for debugging
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
