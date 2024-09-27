@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import blog from "@/Assets/Blog.svg"
-import style from "./blog.module.css"
+import style from "@/css/blog.module.css"
 import Image from "next/image";
 import Link from "next/link";
 async function Blog(){
@@ -20,6 +20,7 @@ async function Blog(){
           const res = await fetch('/api/posts');
           const data = await res.json();
           setPosts(data);
+          console.log(posts)
         };
         fetchPosts();
       }, []);
@@ -44,9 +45,20 @@ async function Blog(){
     {posts.map((post) => (
   <div tabIndex={0} className={style.collapse} key={post._id}>
     <div className={style.collapseTitle}>{post.title}</div>
-    <div className={style.collapseDate}>{new Date(post.createdAt).toLocaleString()}</div>
+    <div className={style.collapseDate}>
+    <Image 
+      src={post.Profile}
+      width={20}
+      height={20}
+      alt='profile image'
+      />
+      {/* <h5>{post.alumni.Name}</h5> */}
+    <h5>{new Date(post.createdAt).toLocaleString()}</h5>
+      
+      </div>
     <div className={style.collapseContent}>
       <p>{post.summary}</p>
+      
         </div>
         <div className={style.Button}>
         <Link href={{ pathname:"/SingleBlogPage" , query: { _id: post._id }}} className={style.link}>

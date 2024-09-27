@@ -94,6 +94,9 @@
 .post-content a:hover {
   text-decoration: underline;
 }
+.post-content p{
+  color: black;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

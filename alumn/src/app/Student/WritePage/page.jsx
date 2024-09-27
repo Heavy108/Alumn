@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation'; // To handle redirection
 import 'react-quill/dist/quill.snow.css';
@@ -7,6 +7,7 @@ import './writePage.css';
 import Navbar from '@/Components/Navbar';
 import Footer from '@/Components/Footer';
 import Title from '@/Components/Title';
+import { parseJwt } from '@/Js/parsejwt'; // Helper function to parse JWT
 
 // Dynamically load ReactQuill because of Next.js SSR issue
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -57,43 +58,42 @@ const formats = [
 
 const NewPost = () => {
   const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState(''); // New summary state
+  const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
   const [Alumni_id, setAlumniId] = useState(''); // Alumni ID state
-  const [alumniIdValid, setAlumniIdValid] = useState(null); // Alumni ID validation
   const router = useRouter(); // For redirection
 
-  // Handle Alumni ID change and validate
-  const handleAlumniIdChange = async (e) => {
-    const id = e.target.value;
-    setAlumniId(id);
+  // Fetch Alumni ID from JWT or session on component mount
+  useEffect(() => {
+    const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+    if (token) {
+      const jwt = token.split('=')[1];
+      console.log("JWT token: ", jwt); // Log the JWT token to debug
+      const decoded = parseJwt(jwt);
+      console.log("Decoded JWT: ", decoded); // Log the decoded JWT to ensure it's parsed correctly
 
-    // Check validity of the Alumni ID
-    if (id.length > 0) {
-      const res = await fetch(`/api/CheckId?alumniId=${id}`);
-      const data = await res.json();
-      setAlumniIdValid(data.exists);
+      if (decoded && decoded.alumniId) {
+        console.log("Alumni ID from token: ", decoded.alumniId); // Log the alumni ID
+        setAlumniId(decoded.alumniId);
+      } else {
+        console.log("No alumni ID found in decoded token");
+      }
     } else {
-      setAlumniIdValid(null);
+      console.log("Token not found in cookies");
     }
-  };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!alumniIdValid) {
-      alert('Please enter a valid Alumni ID.');
-      return;
-    }
-
     const postData = {
       title,
-      summary, // Include summary in the payload
+      summary, 
       content,
-      Alumni_id, // Include Alumni ID in the payload
+      Alumni_id,
     };
 
-    const res = await fetch('/api/posts', {
+    const res = await fetch('../api/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const NewPost = () => {
 
     if (res.ok) {
       console.log('Post created!');
-      router.push('/Blog'); // Redirect to the Blog page upon success
+      router.push('/Blog');
     } else {
       console.error('Error creating post');
     }
@@ -111,7 +111,7 @@ const NewPost = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Title title="Create Blog" />
       <form onSubmit={handleSubmit}>
         {/* Title input */}
@@ -127,16 +127,12 @@ const NewPost = () => {
         <div className="input-field">
           <label htmlFor="alumni-id">
             Alumni ID
-            {alumniIdValid === true && <span className="valid">✅</span>}
-            {alumniIdValid === false && <span className="invalid">❌</span>}
           </label>
           <input
             name="alumni-id"
             type="text"
-            placeholder="Enter your Alumni ID"
             value={Alumni_id}
-            onChange={handleAlumniIdChange}
-            required
+            readOnly // Make it read-only so the user cannot modify it
           />
         </div>
 
@@ -161,7 +157,7 @@ const NewPost = () => {
         <button type="submit">Publish</button>
       </form>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -5,6 +5,7 @@ export async function POST(req) {
   try {
     await connect();
     const { title, content,summary ,Alumni_id} = await req.json();
+    console.log(title, content,summary ,Alumni_id)
     const newPost = new Post({ title, content ,summary,Alumni_id});
     await newPost.save();
     return new Response(JSON.stringify(newPost), { status: 201 });
@@ -20,7 +21,6 @@ export async function GET(req) {
   try {
     await connect();
     
-    // If an ID is provided, find that specific post; otherwise, return all posts without content
     const posts = id 
       ? await Post.findById(id) // Fetch the specific post by ID
       : await Post.find({}, { content: 0 }); // Fetch all posts without the content field
