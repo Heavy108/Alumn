@@ -38,7 +38,7 @@ function DashBoard() {
       <div className={style.dashboardContainer}>
         <div className={style.superContainer}>
           <ul className={style.items}>
-            <li>Alumni connect</li>
+            <li>Admin DashBoard</li>
             <li
               onClick={() => handleClick('Home')}
               className={activeItem === 'Home' ? `${style.activeItem}` : ''}

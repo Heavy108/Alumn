@@ -103,7 +103,8 @@ const NewPost = () => {
 
     if (res.ok) {
       console.log('Post created!');
-      router.push('/Blog');
+      // router.push('/Blog');
+      router.refresh()
     } else {
       console.error('Error creating post');
     }

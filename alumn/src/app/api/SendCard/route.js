@@ -28,7 +28,7 @@ export async function POST(request) {
             Congratulations! Your email has been successfully verified. Here are your alumni credentials:
           </p>
           <ul style="font-size: 16px; color: #333;">
-            <li><strong>Unique ID:</strong> ${uniqueID}</li>
+            <li><strong>Alumni ID:</strong> ${uniqueID}</li>
             <li><strong>Name:</strong> ${name}</li>
             <li><strong>Passout Year:</strong> ${passoutYear}</li>
           </ul>
@@ -45,7 +45,20 @@ export async function POST(request) {
           <p style="font-size: 14px; color: #555;">
             ${detailsPageUrl}
           </p>
+    
+          <!-- Instructions to write a blog -->
+          <p style="font-size: 16px; color: #333; margin-top: 20px;">
+            You can now contribute to our alumni blog! To write a blog post on the website, use the following credentials:
+          </p>
+          <ul style="font-size: 16px; color: #333;">
+            <li><strong>Username (Email):</strong> ${email}</li>
+            <li><strong>Password (Alumni ID):</strong> ${uniqueID}</li>
+          </ul>
           <p style="font-size: 16px; color: #333;">
+            Simply log in to your alumni account and start writing your blog today!
+          </p>
+    
+          <p style="font-size: 16px; color: #333; margin-top: 20px;">
             Thank you,<br />
             The Alumni Relations Team
           </p>
@@ -56,6 +69,7 @@ export async function POST(request) {
         </div>
       `,
     };
+    
 
     const mailResponse = await transporter.sendMail(mailOptions);
 

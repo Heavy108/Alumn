@@ -1,7 +1,7 @@
 'use client';
 
 import { parseJwt } from '@/Js/parsejwt'; // Import your JWT parsing function
-
+import Title from '@/Components/Title';
 import style from "@/css/blog.module.css";
 import Image from "next/image";
 import noDataImg from "@/Assets/found.svg"; // Image to show when no posts are found
@@ -26,6 +26,7 @@ async function Blog() {
   return (
     <>
       {/* <Navbar /> */}
+      <Title title="post"/>
       <div className={style.container2}>
         {/* If no posts found, display an image */}
         {posts.length === 0 ? (

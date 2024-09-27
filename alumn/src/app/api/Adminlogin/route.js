@@ -10,12 +10,13 @@ export async function POST(request) {
     await connect();
     const reqBody = await request.json();
     const { username, password, type } = reqBody;
-
+    console.log(username, password, type,reqBody)
     let userData;
 
     if (type === "admin") {
       // Find admin in the database
-      userData = await admin.findOne({ username });
+      userData = await admin.findOne({Name: username });
+      console.log(userData)
       if (!userData) {
         return NextResponse.json({ error: "Admin not found" }, { status: 404 });
       }

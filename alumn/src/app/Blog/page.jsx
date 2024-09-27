@@ -8,22 +8,23 @@ import style from "@/css/blog.module.css"
 import Image from "next/image";
 import Link from "next/link";
 async function Blog(){
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
     const Title = "Blog";
     
     const Description =
       "< Byte Description > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ";
-   
+      const res = await fetch('/api/posts');
+      const posts = await res.json();
 
-      useEffect(() => {
-        const fetchPosts = async () => {
-          const res = await fetch('/api/posts');
-          const data = await res.json();
-          setPosts(data);
-          console.log(posts)
-        };
-        fetchPosts();
-      }, []);
+      // useEffect(() => {
+      //   const fetchPosts = async () => {
+      //     const res = await fetch('/api/posts');
+      //     const data = await res.json();
+      //     setPosts(data);
+      //     console.log(posts)
+      //   };
+      //   fetchPosts();
+      // }, []);
     return(<>
     <Navbar/>
     <div className={style.CardOuter}>
@@ -36,7 +37,7 @@ async function Blog(){
     <div className={style.Navig}>
         <h2>Recent Blog</h2>
         <div className={style.Button}>
-        <Link href="/Write" className={style.link}>
+        <Link href="/AdminLogin" className={style.link}>
             <button >Write Blog</button>
           </Link>
         </div>

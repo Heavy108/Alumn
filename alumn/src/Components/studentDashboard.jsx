@@ -5,7 +5,7 @@ import { MdDashboard } from 'react-icons/md';
 import { BiSolidCarousel } from 'react-icons/bi';
 import { HiUserGroup } from 'react-icons/hi';
 import { RiSettings4Fill } from 'react-icons/ri';
-import { IoLogOutOutline } from 'react-icons/io5';
+import { IoLogOutOutline,IoStatsChart  } from 'react-icons/io5';
 import { TbHomeFilled } from 'react-icons/tb';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -38,7 +38,7 @@ function StudentDashBoard() {
       <div className={style.dashboardContainer}>
         <div className={style.superContainer}>
           <ul className={style.items}>
-            <li>Alumni connect</li>
+            <li>Alumni_DashBoard</li>
             <li
               onClick={() => handleClick('Dashboard')}
               className={activeItem === 'Dashboard' ? `${style.activeItem}` : ''}
@@ -52,7 +52,7 @@ function StudentDashBoard() {
               className={activeItem === 'Write' ? `${style.activeItem}` : ''}
             >
               <Link href="/Student/WritePage" className={style.Link}>
-                <TbHomeFilled className={style.icons} /> Write Blog
+                <HiUserGroup  className={style.icons} /> Write Blog
               </Link>
             </li>
             <li
@@ -61,6 +61,22 @@ function StudentDashBoard() {
             >
               <Link href="/Student/BlogPage" className={style.Link}>
                 <BiSolidCarousel className={style.icons} /> Blog
+              </Link>
+            </li>
+            <li
+              onClick={() => handleClick('Stats')}
+              className={activeItem === 'Stats' ? `${style.activeItem}` : ''}
+            >
+              <Link href="/Student/coming" className={style.Link}>
+                <IoStatsChart   className={style.icons} /> Stats
+              </Link>
+            </li>
+            <li
+              onClick={() => handleClick('Setting')}
+              className={activeItem === 'Setting' ? `${style.activeItem}` : ''}
+            >
+              <Link href="/Student/coming" className={style.Link}>
+                <RiSettings4Fill  className={style.icons} /> Setting
               </Link>
             </li>
 

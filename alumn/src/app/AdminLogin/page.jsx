@@ -1,9 +1,9 @@
-"use client";
-// import "../global.css"
+'use client'; // Ensure you're using client-side rendering
 
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import style from "@/css/adminlogin.module.css";
+import Link from "next/link";
 
 function AdminLogin() {
   const router = useRouter();
@@ -18,13 +18,18 @@ function AdminLogin() {
   const onLogin = async () => {
     try {
       setLoading(true);
-      
+      setButtonDisabled(true); // Disable button during submission
+
       const response = await fetch("/api/Adminlogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user),
+        body: JSON.stringify({
+          username: user.username,
+          password: user.password,
+          type: user.type,
+        }),
       });
 
       const data = await response.json();
@@ -32,23 +37,27 @@ function AdminLogin() {
       if (response.ok) {
         console.log("Login success", data);
 
-        // Redirect based on the user type
-        if (user.type === "admin") {
-          router.push("/DashBoard/Home"); // Redirect admin to admin dashboard
-        } else if (user.type === "student") {
-          router.push("/Student/WritePage"); // Redirect student to student home
+        // Redirect based on the user type returned from the backend
+        if (data.type === "admin") {
+          router.push("/DashBoard/Home"); // Redirect admin to dashboard
+        } else if (data.type === "student") {
+          router.push("/Student/WritePage"); // Redirect student to student page
+        } else {
+          window.alert("Unknown user type");
         }
       } else {
-        window.alert(`Login failed: ${data.error}`); // Alert for incorrect credentials
+        window.alert(`Login failed1: ${data.error}`); // Show error message
       }
     } catch (error) {
       window.alert(`Login failed: ${error.message}`);
     } finally {
       setLoading(false);
+      setButtonDisabled(false); // Re-enable button after submission
     }
   };
 
   useEffect(() => {
+    // Disable login button if username or password is empty
     if (user.username.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
     } else {
@@ -59,14 +68,13 @@ function AdminLogin() {
   return (
     <>
       <div className={style.LoginFrame}>
-        <img src="/Login.svg" className={style.LoginImage} />
+        <img src="/Login.svg" className={style.LoginImage} alt="Login Image" />
         <div className={style.FormContainer}>
           <h1>Alumni_Connect</h1>
           <h2>Welcome to Alumni_Connect</h2>
           <p>Please Sign-in to your account</p>
 
           <div className={style.form}>
-            {/* <h1>{loading ? "Processing" : "Login"}</h1> */}
             <hr />
             <label htmlFor="username" className={style.label}>UserName</label>
             <form action="">
@@ -109,8 +117,9 @@ function AdminLogin() {
               className={style.Button}
               disabled={buttonDisabled}
             >
-              {loading ? "Processing" : "Login"}
+              {loading ? "Processing..." : "Login"}
             </button>
+            <Link href="/">Visit Home</Link>
           </div>
         </div>
       </div>

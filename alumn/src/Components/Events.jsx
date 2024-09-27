@@ -60,7 +60,7 @@ function Events({ data }) {
       <div className={sty.wrapper2}>
         <Link href='/CommingSoon'><Button text="More" /></Link>
       </div>
-      <p className={styles.container}>Past Events</p>
+      {/* <p className={styles.container}>Past Events</p>
       <div className={styles.container_2}>
         {data.map((event, index) => (
           <Event_Card
@@ -71,7 +71,7 @@ function Events({ data }) {
       </div>
       <div className={sty.wrapper2}>
         <Link href='/CommingSoon'><Button text="More" /></Link>
-      </div>
+      </div> */}
     </>
   );
 }
