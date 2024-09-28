@@ -22,7 +22,7 @@ export async function POST(request) {
       }
     } else if (type === "student") {
       // Find student in the card model using email (username)
-      userData = await Card.findOne({ Email: username });
+      userData = await Card.findOne({ Email: username.toLowercase() });
       if (!userData) {
         return NextResponse.json({ error: "Student not found" }, { status: 404 });
       }

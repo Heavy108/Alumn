@@ -27,7 +27,7 @@ export async function POST(request) {
 
     const Name = data.get("Name");
     const Roll = data.get("Roll No");
-    const Email = data.get("Email");
+    const Email = data.get("Email").toLowerCase();
     const Programme = data.get("Programme");
     const Passout_Year = data.get("Passout Year");
     const Linkedin_Profile = data.get("Linkedin Profile");

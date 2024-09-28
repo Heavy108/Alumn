@@ -5,8 +5,9 @@ import Title from '@/Components/Title';
 import style from "@/css/blog.module.css";
 import Image from "next/image";
 import noDataImg from "@/Assets/found.svg"; // Image to show when no posts are found
-
+import { useRouter } from 'next/navigation';
 async function Blog() {
+  const router=useRouter()
   const token = document.cookie.split('; ').find(row => row.startsWith('token='));
   
   // If no token, show a message
@@ -64,6 +65,7 @@ async function handleDelete(postId) {
   if (res.ok) {
     alert("Successfully deleted the blog");
     // Optionally refresh the page or update the state
+    // router.refresh()
   } else {
     console.error('Error deleting post');
   }

@@ -16,7 +16,7 @@ export async function GET(request) {
       );
     }
 
-    const student = await Alumni_det.findOne({ Roll_Number: rollNo });
+    const student = await Alumni_det.findOne({ Roll_Number: rollNo.toUpperCase() });
 
     return NextResponse.json({ success: true, exists: !!student });
   } catch (error) {
