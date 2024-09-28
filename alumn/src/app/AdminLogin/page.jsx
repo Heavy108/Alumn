@@ -41,7 +41,7 @@ function AdminLogin() {
         if (data.type === "admin") {
           router.push("/DashBoard/Home"); // Redirect admin to dashboard
         } else if (data.type === "student") {
-          router.push("/Student/WritePage"); // Redirect student to student page
+          router.push("/Student/studentDash"); // Redirect student to student page
         } else {
           window.alert("Unknown user type");
         }
