@@ -11,7 +11,7 @@ async function GalleryPage(){
     
     <div className={style.Account}>
         <div className={style.heading}>
-          <p className={style.p}>Gallery</p>
+          <h5 className={style.p}>Gallery</h5>
           <Link href="/DashBoard/AddImage" className={style.link}>
             <button className={style.add}>Add Image</button>
           </Link>
@@ -32,7 +32,7 @@ async function GalleryPage(){
         </ul>
 
         <div className={style.heading}>
-          <p className={style.all}>All Image</p>
+          <h5 className={style.all}>All Image</h5>
           <div className={style.searchContainer}>
             <input type="search" placeholder="Search" />
             <CiSearch />
