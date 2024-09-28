@@ -13,14 +13,12 @@ async function verifyJWT(token, secret) {
   const [header, payload, signature] = token.split('.');
 
   const data = `${header}.${payload}`;
-  const expectedSignature = atob(signature)
-    .split('')
-    .map((c) => c.charCodeAt(0));
+  const expectedSignature = Uint8Array.from(Buffer.from(signature, 'base64'));
   
   const isValid = await crypto.subtle.verify(
     'HMAC',
     key,
-    new Uint8Array(expectedSignature),
+    expectedSignature,
     new TextEncoder().encode(data)
   );
 
@@ -50,7 +48,7 @@ export async function middleware(request) {
       const decoded = await verifyJWT(token, process.env.JWT_SECRET);
       const userType = decoded.type;
 
-      console.log("Decoded User Type:", userType); // Debugging line
+      console.log("Decoded User Type:", userType);
       if (userType === "admin") {
         return NextResponse.redirect(new URL('/DashBoard/Home', request.url));
       } else if (userType === "student") {
@@ -71,10 +69,9 @@ export async function middleware(request) {
   if (!isPublicPath && token) {
     try {
       const decoded = await verifyJWT(token, process.env.JWT_SECRET);
-      console.log(token)
       const userType = decoded.type;
 
-      console.log("Decoded User Type for Role-based Check:", userType); // Debugging line
+      console.log("Decoded User Type for Role-based Check:", userType);
       // Admin trying to access student paths
       if (userType === 'admin' && path.startsWith('/Student')) {
         console.log("Admin accessing student path, redirecting...");
