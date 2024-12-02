@@ -3,6 +3,7 @@ import Title from "@/Components/Title";
 import style from "@/css/addEvent.module.css"; // Update to the relevant CSS file
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Input } from "@/Components/Input"; // Assuming you have an Input component
 
 function AddGallery() {
@@ -10,6 +11,7 @@ function AddGallery() {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
   const formRef = useRef(null);
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFileInputChange = (event) => {
@@ -55,6 +57,7 @@ function AddGallery() {
       console.error(error);
       alert("An error occurred. Please try again later.");
     } finally {
+      router.refresh()
       setIsLoading(false);
     }
   };

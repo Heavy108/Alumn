@@ -5,7 +5,7 @@ import style from "@/css/addEvent.module.css"
 import Image from "next/image";
 import { useState, useRef } from "react";
 import { Input ,Textarea} from "@/Components/Input"; // Assuming you have an Input component like before
-
+import { useRouter } from "next/navigation";
 function AddEvents() {
   const [selectedImage1, setSelectedImage1] = useState(null);
   const [selectedFile1, setSelectedFile1] = useState(null);
@@ -15,7 +15,7 @@ function AddEvents() {
   const fileInputRef2 = useRef(null);
   const formRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const router =useRouter()
   const handleFileInputChange1 = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -71,6 +71,7 @@ function AddEvents() {
       console.error(error);
       alert("An error occurred. Please try again later.");
     } finally {
+      router.refresh()
       setIsLoading(false);
     }
   };

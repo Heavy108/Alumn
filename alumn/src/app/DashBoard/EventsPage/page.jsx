@@ -4,6 +4,7 @@ import { fetchData } from "@/app/api/Eventdata/route";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 
+
 async function EventPage(){
     const data =await fetchData()
     console.log(typeof(data))
