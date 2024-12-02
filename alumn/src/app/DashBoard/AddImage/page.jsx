@@ -57,8 +57,10 @@ function AddGallery() {
       console.error(error);
       alert("An error occurred. Please try again later.");
     } finally {
-      router.refresh()
+      
       setIsLoading(false);
+      router.push("/DashBoard/GalleryPage");
+      router.refresh();
     }
   };
 
