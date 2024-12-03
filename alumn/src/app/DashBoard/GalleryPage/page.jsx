@@ -4,7 +4,9 @@ import { fetchGalleryData } from "@/app/api/Gallery/route";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 
+export const revalidate = 0;
 async function GalleryPage(){
+    
     const data =await fetchGalleryData()
     const total = data.length
     return(<>
