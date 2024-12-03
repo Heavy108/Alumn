@@ -96,14 +96,14 @@ export const Admin_details =[
     "email": "cse23018@tezu.ac.in"
   },
 
-   {
-    "img": "/admin-photo/dkp-image.webp",
-    "name": "Deepak Kr. Prajapati",
-    "designation": "Student Member",
-    "programme": "B.Tech",
-    "roll_no": "CSB21096",
-    "email": "csb21096@tezu.ac.in"
-  },
+  //  {
+  //   "img": "/admin-photo/dkp-image.webp",
+  //   "name": "Deepak Kr. Prajapati",
+  //   "designation": "Student Member",
+  //   "programme": "B.Tech",
+  //   "roll_no": "CSB21096",
+  //   "email": "csb21096@tezu.ac.in"
+  // },
 
   {
     "img": "/admin-photo/Satyam.jpg",
@@ -114,12 +114,12 @@ export const Admin_details =[
     "email": "csb21073@tezu.ac.in"
   },
 
-   {
-    "img": "/admin-photo/Rup.jpeg",
-    "name": "Rupesh Kumar",
-    "designation": "Developer",
-    "programme": "B.Tech",
-    "roll_no": "CSB21072",
-    "email": "csb21072@tezu.ac.in"
-  }
+  //  {
+  //   "img": "/admin-photo/Rup.jpeg",
+  //   "name": "Rupesh Kumar",
+  //   "designation": "Developer",
+  //   "programme": "B.Tech",
+  //   "roll_no": "CSB21072",
+  //   "email": "csb21072@tezu.ac.in"
+  // }
 ]

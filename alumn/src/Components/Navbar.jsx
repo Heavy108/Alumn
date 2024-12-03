@@ -25,7 +25,7 @@ function Navbar() {
         width={40}
         height={40}
         alt="University Logo"/></span>
-        <Link href="/"><h4>Alumni Connect</h4></Link>
+        <Link href="/"><h4>Alumni Plus</h4></Link>
         {/* <span> <GiHamburgerMenu/></span> */}
         </div>
         

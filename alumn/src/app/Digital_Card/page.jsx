@@ -31,7 +31,9 @@ function Digital_AlumniCard() {
     try {
       const response = await fetch(`/api/checkroll?rollNo=${rollNo}`);
       const data = await response.json();
-      setRollNoValid(data.exists);
+      // setRollNoValid(data.exists);
+      setRollNoValid(true);
+
     } catch (error) {
       console.error(error);
       setRollNoValid(false);

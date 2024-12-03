@@ -7,7 +7,7 @@ function Footer() {
   return (
     <>
       <div className={style.Footer}>
-        <h1 >Alumni Connect</h1>
+        <h1 >Alumni Plus</h1>
         <ul className={style.list}>
           <li>University Links</li>
           <li>TU Home</li>
@@ -29,7 +29,7 @@ function Footer() {
         <ul className={style.list}>
           <li>Address</li>
           <li>
-            Alumni Connect Computer Science Department, Tezpur University,
+            Alumni Plus Computer Science Department, Tezpur University,
             Napaam, Tezpur - 784028
           </li>
           <li className={style.icons}>
@@ -44,7 +44,7 @@ function Footer() {
             <IoLogoYoutube /> <FaFacebookF /> <IoLogoInstagram />{" "}
             <FaLinkedinIn />
           </li>
-          <li>Copyright © 2024 Alumni Connect ,TEZPUR UNIVERSITY</li>
+          <li>Copyright © 2024 Alumni Plus ,TEZPUR UNIVERSITY</li>
         </ul>
       </div>
     </>
