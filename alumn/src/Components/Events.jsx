@@ -4,7 +4,7 @@ import Title from "./Title";
 import Button from "./Button";
 import Link from "next/link";
 import sty from "@/css/button.module.css";
-
+export const revalidate = 0;
 function Event_Card({ data }) {
   return (
     <>

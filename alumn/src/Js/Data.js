@@ -1,6 +1,7 @@
 
 export const Data = [
   {
+    Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
     image: "/Profile.png",
     name: "Lisa Xavier",
     Designation: "senior Software",
@@ -9,15 +10,17 @@ export const Data = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    image: "/Profile.png",
-    name: "Lisa Xavier",
-    Designation: "senior Software",
+    Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
+    image: "/Event/achievement.png",
+    name: "Ms. Prerna Talukdar",
+    Designation: "National cadet corp",
     position: "Developer, TCS",
     Detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Ms. Prerna Talukdar, an NCC Lance Corporal and English student at Tezpur University, represented the university at the prestigious Republic Day Camp 2023, briefing Defence Minister Rajnath Singh. Congratulations to her for this remarkable achievement!",
   },
   {
-    image:"/Profile.png",
+    Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
+    image: "/Profile.png",
     name: "Lisa Xavier",
     Designation: "senior Software",
     position: "Developer, TCS",

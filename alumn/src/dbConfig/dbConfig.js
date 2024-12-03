@@ -25,15 +25,3 @@ export async function connect() {
   }
 }
 
-// export async function disconnect() {
-//   try {
-//     if (isConnected) {
-//       await mongoose.disconnect();
-//       isConnected = false;
-//       console.log("Mongodb disconnected successfully");
-//     }
-//   } catch (error) {
-//     console.log("Error while disconnecting from MongoDB");
-//     console.log(error);
-//   }
-// }

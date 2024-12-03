@@ -22,7 +22,7 @@ const items = [
 
 const Card = (props) => {
   return (<>
-  <li className="card">
+  <li className="card" key={props.ind}>
     <div className="Introduction">
     <h2>Together Again!</h2>
     <p 
@@ -99,7 +99,7 @@ const Carasoul = () => {
       </div>
       <ul onAnimationEnd={handleAnimationEnd} className={`${moveClass} carousel`}>
         {carouselItems.map((t, index) => 
-          <Card key={ index} image={t.image}  />
+          <Card key={ index} image={t.image} ind={index} />
         )}
       </ul>
     </div>

@@ -7,6 +7,7 @@ import Link from "next/link";
 import style from "@/css/Gallery.module.css";
 import sty from "@/css/button.module.css";
 
+export const revalidate = 0;
 function Gallery({ data }) {
   console.log(typeof(data))
   const [isOpen, setIsOpen] = useState(false);

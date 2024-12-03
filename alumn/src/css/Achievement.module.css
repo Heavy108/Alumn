@@ -5,6 +5,8 @@
 
 }
 .card{
+    color: rgb(12, 81, 16);
+    text-decoration: none;
     border: 2px solid #d9d9d9;
     padding: 1rem;
     background-color: #fafafa;

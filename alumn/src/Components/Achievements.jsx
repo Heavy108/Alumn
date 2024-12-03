@@ -18,7 +18,7 @@ function Achievement() {
       <div className={style.wrapper}>
          
       {Data.map((t, index) => (
-        <div className={style.card} key={index}>
+        <Link href={t.Link} className={style.card} key={index}>
           <div className={style.upper}>
             <Image 
             
@@ -37,7 +37,7 @@ function Achievement() {
             </div>
           </div>
           <p>{t.Detail}</p>
-        </div>
+        </Link>
       ))}
       
       </div>
