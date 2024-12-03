@@ -8,7 +8,7 @@ export async function POST(request) {
       
       console.log("from route event delete", id);
   
-      const result = await Event.findByIdAndDelete(id); // Use id directly
+      const result = await Event.findByIdAndDelete({_id:id}); // Use id directly
   
       if (!result) {
         return NextResponse.json({ error: "Event not found" }, { status: 404 });

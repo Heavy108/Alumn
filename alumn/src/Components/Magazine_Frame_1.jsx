@@ -23,7 +23,7 @@ function Magazine(props) {
       const currentUrl = window.location.href;
       let apiEndpoint = "";
   
-      if (currentUrl.includes("DashBoard/EventPage")) {
+      if (currentUrl.includes("DashBoard/EventsPage")) {
         apiEndpoint = "../api/DeleteEvent";
       } else if (currentUrl.includes("DashBoard/GalleryPage")) {
         apiEndpoint = "../api/DeleteGallery";
