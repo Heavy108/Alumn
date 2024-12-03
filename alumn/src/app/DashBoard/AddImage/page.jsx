@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/Components/Input"; // Assuming you have an Input component
-
+import { revalidatePath } from "next/cache";
 function AddGallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -59,6 +59,7 @@ function AddGallery() {
     } finally {
       
       setIsLoading(false);
+        revalidatePath("/DashBoard/GalleryPage");
       router.push("/DashBoard/GalleryPage");
       router.refresh();
     }
