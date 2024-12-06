@@ -89,12 +89,55 @@ function AddEvents() {
         <form onSubmit={onSubmit} className={style.form} ref={formRef}>
           <div className={style.half}>
             <h4>Event Details</h4>
-            <Input label="Event Headline" type="text" name="head" placeholder="Enter the Event Headline" required />
-            <Input label="Speaker Name" type="text" name="name" placeholder="Enter the Name of the speaker" required />
-            <Input label="Position" type="text" name="position" placeholder="Enter the speaker Designation" required />
-            <Input label="Venue" type="text" name="venue" placeholder="Enter the venue" required />
-            <Input label="Title" type="text" name="Title" placeholder="Enter the Title of event" required />
-            <Input label="Time" type="datetime-local" name="time" placeholder="6:30 PM, 10/11/2024" required />
+            <Input
+              label="Event Headline"
+              type="text"
+              name="head"
+              placeholder="Enter the Event Headline"
+              required
+            />
+            <Input
+              label="Speaker Name"
+              type="text"
+              name="name"
+              placeholder="Enter the Name of the speaker"
+              required
+            />
+            <Input
+              label="Position"
+              type="text"
+              name="position"
+              placeholder="Enter the speaker Designation"
+              required
+            />
+            <Input
+              label="Venue"
+              type="text"
+              name="venue"
+              placeholder="Enter the venue"
+              required
+            />
+            <Input
+              label="Title"
+              type="text"
+              name="Title"
+              placeholder="Enter the Title of event"
+              required
+            />
+            <Input
+              label="Time"
+              type="datetime-local"
+              name="time"
+              placeholder="6:30 PM, 10/11/2024"
+              required
+            />
+            <Input
+              label="External_Link"
+              type="text"
+              name="ext_page"
+              placeholder="Enter the Link of extra Page"
+              required
+            />
             <Textarea
               label="description"
               placeholder="Enter description"
@@ -102,47 +145,75 @@ function AddEvents() {
             ></Textarea>
           </div>
           <div className={style.image_container}>
-          <div className={style.img_container3}>
-            <label htmlFor="Speaker Image" className={style.piclabel}>Speaker Image</label>
-            <div className={style.image_preview} onClick={handleImageClick1}>
-              {selectedImage1 ? (
-                <Image src={selectedImage1} alt="speaker Image 1" width={200} height={200} />
-              ) : (
-                <Image src="/Profile.png" alt="Default Image 1" width={200} height={200} />
-              )}
+            <div className={style.img_container3}>
+              <label htmlFor="Speaker Image" className={style.piclabel}>
+                Speaker Image
+              </label>
+              <div className={style.image_preview} onClick={handleImageClick1}>
+                {selectedImage1 ? (
+                  <Image
+                    src={selectedImage1}
+                    alt="speaker Image 1"
+                    width={200}
+                    height={200}
+                  />
+                ) : (
+                  <Image
+                    src="/Profile.png"
+                    alt="Default Image 1"
+                    width={200}
+                    height={200}
+                  />
+                )}
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef1}
+                onChange={handleFileInputChange1}
+                style={{ display: "none" }}
+              />
             </div>
-            <input
-              type="file"
-              accept="image/*"
-              ref={fileInputRef1}
-              onChange={handleFileInputChange1}
-              style={{ display: 'none' }}
-            />
-          </div>
-             
-          <div className={style.img_container3}>
-            <label htmlFor="Event Image" className={style.piclabel}>Event Image</label>
-            <div className={style.image_preview} onClick={handleImageClick2}>
-              {selectedImage2 ? (
-                <Image src={selectedImage2} alt="speaker Image 2" width={200} height={200} />
-              ) : (
-                <Image src="/profile.png" alt="Default Image 2" width={200} height={200} />
-              )}
+
+            <div className={style.img_container3}>
+              <label htmlFor="Event Image" className={style.piclabel}>
+                Event Image
+              </label>
+              <div className={style.image_preview} onClick={handleImageClick2}>
+                {selectedImage2 ? (
+                  <Image
+                    src={selectedImage2}
+                    alt="speaker Image 2"
+                    width={200}
+                    height={200}
+                  />
+                ) : (
+                  <Image
+                    src="/profile.png"
+                    alt="Default Image 2"
+                    width={200}
+                    height={200}
+                  />
+                )}
+              </div>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef2}
+                onChange={handleFileInputChange2}
+                style={{ display: "none" }}
+              />
             </div>
-            <input
-              type="file"
-              accept="image/*"
-              ref={fileInputRef2}
-              onChange={handleFileInputChange2}
-              style={{ display: 'none' }}
-            />
-          </div>
           </div>
         </form>
 
         <div className={style.Button}>
-          <button type="button" onClick={handleButtonClick} disabled={isLoading}>
-            {isLoading ? 'Submitting...' : 'Submit'}
+          <button
+            type="button"
+            onClick={handleButtonClick}
+            disabled={isLoading}
+          >
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </div>

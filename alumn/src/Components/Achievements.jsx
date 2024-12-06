@@ -1,76 +1,57 @@
-'use client'
+"use client";
 import style from "@/css/Achievement.module.css";
+import sty from "@/css/button.module.css";
 import Image from "next/image";
 import { Data } from "@/Js/Data";
 import Title from "@/Components/Title";
 import Button from "./Button";
-import sty from "@/css/button.module.css"
 import Link from "next/link";
 
+// Reusable Achievement Card Component
+function AchievementCard({ link, image, name, designation, position, detail }) {
+  return (
+    <div className={style.card}>
+      <Link href={link} target="_blank" rel="noopener noreferrer" className={style.superlink}>
+        <div className={style.upper}>
+          <Image src={image} width={560} height={560} alt="Achievers" />
+          <div className={style.Introduction}>
+            <h3>{name}</h3>
+            <h4>{designation}</h4>
+            <h4>{position}</h4>
+          </div>
+        </div>
+        <p>{detail}</p>
+      </Link>
+    </div>
+  );
+}
+
+// Main Achievement Component
 function Achievement() {
-    // const imageLoader = ({ src, width, quality }) => {
-    //     return `https://example.com/${src}?w=${width}&q=${quality || 75}`
-    //   }
-    const title ="Alumni Achievements";
+  const title = "Alumni Achievements";
   return (
     <>
-     <Title title={title}/> 
+      <Title title={title} />
       <div className={style.wrapper}>
-         
-      {Data.map((t, index) => (
-        <Link href={t.Link} className={style.card} key={index}>
-          <div className={style.upper}>
-            <Image 
-            
-              src={t.image}
-              width={560}
-              height={560}
-              alt="Achievers"
-              
-              
-            />
-            
-            <div className={style.Introduction}>
-              <h3>{t.name}</h3>
-              <h4>{t.Designation}</h4>
-              <h4>{t.position}</h4>
-            </div>
-          </div>
-          <p>{t.Detail}</p>
-        </Link>
-      ))}
-      
+        {Data.map((t, index) => (
+          <AchievementCard
+            key={index}
+            link={t.Link}
+            image={t.image}
+            name={t.name}
+            designation={t.Designation}
+            position={t.position}
+            detail={t.Detail}
+          />
+        ))}
       </div>
       <div className={sty.wrapper2}>
-        <Link href='/CommingSoon'><Button text="More" /></Link>
-      
+        <Link href="/CommingSoon">
+          <Button text="More" />
+        </Link>
       </div>
     </>
   );
 }
 
 export default Achievement;
-
-// export const Data = [
-//   {
-//     image: "@Assets/Profile.png",
-//     name: "Lisa Xavier",
-//     Designation: "Senior Software",
-//     position: "Developer, TCS",
-//     Detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   },
-//   {
-//     image: "@Assets/Profile.png",
-//     name: "Lisa Xavier",
-//     Designation: "Senior Software",
-//     position: "Developer, TCS",
-//     Detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   },
-//   {
-//     image: "@Assets/Profile.png",
-//     name: "Lisa Xavier",
-//     Designation: "Senior Software",
-//     position: "Developer, TCS",
-//     Detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   },
-// ];

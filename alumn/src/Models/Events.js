@@ -10,6 +10,7 @@ const Event_Schema = new mongoose.Schema({
   time: { type: Date },
   S_image: { type: Buffer  },
   E_image: { type: Buffer  },
+  Ext_page:{type:String},
   
   // verifyTokenExpiry: Date,
 });

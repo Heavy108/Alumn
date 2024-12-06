@@ -32,7 +32,8 @@ export async function POST(request) {
     const Title = data.get("Title");
     const description = data.get("description");
     const time = data.get("Time");
-
+    const ext_page = data.get("External_Link");
+    console.log(ext_page)
     // Check for missing required fields
     // if (!head || !name || !position || !venue || !Title || !description || !time) {
       // throw new Error("Missing required fields");
@@ -40,13 +41,14 @@ export async function POST(request) {
 
     // Save data to the database
     const newEvent = await Event.create({
-      Head:head,
-      Name:name,
-      Position:position,
-      Venue:venue,
-      Title:Title,
-      description:description,
-      time:time,
+      Head: head,
+      Name: name,
+      Position: position,
+      Venue: venue,
+      Title: Title,
+      description: description,
+      time: time,
+      Ext_page: ext_page,
       S_image: buffer1,
       E_image: buffer2,
     });

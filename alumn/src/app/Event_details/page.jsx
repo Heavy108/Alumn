@@ -20,9 +20,20 @@ async function Event_detail({ searchParams }) {
     }
     console.log(typeof data)
     // Destructure necessary fields from the fetched data
-    const { E_image,tiitle, Head, Name, Position, Venue, time, description ,S_image} = data;
+    const {
+      E_image,
+      tiitle,
+      Head,
+      Name,
+      Position,
+      Venue,
+      time,
+      description,
+      S_image,
+      Ext_page,
+    } = data;
     // console.log( E_image, Title,  Head, Name, Position, Venue, time, description)
-    // console.log(data)
+    // console.log("from ",data)
     return (
       <>
         <Navbar />
@@ -81,11 +92,13 @@ async function Event_detail({ searchParams }) {
             )}
             <h3>About</h3>
             <p>{description || "No description available."}</p>
-            <div className={sty.wrapper2}>
-              <Link href="/Registration">
-                <Button text="Register" />
-              </Link>
-            </div>
+            {Ext_page && (
+              <div className={sty.wrapper2}>
+                <Link href={Ext_page}>
+                  <Button text="Register" />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         <Footer />
