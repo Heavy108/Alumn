@@ -75,61 +75,56 @@ function Transcript() {
   }, [debounceTimeout]);
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Title title="Service" />
-      <center className={style.texts}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center>
+      <center className={style.texts}>
+        Easily request your official academic transcript through our alumni
+        portal. Whether for higher education, job applications, or personal
+        records, we’ve made the process seamless and hassle-free. Simply fill
+        out the details below, and our team will process your request promptly.
+        Stay connected, and let us assist you in achieving your next milestone.
+      </center>
       <div className={style.container}>
-        
         <form onSubmit={onSubmit} className={style.form}>
-        <h4>Transcript</h4>
-          <Input 
-            label="Name" 
-            type="text" 
-            placeholder="Enter your name" />
-            <Input 
-            label="Roll No" 
-            type="text" 
-            placeholder="Enter your Roll no" />
-           <div className={style.Input_field}>
-            <label htmlFor="Alumni ID">Alumni ID
-            {alumniIdValid === true && <span className={style.valid}>✔️</span>}
-            {alumniIdValid === false && <span className={style.invalid}>❌</span>}
+          <h4>Transcript</h4>
+          <Input label="Name" type="text" placeholder="Enter your name" />
+          <Input label="Roll No" type="text" placeholder="Enter your Roll no" />
+          <div className={style.Input_field}>
+            <label htmlFor="Alumni ID">
+              Alumni ID
+              {alumniIdValid === true && (
+                <span className={style.valid}>✔️</span>
+              )}
+              {alumniIdValid === false && (
+                <span className={style.invalid}>❌</span>
+              )}
             </label>
-            <input 
-              name="Alumni ID" 
-              type="text" 
-              placeholder="Enter your ID" 
+            <input
+              name="Alumni ID"
+              type="text"
+              placeholder="Enter your ID"
               value={alumniId}
-              onChange={handleAlumniIdChange} />
-            
+              onChange={handleAlumniIdChange}
+            />
           </div>
-          
-         
-          <Input
-            label="Email"
-            type="text"
-            placeholder="Enter your email"
-          />
-          
-          <Input
-            label="Reason"
-            type="text"
-            placeholder="Enter your reason "
-          />
+
+          <Input label="Email" type="text" placeholder="Enter your email" />
+
+          <Input label="Reason" type="text" placeholder="Enter your reason " />
           <div className={style.Button}>
-            <button type="submit" disabled={isLoading || alumniIdValid !== true}>
-              {isLoading ? 'Submitting...' : 'Submit'}
+            <button
+              type="submit"
+              disabled={isLoading || alumniIdValid !== true}
+            >
+              {isLoading ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>
         <div className={style.img_conatiner}>
-        <Image 
-            src={Transcrip}
-            alt="TranScript"
-            />
-            </div>
+          <Image src={Transcrip} alt="TranScript" />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

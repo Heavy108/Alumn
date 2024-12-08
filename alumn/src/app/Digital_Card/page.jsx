@@ -90,7 +90,12 @@ function Digital_AlumniCard() {
       <Navbar />
       <Title title="Services" />
       <center className={styl.text}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Join our alumni network by creating your personalized Digital Alumni
+        Card. Share your journey, stay connected with your batchmates, and
+        access exclusive alumni privileges. Fill in your details below to get
+        started. Your Digital Alumni Card helps us celebrate your achievements
+        and ensures you’re a part of our vibrant community. Stay updated with
+        the latest news, events, and opportunities
       </center>
       <div className={styl.container4}>
         <form onSubmit={onSubmit} className={styl.form} ref={formRef}>
@@ -98,9 +103,14 @@ function Digital_AlumniCard() {
             <h4>Digital Alumni Card</h4>
             <Input label="Name" type="text" placeholder="Enter your name" />
             <div className={style.Input_field}>
-              <label htmlFor="Roll No">Roll No
-                {rollNoValid === true && <span className={style.valid}>✔️</span>}
-                {rollNoValid === false && <span className={style.invalid}>❌</span>}
+              <label htmlFor="Roll No">
+                Roll No
+                {rollNoValid === true && (
+                  <span className={style.valid}>✔️</span>
+                )}
+                {rollNoValid === false && (
+                  <span className={style.invalid}>❌</span>
+                )}
               </label>
               <input
                 name="Roll No"
@@ -111,17 +121,44 @@ function Digital_AlumniCard() {
               />
             </div>
             <Input label="Email" type="email" placeholder="Enter your Email" />
-            <Input label="Programme" type="text" placeholder="Enter text here" />
-            <Input label="Passout Year" type="number" placeholder="Enter Passout Year" />
-            <Input label="Linkedin Profile" type="text" placeholder="Enter text here" />
+            <Input
+              label="Programme"
+              type="text"
+              placeholder="Enter text here"
+            />
+            <Input
+              label="Passout Year"
+              type="number"
+              placeholder="Enter Passout Year"
+            />
+            <Input
+              label="Linkedin Profile"
+              type="text"
+              placeholder="Enter text here"
+            />
           </div>
           <div className={styl.img_container3}>
-            <label htmlFor="Upload Image" className={styl.piclabel}>Upload Profile</label>
-            <div className={styl.image_preview} onClick={() => fileInputRef.current.click()}>
+            <label htmlFor="Upload Image" className={styl.piclabel}>
+              Upload Profile
+            </label>
+            <div
+              className={styl.image_preview}
+              onClick={() => fileInputRef.current.click()}
+            >
               {selectedImage ? (
-                <Image src={selectedImage} alt="Uploaded photo" width={200} height={200} />
+                <Image
+                  src={selectedImage}
+                  alt="Uploaded photo"
+                  width={200}
+                  height={200}
+                />
               ) : (
-                <Image src="/Profile.png" alt="Default photo" width={200} height={200} />
+                <Image
+                  src="/Profile.png"
+                  alt="Default photo"
+                  width={200}
+                  height={200}
+                />
               )}
             </div>
             <input
@@ -129,13 +166,17 @@ function Digital_AlumniCard() {
               accept="image/*"
               ref={fileInputRef}
               onChange={handleFileInputChange}
-              styl={{ display: 'none' }}
+              styl={{ display: "none" }}
             />
           </div>
         </form>
         <div className={styl.Button}>
-          <button type="button" onClick={() => formRef.current.requestSubmit()} disabled={isLoading || rollNoValid !== true}>
-            {isLoading ? 'Submitting...' : 'Submit'}
+          <button
+            type="button"
+            onClick={() => formRef.current.requestSubmit()}
+            disabled={isLoading || rollNoValid !== true}
+          >
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </div>

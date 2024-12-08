@@ -19,7 +19,7 @@ function GiveBack_card(props){
             />
             <div className={style.Introduction}>
            <center> <h4>{props.head}</h4></center>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut .</p>
+            <p>{props.text}</p>
             </div>
         </div>
         </Link>
@@ -30,16 +30,24 @@ function GiveBack_card(props){
 // export default  GiveBack_card;
 
 function  GiveBack(){
+    const achivem =
+      "Share your personal and professional milestones with the alumni community. Inspire others with your journey and accomplishments.";
+    const Ment =
+      "Support students and recent graduates by sharing your experiences and insights. Help them navigate their paths to success.";
+    const opport =
+      "Post job openings, internships, and other opportunities to help alumni and students achieve their career aspirations.";
+    const payb =
+      "Contribute to initiatives that support education and growth, helping the association make a lasting impact.";
     return(
         <>
         <Title title="GiveBack"/>
 
         <div className={style.container}>
             
-            <GiveBack_card head="Share Achievements" img ={Achi}  address='/Share_Achievements'/>
-            <GiveBack_card head="Be a Mentor" img={mentor}  address='/Mentor'/>
-            <GiveBack_card head= "Share Opportunities" img={opportunities}  address='/Share_Opportunities'/>
-            <GiveBack_card head="PayBack" img={donation}  address='/Payback'/>
+            <GiveBack_card head="Share Achievements" img ={Achi}  address='/Share_Achievements' text={achivem}/>
+            <GiveBack_card head="Be a Mentor" img={mentor}  address='/Mentor'text={Ment}/>
+            <GiveBack_card head= "Share Opportunities" img={opportunities}  address='/Share_Opportunities'text={opport}/>
+            <GiveBack_card head="PayBack" img={donation}  address='/Payback'text={payb}/>
         </div>
         
         </>
