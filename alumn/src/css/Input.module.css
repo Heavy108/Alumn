@@ -1,3 +1,35 @@
+.select {
+  width: 65%;
+  /* padding: 10px; */
+  /* font-size: 16px; */
+  border: 2px solid #ccc;
+  border-radius: 1.5rem;
+  background-color: black;
+  color: #fff;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+  padding: 0.25rem 0.25rem 0.25rem 0.8rem;
+}
+
+.select:focus {
+  border-color: #676464; /* Highlight color on focus */
+  box-shadow: 0 0 5px rgba(10, 11, 11, 0.5); /* Optional shadow on focus */
+  
+}
+
+.select option {
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+.select option:hover{
+    background-color: #515050;
+}
+
+
 .Input_field{
     margin-bottom: 1rem  ;
     border: 2px solid #d9d9d9;
