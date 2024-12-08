@@ -1,14 +1,14 @@
 import styles from "@/css/Event.module.css";
 import Image from "next/image";
-import Title from "./Title";
+// import Title from "./Title";
 import Button from "./Button";
 import Link from "next/link";
 import sty from "@/css/button.module.css";
-export const revalidate = 0;
+// export const revalidate = 0;
 function Event_Card({ data }) {
   return (
     <>
-      <div className={styles.card}>
+      <div className={styles.card} key={data._id}>
         <Image
           src={`data:image/jpeg;base64,${data.E_image}`} // Use base64 encoded image
           width={1200}
@@ -40,40 +40,40 @@ function Event_Card({ data }) {
   );
 }
 
-function Events({ data }) {
-  const eventsArray = Array.isArray(data) ? data : data ? [data] : [];
-  // console.log(data)
+// function Events({ data }) {
+//   const eventsArray = Array.isArray(data) ? data : data ? [data] : [];
+//   // console.log(data)
 
-  return (
-    <>
+//   return (
+//     <>
     
-      <Title title="Events" />
-      <p className={styles.subtitle}>Upcoming Events</p>
-      <div className={styles.container_1}>
-        {data.map((event, index) => (
-          <Event_Card
-            key={index}
-            data={event}  // Passing event data to Event_Card
-          />
-        ))}
-      </div>
-      <div className={sty.wrapper2}>
-        <Link href='/CommingSoon'><Button text="More" /></Link>
-      </div>
-      {/* <p className={styles.container}>Past Events</p>
-      <div className={styles.container_2}>
-        {data.map((event, index) => (
-          <Event_Card
-            key={index}
-            data={event}  // Passing event data to Event_Card
-          />
-        ))}
-      </div>
-      <div className={sty.wrapper2}>
-        <Link href='/CommingSoon'><Button text="More" /></Link>
-      </div> */}
-    </>
-  );
-}
+//       <Title title="Events" />
+//       <p className={styles.subtitle}>Upcoming Events</p>
+//       <div className={styles.container_1}>
+//         {data.map((event, index) => (
+//           <Event_Card
+//             key={index}
+//             data={event}  // Passing event data to Event_Card
+//           />
+//         ))}
+//       </div>
+//       <div className={sty.wrapper2}>
+//         <Link href='/Event'><Button text="More" /></Link>
+//       </div>
+//       {/* <p className={styles.container}>Past Events</p>
+//       <div className={styles.container_2}>
+//         {data.map((event, index) => (
+//           <Event_Card
+//             key={index}
+//             data={event}  // Passing event data to Event_Card
+//           />
+//         ))}
+//       </div>
+//       <div className={sty.wrapper2}>
+//         <Link href='/CommingSoon'><Button text="More" /></Link>
+//       </div> */}
+//     </>
+//   );
+// }
 
-export default Events;
+export default Event_Card;

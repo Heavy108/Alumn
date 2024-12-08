@@ -9,6 +9,7 @@
   border-radius: 1.5rem;
   /* padding: 1rem; */
   overflow: hidden;
+  
   background-color: #fafafa;
   margin-bottom: 1rem;
 }
@@ -77,7 +78,8 @@
     display: flex;
   }
   .card {
-    width: 100%;
+      width: 20rem;
+    
     margin: 0.5rem;
   }
   .card a{
@@ -112,6 +114,10 @@
     }
     .Introductio p{
         font-size: 0.8rem;
+    }
+    .card{
+      width: 26rem;
+      /* height: 23.5rem; */
     }
 }
 @media only screen and (min-width:1440px){

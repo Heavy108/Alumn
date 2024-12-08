@@ -16,244 +16,248 @@ function Navbar() {
    }
   return (
     <>
-
       <div className={style.Nav}>
         <div className={style.list}>
-        <span>
-        <Image 
-        src={logo} 
-        width={40}
-        height={40}
-        alt="University Logo"/></span>
-        <Link href="/"><h4>Alumni Plus</h4></Link>
-        {/* <span> <GiHamburgerMenu/></span> */}
+          <span>
+            <Image src={logo} width={40} height={40} alt="University Logo" />
+          </span>
+          <Link href="/">
+            <h4>Alumni Plus</h4>
+          </Link>
+          {/* <span> <GiHamburgerMenu/></span> */}
         </div>
-        
+
         <div className={style.container}>
-        <div className={style.list1}>
-          <ul >
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                GiveBack <IoIosArrowDown />
-              </Link>
-              <div className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/Share_Achievements">Share Achievement</Link>
-                  </li>
-                  <li>
-                    <Link href="/Mentor">Be A Mentor</Link>
-                  </li>
-                  <li>
-                    <Link href="/Share_Opportunities">Share opportunity</Link>
-                  </li>
-                  <li>
-                    <Link href="/Payback">PayBack</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Alumni+ <IoIosArrowDown />
-              </Link>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/CommingSoon">Alumni Achievement</Link>
-                  </li>
-                  <li>
-                    <Link href="/Alumni_Family">Alumni Family</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Events <IoIosArrowDown />
-              </Link>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/CommingSoon">UpComing Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Past Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Past Committee</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Reunion</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Service <IoIosArrowDown />
-              </Link>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/Digital_Card">Digital Alumni Card</Link>
-                  </li>
-                  <li>
-                    <Link href="/Transcript">Transcript</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                About <IoIosArrowDown />
-              </Link>
-              <div   className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/About">Relation</Link>
-                  </li>
-                  <li>
-                    <Link href="/Admin">Admin</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div className={style.list2}>
+          <div className={style.list1}>
             <ul>
-            <li ><Link href="/Blog">Blog </Link></li>
-        <li ><Link href="/login">Connect </Link></li>
-        <li>
-          <Link href="/Gallery">Gallery</Link>
-        </li>
-        <Link href="/AdminLogin">
-        <button className={style.contact}>Login</button>
-        </Link>
-        </ul>
-        </div>
-        </div>
+              <li className={style.opt}>
+                <Link className={style.opt2} href="#">
+                  GiveBack <IoIosArrowDown />
+                </Link>
+                <div className={style.Menu}>
+                  <ul>
+                    <li>
+                      <Link href="/Share_Achievements">Share Achievement</Link>
+                    </li>
+                    <li>
+                      <Link href="/Mentor">Be A Mentor</Link>
+                    </li>
+                    <li>
+                      <Link href="/Share_Opportunities">Share opportunity</Link>
+                    </li>
+                    <li>
+                      <Link href="/Payback">PayBack</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li className={style.opt}>
+                <Link className={style.opt2} href="#">
+                  Alumni+ <IoIosArrowDown />
+                </Link>
+                <div className={style.Menu}>
+                  <ul>
+                    <li>
+                      <Link href="/Alumni_Achievement">Alumni Achievement</Link>
+                    </li>
+                    <li>
+                      <Link href="/Alumni_Family">Alumni Family</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
 
+              <li className={style.opt}>
+                <Link className={style.opt2} href="#">
+                  Events <IoIosArrowDown />
+                </Link>
+                <div className={style.Menu}>
+                  <ul>
+                    <li>
+                      <Link href="/Event">UpComing Events</Link>
+                    </li>
+                    <li>
+                      <Link href="/CommingSoon">Past Events</Link>
+                    </li>
+                    <li>
+                      <Link href="/CommingSoon">Past Committee</Link>
+                    </li>
+                    <li>
+                      <Link href="/CommingSoon">Reunion</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li className={style.opt}>
+                <Link className={style.opt2} href="#">
+                  Service <IoIosArrowDown />
+                </Link>
+                <div className={style.Menu}>
+                  <ul>
+                    <li>
+                      <Link href="/Digital_Card">Digital Alumni Card</Link>
+                    </li>
+                    <li>
+                      <Link href="/Transcript">Transcript</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li className={style.opt}>
+                <Link className={style.opt2} href="#">
+                  About <IoIosArrowDown />
+                </Link>
+                <div className={style.Menu}>
+                  <ul>
+                    <li>
+                      <Link href="/About">Relation</Link>
+                    </li>
+                    <li>
+                      <Link href="/Admin">Admin</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className={style.list2}>
+            <ul>
+              <li>
+                <Link href="/Blog">Blog </Link>
+              </li>
+              <li>
+                <Link href="/login">Connect </Link>
+              </li>
+              <li>
+                <Link href="/Gallery">Gallery</Link>
+              </li>
+              <Link href="/AdminLogin">
+                <button className={style.contact}>Login</button>
+              </Link>
+            </ul>
+          </div>
+        </div>
 
         <div className={style.menuIcon} onClick={handleClick}>
-            <span>
-          {active ?  <IoMdCloseCircleOutline/> : <GiHamburgerMenu /> }
+          <span>
+            {active ? <IoMdCloseCircleOutline /> : <GiHamburgerMenu />}
           </span>
         </div>
-      </div>   
-       
-      {/* <div className={`sideMenu ${active ? 'show' : ''}`}> */}
-      {active &&
-      <ul className={style.sideMenu}>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                GiveBack <IoIosArrowDown />
-              </Link>
-              <hr className={style.horizontal}/>
-              <div className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/Share_Achievements">Share Achievement</Link>
-                  </li>
-                  <li>
-                    <Link href="/Mentor">Be A Mentor</Link>
-                  </li>
-                  <li>
-                    <Link href="/Share_Opportunities">Share opportunity</Link>
-                  </li>
-                  <li>
-                    <Link href="/Payback">PayBack</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Alumni+ <IoIosArrowDown />
-              </Link>
-              <hr  className={style.horizontal}/>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/CommingSoon">Alumni Achievement</Link>
-                  </li>
-                  <li>
-                    <Link href="/Alumni_Family">Alumni Family</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
+      </div>
 
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Events <IoIosArrowDown />
-              </Link>
-              <hr  className={style.horizontal}/>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/CommingSoon">UpComing Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Past Events</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Past Committee</Link>
-                  </li>
-                  <li>
-                    <Link href="/CommingSoon">Reunion</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                Service <IoIosArrowDown />
-              </Link>
-              <hr  className={style.horizontal}/>
-              <div  className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/Digital_Card">Digital Alumni Card</Link>
-                  </li>
-                  <li>
-                    <Link href="/Transcript">Transcript</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}>
-              <Link className={style.opt2} href="#">
-                About <IoIosArrowDown />
-              </Link>
-              <hr  className={style.horizontal}/>
-              <div   className={style.Menu}>
-                <ul>
-                  <li>
-                    <Link href="/About">Relation</Link>
-                  </li>
-                  <li>
-                    <Link href="/Admin">Admin</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li className={style.opt}><Link href="/Blog">Blog </Link></li>
-            <hr  className={style.horizontal}/>
-            <li className={style.opt}><Link href="/login">Connect </Link></li>
-            <hr  className={style.horizontal}/>
-        <li className={style.opt}>
-          <Link href="/Gallery">Gallery</Link>
-        </li>
-        <hr  className={style.horizontal}/>
-        <Link href="/AdminLogin">
-        <button className={style.contact}>Login</button>
-        </Link>
-          </ul>
-          }
-      
+      {/* <div className={`sideMenu ${active ? 'show' : ''}`}> */}
+      {active && (
+        <ul className={style.sideMenu}>
+          <li className={style.opt}>
+            <Link className={style.opt2} href="#">
+              GiveBack <IoIosArrowDown />
+            </Link>
+            <hr className={style.horizontal} />
+            <div className={style.Menu}>
+              <ul>
+                <li>
+                  <Link href="/Share_Achievements">Share Achievement</Link>
+                </li>
+                <li>
+                  <Link href="/Mentor">Be A Mentor</Link>
+                </li>
+                <li>
+                  <Link href="/Share_Opportunities">Share opportunity</Link>
+                </li>
+                <li>
+                  <Link href="/Payback">PayBack</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className={style.opt}>
+            <Link className={style.opt2} href="#">
+              Alumni+ <IoIosArrowDown />
+            </Link>
+            <hr className={style.horizontal} />
+            <div className={style.Menu}>
+              <ul>
+                <li>
+                  <Link href="/Alumni_Achievement">Alumni Achievement</Link>
+                </li>
+                <li>
+                  <Link href="/Alumni_Family">Alumni Family</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li className={style.opt}>
+            <Link className={style.opt2} href="#">
+              Events <IoIosArrowDown />
+            </Link>
+            <hr className={style.horizontal} />
+            <div className={style.Menu}>
+              <ul>
+                <li>
+                  <Link href="/Event">UpComing Events</Link>
+                </li>
+                <li>
+                  <Link href="/CommingSoon">Past Events</Link>
+                </li>
+                <li>
+                  <Link href="/CommingSoon">Past Committee</Link>
+                </li>
+                <li>
+                  <Link href="/CommingSoon">Reunion</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className={style.opt}>
+            <Link className={style.opt2} href="#">
+              Service <IoIosArrowDown />
+            </Link>
+            <hr className={style.horizontal} />
+            <div className={style.Menu}>
+              <ul>
+                <li>
+                  <Link href="/Digital_Card">Digital Alumni Card</Link>
+                </li>
+                <li>
+                  <Link href="/Transcript">Transcript</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className={style.opt}>
+            <Link className={style.opt2} href="#">
+              About <IoIosArrowDown />
+            </Link>
+            <hr className={style.horizontal} />
+            <div className={style.Menu}>
+              <ul>
+                <li>
+                  <Link href="/About">Relation</Link>
+                </li>
+                <li>
+                  <Link href="/Admin">Admin</Link>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className={style.opt}>
+            <Link href="/Blog">Blog </Link>
+          </li>
+          <hr className={style.horizontal} />
+          <li className={style.opt}>
+            <Link href="/login">Connect </Link>
+          </li>
+          <hr className={style.horizontal} />
+          <li className={style.opt}>
+            <Link href="/Gallery">Gallery</Link>
+          </li>
+          <hr className={style.horizontal} />
+          <Link href="/AdminLogin">
+            <button className={style.contact}>Login</button>
+          </Link>
+        </ul>
+      )}
     </>
   );
 }

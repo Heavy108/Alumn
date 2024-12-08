@@ -5,6 +5,16 @@
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
+  
+  
+}
+.head{
+  font-weight: 800;
+}
+.hyperlink{
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
 }
 .Footer h1{
   font-size: 1.5rem;
@@ -18,10 +28,11 @@
 .list li{
   font-size: 0.6rem;
   margin: 0.4rem;
+  /* font-weight: 400; */
 }
 .list li:first-child{
   font-size: 0.8rem;
-  font-weight: 800;
+  /* font-weight: 800; */
 }
 
 @media only screen and (min-width:768px){
@@ -37,7 +48,7 @@
   }
   .list li:first-child{
     font-size: 1rem;
-    font-weight: 800;
+    /* font-weight: 800; */
   }
 }
 @media only screen and (min-width:1024px){

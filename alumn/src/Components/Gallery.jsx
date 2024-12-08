@@ -54,7 +54,7 @@ function Gallery({ data }) {
       <Title title="Memories" />
       <div className={style.gallery_container}>
         {data.map((item, index) => (
-          <div key={item.id} className={style.gallery_item}>
+          <div key={item._id + index} className={style.gallery_item}>
             <Image
               src={`data:image/jpeg;base64,${item.image}`} // Assuming image is base64 encoded
               width={220}

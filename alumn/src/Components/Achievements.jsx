@@ -31,7 +31,7 @@ function Achievement() {
   const title = "Alumni Achievements";
   return (
     <>
-      <Title title={title} />
+      {/* <Title title={title} /> */}
       <div className={style.wrapper}>
         {Data.map((t, index) => (
           <AchievementCard
@@ -45,11 +45,11 @@ function Achievement() {
           />
         ))}
       </div>
-      <div className={sty.wrapper2}>
-        <Link href="/CommingSoon">
+      {/* <div className={sty.wrapper2}>
+        <Link href="/Alumni_Achievement">
           <Button text="More" />
         </Link>
-      </div>
+      </div> */}
     </>
   );
 }

@@ -219,6 +219,7 @@ function AlumniRegistrationForm() {
               <option>No</option>
             </select>
           </div>
+
           <div className={styl.Input_field}>
             <label>Are you coming with your spouse or family members?*</label>
             <select name="withFamily" className={styl.select} required>
@@ -250,13 +251,72 @@ function AlumniRegistrationForm() {
           </div>
           <div className={styl.Input_field}>
             <label>
-              Registration Fee (Rs {registrationFeePerPerson} per person)
+              Registration Fee (Rs {registrationFeePerPerson} per person )
             </label>
             <input
               type="text"
               value={`Rs ${numPersons * registrationFeePerPerson}`}
               readOnly
             />
+            <div>
+              {/* Open the modal using document.getElementById('ID').showModal() method */}
+              <li
+                className="text-blue-500 underline decoration-none cursor-pointer list-none"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
+                Bank Details
+              </li>
+
+              {/* <center>Click the above Image for Bank details</center> */}
+
+              <dialog id="my_modal_1" className="modal">
+                <div className="modal-box  bg-white">
+                  <h3 className="font-bold text-lg">Bank Account Details</h3>
+                  <p className="py-4 text-primary-black">
+                    <strong>Name of Account Holder:</strong> Registrar, Tezpur
+                    University
+                    <br />
+                    <strong>Complete Contact Address:</strong> Tezpur
+                    University, Napaam, Tezpur, Assam-784028
+                    <br />
+                    <strong>Telephone Number / Fax:</strong>{" "}
+                    03712-273101/267004, Fax: 267005
+                    <br />
+                    <br />
+                    <strong>Bank Name:</strong> State Bank of India
+                    <br />
+                    <strong>Branch Name:</strong> Tezpur University Branch,
+                    Napaam, Tezpur, Sonitpur, Assam-784028
+                    <br />
+                    <strong>Branch Telephone:</strong> +91-3712-273361
+                    <br />
+                    <strong>RTGS Enabled:</strong> YES (IFS Code: SBIN0014259)
+                    <br />
+                    <strong>NEFT Enabled:</strong> YES
+                    <br />
+                    <strong>Type of Bank Account:</strong> Savings
+                    <br />
+                    <strong>Institute Account Name:</strong> Tezpur University
+                    Endowment Fund Account
+                    <br />
+                    <strong>Account Number:</strong> 10501585452
+                    <br />
+                    <strong>MICR Code:</strong> 784002005
+                    <br />
+                    <strong>PFMS Code:</strong> TU
+                    <br />
+                  </p>
+                  <div className="modal-action">
+                    <form method="dialog">
+                      {/* If there is a button in the form, it will close the modal */}
+                      <button className="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+            </div>
           </div>
           <div className={styl.Input_field}>
             <label>Please upload a screenshot of the payment details*</label>
@@ -288,64 +348,7 @@ function AlumniRegistrationForm() {
         {/* Open the modal using document.getElementById('ID').showModal() method */}
 
         <div className={style.img_conatiner2}>
-          <div className={style.bankcontainerdiv}>
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <Image
-              className={style.Account_details}
-              src={account}
-              onClick={() => document.getElementById("my_modal_1").showModal()}
-            />
-            <center>Click the above Image for Bank details</center>
-             
-           
-            <dialog id="my_modal_1" className="modal">
-              <div className="modal-box  bg-white">
-                <h3 className="font-bold text-lg">Bank Account Details</h3>
-                <p className="py-4">
-                  <strong>Name of Account Holder:</strong> Registrar, Tezpur
-                  University
-                  <br />
-                  <strong>Complete Contact Address:</strong> Tezpur University,
-                  Napaam, Tezpur, Assam-784028
-                  <br />
-                  <strong>Telephone Number / Fax:</strong> 03712-273101/267004,
-                  Fax: 267005
-                  <br />
-                  <br />
-                  <strong>Bank Name:</strong> State Bank of India
-                  <br />
-                  <strong>Branch Name:</strong> Tezpur University Branch,
-                  Napaam, Tezpur, Sonitpur, Assam-784028
-                  <br />
-                  <strong>Branch Telephone:</strong> +91-3712-273361
-                  <br />
-                  <strong>RTGS Enabled:</strong> YES (IFS Code: SBIN0014259)
-                  <br />
-                  <strong>NEFT Enabled:</strong> YES
-                  <br />
-                  <strong>Type of Bank Account:</strong> Savings
-                  <br />
-                  <strong>Institute Account Name:</strong> Tezpur University
-                  Endowment Fund Account
-                  <br />
-                  <strong>Account Number:</strong> 10501585452
-                  <br />
-                  <strong>MICR Code:</strong> 784002005
-                  <br />
-                  <strong>PFMS Code:</strong> TU
-                  <br />
-                </p>
-                <div className="modal-action">
-                  <form method="dialog">
-                    {/* If there is a button in the form, it will close the modal */}
-                    <button className="btn">Close</button>
-                  </form>
-                </div>
-              </div>
-            </dialog>
-          </div>
-
-          <Image src={qr} alt="PayBack" className={style.alumni_reg_img}/>
+          <Image src={qr} alt="PayBack" className={style.alumni_reg_img} />
           {/* <Image src={Don} alt="PayBack" /> */}
         </div>
       </div>

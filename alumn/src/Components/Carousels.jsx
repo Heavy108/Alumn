@@ -10,29 +10,47 @@ const items = [
        
     },
     {
-      image:"/2.jpeg",
+      image:"/cara1.jpg",
        
     },
     {
-      image:'/3.jpeg',
+      image:'/cara3.jpg',
        
     }
     
 ];
 
 const Card = (props) => {
-  return (<>
-  <li className="card" key={props.ind}>
-    <div className="Introduction">
-    <h2>Together Again!</h2>
-    <p 
-    >Welcome back, brilliant minds of 0s and 1s! As CSE alumni, you're the architects of the digital future. Reconnect, reminisce, and inspire. Together, let's code unforgettable memories!</p>
-    </div>
-    
-    <Image src={props.image} width={1200} height={1200} alt="Univeristy Image"></Image>
+  return (
+    <>
+      <li className="card" key={props.ind}>
+        <div className="Introduction">
+          <h2
+            style={{
+              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            Together Again!
+          </h2>
+          <p
+            style={{
+              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+            }}
+          >
+            Welcome Home, Tezpur University Alumni! Let's celebrate our shared
+            journey, rekindle cherished memories, and envision a brighter future
+            together. United as one family, we inspire greatness!
+          </p>
+        </div>
 
-  </li>
-{/*     
+        <Image
+          src={props.image}
+          width={1200}
+          height={1200}
+          alt="Univeristy Image"
+        ></Image>
+      </li>
+      {/*     
     <li className="card">
     <Image
     src={props.image}
@@ -44,7 +62,7 @@ const Card = (props) => {
       <p>{props.copy}</p>
     </li> */}
     </>
-  )
+  );
 }
 
 const Carasoul = () => {

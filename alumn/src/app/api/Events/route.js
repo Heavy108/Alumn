@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function fetchEventData(eventId = null) {
   try {
+    // console.log(num)
     await connect();
 
     let data;
@@ -26,7 +27,7 @@ export async function fetchEventData(eventId = null) {
       return plainObject;
     } else {
         data = await Event.find({}, { S_image: 0, description: 0, Title: 0 })
-        .sort({ _id: -1 })  // Sort by _id in descending order to get the latest documents
+        .sort({ _id: 1 })  // Sort by _id in descending order to get the latest documents
         .limit(3)           // Limit to 3 documents
         .lean()
         .exec();
