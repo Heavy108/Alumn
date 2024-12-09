@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
 import RegistrationForm from "@/Models/registration";
+import { RegistrationEmail } from "@/dbConfig/eventreg";
 
 export async function POST(request) {
   try {
@@ -97,8 +98,16 @@ export async function POST(request) {
       transactionRef,
       transactionDate: new Date(transactionDate),
     });
-
-    console.log("Registration Entry Saved:", registrationEntry);
+    await RegistrationEmail(
+      firstName,
+      lastName,
+      numberOfPersons,
+      programme,
+      personalEmail,
+      registrationEntry._id
+    );
+    console.log(registrationEntry._id);
+    // console.log("Registration Entry Saved:", registrationEntry);
 
     return NextResponse.json({
       success: true,

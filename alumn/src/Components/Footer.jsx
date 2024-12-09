@@ -120,7 +120,7 @@ function Footer() {
               rel="noopener noreferrer"
               className={style.hyperlink}
             >
-              Alumn@tezu.ac.in
+              deena@tezu.ernet.in
             </Link>
           </li>
           <li className={style.icons}>
@@ -131,7 +131,7 @@ function Footer() {
               rel="noopener noreferrer"
               className={style.hyperlink}
             >
-              +91 XXXXX XXXXX
+              +91 9706368501
             </Link>
           </li>
         </ul>

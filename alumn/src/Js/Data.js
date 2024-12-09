@@ -1,31 +1,31 @@
 
 export const Data = [
   {
-    Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
-    image: "/Profile.png",
-    name: "Lisa Xavier",
-    Designation: "senior Software",
-    position: "Developer, TCS",
+    Link: "https://www.linkedin.com/posts/tezpur-university_alumna-achievement-awards-activity-7013837250929025024-C8QR?utm_source=share&utm_medium=member_desktop",
+    image: "/Arp.png",
+    name: "Ms. Arpita Ghosh",
+    Designation: "Journalist",
+    position: "Journalism",
     Detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "She was awarded for the documentary Nagaland Killings: Telling The Story Through The Eyes of Those Left BehindIn its first edition, The Future of News' Conference & Awards curated by afaqs, recognised & rewarded the best of news on TV and online video. Ms. Ghosh is presently associated with The Quint",
   },
   {
     Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
-    image: "/Event/achievement.png",
+    image: "/pro.png",
     name: "Ms. Prerna Talukdar",
     Designation: "National cadet corp",
-    position: "Developer, TCS",
+    position: "..",
     Detail:
       "Ms. Prerna Talukdar, an NCC Lance Corporal and English student at Tezpur University, represented the university at the prestigious Republic Day Camp 2023, briefing Defence Minister Rajnath Singh. Congratulations to her for this remarkable achievement!",
   },
   {
-    Link: "https://www.linkedin.com/posts/tezpur-university_ms-prerna-talukdar-an-ncc-cadet-lance-activity-7025068587203584000-7sn5/",
-    image: "/Profile.png",
-    name: "Lisa Xavier",
-    Designation: "senior Software",
-    position: "Developer, TCS",
+    Link: "https://www.instagram.com/p/Cv9KoZBoat7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    image: "/prad.png",
+    name: "Shri Prabuddha Mishra",
+    Designation: "UPSC",
+    position: "UPSC ,CAPF",
     Detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Shri Prabuddha Mishra, an alumnus of TU has secured All India Rank 18 in the UPSC Central Armed Police Force Exam (CAPF) 2022. Shri Mishra did his B.Tech. in Electronics & Communication Engineering (ECE) from Tezpur University and passed out in 2019.",
   },
 ];
 export const Admin_details =[

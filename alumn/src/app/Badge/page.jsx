@@ -165,7 +165,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
               {name}
             </Text>
             <Text position={[0, 0.4, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
-              Alumni ID: {uniqueID}
+              ID: {uniqueID}
             </Text>
             <Text position={[0, 0.3, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               Batch: {passoutYear}

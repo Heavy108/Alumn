@@ -6,10 +6,10 @@ import { Input, Textarea } from "@/Components/Input";
 import styl from "@/css/Input.module.css";
 import { useRef, useState } from "react";
 import style from "@/css/registration.module.css";
-import account from "@/Assets/bank.svg";
-import qr from "@/Assets/reg.jpg";
+import qr from "@/Assets/r.jpg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
 function AlumniRegistrationForm() {
   const [selectedImage, setSelectedImage] = useState(null);
   const fileInputRef = useRef(null);
@@ -17,7 +17,9 @@ function AlumniRegistrationForm() {
   const [numPersons, setNumPersons] = useState(1); // Default to 1 person
   const registrationFeePerPerson = 1000;
   const [currentStatus, setCurrentStatus] = useState(""); // Track current status
-  const router =useRouter()
+  const [loading, setLoading] = useState(false); // Loading state for the submit button
+  const router = useRouter();
+
   const handleStatusChange = (event) => {
     setCurrentStatus(event.target.value);
   };
@@ -32,26 +34,27 @@ function AlumniRegistrationForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true
     const formData = new FormData(e.target);
 
     try {
-      const response = await fetch('/api/registration', {
+      const response = await fetch("/api/registration", {
         method: "POST",
         body: formData,
       });
 
       const data = await response.json();
       if (data.success) {
-        alert("Registration successful!");
+        alert("Registration successful! Check your mail for the details!");
+        
       } else {
         alert(data.error);
       }
     } catch (error) {
       console.error("Error submitting form", error);
       alert("An error occurred. Please try again.");
-    }
-    finally{
-      router.push('/')
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -342,7 +345,9 @@ function AlumniRegistrationForm() {
             required
           />
           <div className={styl.Button}>
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={loading}>
+              {loading ? "Submitting..." : "Submit"}
+            </button>
           </div>
         </form>
         {/* Open the modal using document.getElementById('ID').showModal() method */}

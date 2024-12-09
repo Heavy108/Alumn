@@ -34,6 +34,7 @@ const RegistrationFormSchema = new mongoose.Schema({
   paymentScreenshot: { type: String, required: true }, // Storing file URL or path
   transactionRef: { type: String, required: true },
   transactionDate: { type: Date, required: true },
+  
 });
 
 const RegistrationForm =
