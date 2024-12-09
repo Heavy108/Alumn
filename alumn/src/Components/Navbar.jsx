@@ -19,7 +19,7 @@ function Navbar() {
       <div className={style.Nav}>
         <div className={style.list}>
           <span>
-            <Image src={logo} width={40} height={40} alt="University Logo" />
+            <Image src={logo} width={50} height={50} alt="University Logo" />
           </span>
           <Link href="/">
             <h4>Alumni Plus</h4>
