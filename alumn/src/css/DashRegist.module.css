@@ -1,0 +1,75 @@
+.container{
+  margin: 1rem 2rem 2rem 2rem;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h4{
+  font-size: 1.25rem;
+}
+.downloadButton{
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  font-weight: 500;
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.table thead {
+  background-color: #f0f0f0;
+}
+
+.table th {
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.table td {
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+
+.serialNumberCell {
+  font-weight: bold;
+  color: #222;
+}
+
+.image {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.edit {
+  padding: 8px 12px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit:hover {
+  background-color: #333;
+}
+
+

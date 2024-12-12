@@ -27,8 +27,8 @@ function AlumniRegistrationForm() {
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setSelectedImage(imageUrl);
+      // const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(file);
     }
   };
 
@@ -36,7 +36,7 @@ function AlumniRegistrationForm() {
     e.preventDefault();
     setLoading(true); // Set loading state to true
     const formData = new FormData(e.target);
-
+    formData.append('file1',selectedImage)
     try {
       const response = await fetch("/api/registration", {
         method: "POST",
@@ -51,7 +51,7 @@ function AlumniRegistrationForm() {
         alert(data.error);
       }
     } catch (error) {
-      console.error("Error submitting form", error);
+      console.error("Error submitting form ", error);
       alert("An error occurred. Please try again.");
     } finally {
       setLoading(false); // Reset loading state
@@ -277,7 +277,7 @@ function AlumniRegistrationForm() {
               <dialog id="my_modal_1" className="modal">
                 <div className="modal-box  bg-white">
                   <h3 className="font-bold text-lg">Bank Account Details</h3>
-                  <p className="py-4 text-primary-black">
+                  <p className={`py-4 ${style.text2}`}>
                     <strong>Name of Account Holder:</strong> Registrar, Tezpur
                     University
                     <br />
@@ -312,22 +312,27 @@ function AlumniRegistrationForm() {
                     <br />
                   </p>
                   <div className="modal-action">
-                    <form method="dialog">
-                      {/* If there is a button in the form, it will close the modal */}
-                      <button className="btn">Close</button>
-                    </form>
+                    <button
+                      className="btn"
+                      onClick={() =>
+                        document.getElementById("my_modal_1").close()
+                      }
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </dialog>
             </div>
           </div>
           <div className={styl.Input_field}>
-            <label>Please upload a screenshot of the payment details*</label>
+            <label>Please upload a screenshot of the payment details(jpg/jpeg)* </label>
             <input
               type="file"
-              name="paymentScreenshot"
+              
               accept="image/*"
               ref={fileInputRef}
+              onChange={handleFileInputChange}
               required
             />
           </div>

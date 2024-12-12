@@ -6,10 +6,10 @@ export const RegistrationEmail = async (
   numberOfPersons,
   programme,
   personalEmail ,
-  uniqueid// Include email as a parameter
+  uniqueid
 ) => {
   try {
-    // Logging for debugging
+    
     console.log(
       "Starting email send process for:",
       firstName,
@@ -20,7 +20,7 @@ export const RegistrationEmail = async (
       uniqueid
     );
     const name = firstName +" "+lastName
-    // Create transporter using Gmail
+    
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -84,10 +84,10 @@ export const RegistrationEmail = async (
       `,
     };
 
-    // Send the email
+   
     const mailResponse = await transporter.sendMail(mailOptions);
 
-    // Check if the email was sent successfully
+    
     if (mailResponse.accepted.length > 0) {
       console.log(
         "Email sent successfully to:",

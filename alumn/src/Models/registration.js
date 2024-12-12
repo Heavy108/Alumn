@@ -31,10 +31,9 @@ const RegistrationFormSchema = new mongoose.Schema({
   numberOfPersons: { type: Number }, // Optional, based on `withFamily`
   foodPreference: { type: String, enum: ["Vegetarian", "Non-Vegetarian"] },
   registrationFee: { type: String }, // Computed on frontend, optional in the schema
-  paymentScreenshot: { type: String, required: true }, // Storing file URL or path
+  paymentScreenshot: { type: Buffer, required: true }, // Storing file URL or path
   transactionRef: { type: String, required: true },
   transactionDate: { type: Date, required: true },
-  
 });
 
 const RegistrationForm =

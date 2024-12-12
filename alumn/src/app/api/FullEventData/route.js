@@ -8,7 +8,7 @@ export async function fetchFullEventData() {
 
     
       const data = await Event.find({}, { S_image: 0, description: 0, Title: 0 })
-        .sort({ _id: -1 }) // Sort by _id in descending order to get the latest documents
+        // .sort({ _id: -1 })
         .lean()
         .exec();
 

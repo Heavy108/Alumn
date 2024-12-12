@@ -70,9 +70,9 @@ function AdminLogin() {
       <div className={style.LoginFrame}>
         <img src="/Login.svg" className={style.LoginImage} alt="Login Image" />
         <div className={style.FormContainer}>
-          <h1>Alumni_Connect</h1>
-          <h2>Welcome to Alumni_Connect</h2>
-          <p>Please Sign-in to your account</p>
+          <h1>Alumni_Plus</h1>
+          <h2>Welcome to Alumni_Plus</h2>
+          <p style={{color:"black"}}>Please Sign-in to your account</p>
 
           <div className={style.form}>
             <hr />

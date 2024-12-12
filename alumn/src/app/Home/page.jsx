@@ -48,18 +48,6 @@ async function Home1 () {
             <Button text="More" />
           </Link>
         </div>
-        {/* <p className={styles.container}>Past Events</p>
-      <div className={styles.container_2}>
-        {data.map((event, index) => (
-          <Event_Card
-            key={index}
-            data={event}  // Passing event data to Event_Card
-          />
-        ))}
-      </div>
-      <div className={sty.wrapper2}>
-        <Link href='/CommingSoon'><Button text="More" /></Link>
-      </div> */}
 
         <Gallery data={data2} />
         <Footer />

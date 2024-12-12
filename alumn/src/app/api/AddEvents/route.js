@@ -8,11 +8,12 @@ export async function POST(request) {
     const data = await request.formData();
 
     // Log all form data
-    console.log("Form Data:", Array.from(data.entries()));
+    // console.log("Form Data:", Array.from(data.entries()));
 
     // Get the files and other form data
     const image1 = data.get("file1");
     const image2 = data.get("file2");
+    
     let buffer1, buffer2;
 
     if (image1) {

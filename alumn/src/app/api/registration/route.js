@@ -11,7 +11,13 @@ export async function POST(request) {
     // console.log(data)
     // Extract form data
     const data = await request.formData();
-
+    const Screenshot = data.get("file1");
+    console.log(Screenshot);
+    let screenshotBuffer;
+    if (Screenshot) {
+      const screenshotBytes = await Screenshot.arrayBuffer();
+      screenshotBuffer = Buffer.from(screenshotBytes);
+    }
     // Extract form data with proper key formatting
     const mobile = data.get("Mobile Number") || "";
     const firstName = data.get("First Name*") || "";
@@ -38,16 +44,7 @@ export async function POST(request) {
     const transactionDate = data.get("Transaction Date*") || "";
 
     // Process the uploaded file (paymentScreenshot)
-    const paymentScreenshot = data.get("paymentScreenshot");
-    let screenshotBuffer = null;
-    if (paymentScreenshot) {
-      try {
-        const screenshotBytes = await paymentScreenshot.arrayBuffer();
-        screenshotBuffer = Buffer.from(screenshotBytes);
-      } catch (error) {
-        console.error("Error processing paymentScreenshot:", error);
-      }
-    }
+    
     // Perform field validation
     // if (
     //   !mobile ||

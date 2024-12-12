@@ -40,7 +40,7 @@ async function Event_detail({ searchParams }) {
         <Title title="Event Details" />
         <center className={style.heading}>
           <h4>
-            We are excited to announce the upcoming event on December 15-16 for
+            We are excited to announce the upcoming event on January 20-21 for
             Tezpur University Alumni
           </h4>
         </center>

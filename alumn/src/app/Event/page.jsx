@@ -5,6 +5,9 @@ import Footer from "@/Components/Footer";
 import styles from "@/css/EventMainPage.module.css";
 import Title from "@/Components/Title";
 import Event_Card from "@/Components/Events";
+
+
+export const revalidate = 0;
 async function Upcomming_Events(){
     const data =await fetchFullEventData()
 return (

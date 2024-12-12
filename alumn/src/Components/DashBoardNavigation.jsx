@@ -40,40 +40,40 @@ function DashBoard() {
           <ul className={style.items}>
             <li>Admin DashBoard</li>
             <li
-              onClick={() => handleClick('Home')}
-              className={activeItem === 'Home' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick("Home")}
+              className={activeItem === "Home" ? `${style.activeItem}` : ""}
             >
               <Link href="/DashBoard/Home" className={style.Link}>
                 <TbHomeFilled className={style.icons} /> Dashboard
               </Link>
             </li>
             <li
-              onClick={() => handleClick('Events')}
-              className={activeItem === 'Events' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick("Events")}
+              className={activeItem === "Events" ? `${style.activeItem}` : ""}
             >
               <Link href="/DashBoard/EventsPage" className={style.Link}>
                 <MdDashboard className={style.icons} /> Events
               </Link>
             </li>
             <li
-              onClick={() => handleClick('Carasoul')}
-              className={activeItem === 'Carasoul' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick("Carasoul")}
+              className={activeItem === "Carasoul" ? `${style.activeItem}` : ""}
             >
               <Link href="/DashBoard/GalleryPage" className={style.Link}>
                 <BiSolidCarousel className={style.icons} /> Gallery
               </Link>
             </li>
             <li
-              onClick={() => handleClick('Email')}
-              className={activeItem === 'Email' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick("Email")}
+              className={activeItem === "Email" ? `${style.activeItem}` : ""}
             >
-              <Link href="#" className={style.Link}>
-                <HiUserGroup className={style.icons} /> Blog
+              <Link href="/DashBoard/RegistrationDetails" className={style.Link}>
+                <HiUserGroup className={style.icons} /> Registration
               </Link>
             </li>
             <li
-              onClick={() => handleClick('SignUp')}
-              className={activeItem === 'SignUp' ? `${style.activeItem}` : ''}
+              onClick={() => handleClick("SignUp")}
+              className={activeItem === "SignUp" ? `${style.activeItem}` : ""}
             >
               <Link href="/DashBoard/signup" className={style.Link}>
                 <RiSettings4Fill className={style.icons} /> Setting

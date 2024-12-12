@@ -9,7 +9,7 @@ function Footer() {
   return (
     <>
       <div className={style.Footer}>
-        <h1>Alumni Plus</h1>
+        <h1>Alumni_Plus</h1>
         <ul className={style.list}>
           <li className={style.head}>University Links</li>
           <Link
@@ -42,7 +42,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={style.hyperlink}
           >
-            <li>Student Affairs</li>
+            <li>Student_Affairs</li>
           </Link>
           <Link
             href={"#"}
@@ -50,7 +50,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={style.hyperlink}
           >
-            <li>Yearly Magazine</li>
+            <li>Yearly_Magazine</li>
           </Link>
           <Link
             href={"/Event"}
@@ -86,7 +86,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={style.hyperlink}
           >
-            <li>Bus Timing</li>
+            <li>Bus_Timing</li>
           </Link>
           <Link
             href={"https://www.tezu.ernet.in/guesthouse/guesth.html"}
@@ -94,7 +94,7 @@ function Footer() {
             rel="noopener noreferrer"
             className={style.hyperlink}
           >
-            <li>Guest House</li>
+            <li>Guest_House</li>
           </Link>
           <Link
             href={"#"}
@@ -102,14 +102,14 @@ function Footer() {
             rel="noopener noreferrer"
             className={style.hyperlink}
           >
-            <li>Contact Us</li>
+            <li>Contact_Us</li>
           </Link>
         </ul>
 
         <ul className={style.list}>
           <li>Address</li>
           <li>
-            Alumni Plus Computer Science Department, Tezpur University, Napaam,
+            Alumni Plus Alumni Cell, Tezpur University, Napaam,
             Tezpur - 784028
           </li>
           <li className={style.icons}>

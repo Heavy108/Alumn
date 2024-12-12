@@ -28,6 +28,7 @@ const Card = (props) => {
           <h2
             style={{
               textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           >
             Together Again!
@@ -35,6 +36,7 @@ const Card = (props) => {
           <p
             style={{
               textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
           >
             Welcome Home, Tezpur University Alumni! Let's celebrate our shared
