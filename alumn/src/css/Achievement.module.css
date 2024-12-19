@@ -31,6 +31,7 @@ height: 7.5rem;
 }
 .card p{
     color: black;
+    font-weight: 500;
     font-size: 0.6rem;
     padding: 0;
     margin: 1rem 0rem 1rem 0rem;

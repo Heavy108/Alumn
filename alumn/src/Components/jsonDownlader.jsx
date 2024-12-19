@@ -10,100 +10,80 @@ function downloadFile(content, fileName, mimeType) {
   URL.revokeObjectURL(link.href);
 }
 
-export function Modal({ item }) {
+export function Modal({ item, modalId }) {
+  // console.log(item)
   return (
-    <div>
-      <button
-        className={styles.edit}
-        onClick={() => document.getElementById("my_modal_5").showModal()}
-      >
-        Details
-      </button>
-      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box bg-white">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <div className="py-4">
-            <p>
+    <>
+      <div className={styles.modalstyle}>
+        <button
+          className={styles.edit}
+          onClick={() => document.getElementById( modalId ).showModal()}
+        >
+          Details
+        </button>
+        <dialog id={modalId} className="modal modal-bottom sm:modal-middle">
+          <div className={styles.modalbox}>
+            <h3 className="font-bold text-lg">Alumni Details</h3>
+
+            <p className={`py-4 ${styles.textd}`}>
               <strong>ID:</strong> {item._id}
-            </p>
-            <p>
+              <br />
               <strong>Mobile:</strong> {item.mobile}
-            </p>
-            <p>
+              <br />
               <strong>First Name:</strong> {item.firstName}
-            </p>
-            <p>
+              <br />
               <strong>Last Name:</strong> {item.lastName}
-            </p>
-            <p>
+              <br />
               <strong>DOB:</strong> {item.dob}
-            </p>
-            <p>
+              <br />
               <strong>Gender:</strong> {item.gender}
-            </p>
-            <p>
+              <br />
               <strong>Department:</strong> {item.department}
-            </p>
-            <p>
+              <br />
               <strong>Programme:</strong> {item.programme}
-            </p>
-            <p>
+              <br />
               <strong>Graduation Year:</strong> {item.graduationYear}
-            </p>
-            <p>
+              <br />
               <strong>Current Status:</strong> {item.currentStatus}
-            </p>
-            <p>
-              <strong>Organisation:</strong> {item.organisation || "N/A"}
-            </p>
-            <p>
+              <br />
+              <strong>Organisation:</strong> {item.organisation}
+              <br />
               <strong>Designation:</strong> {item.designation || "N/A"}
-            </p>
-            <p>
+              <br />
               <strong>Company Email:</strong> {item.companyEmail || "N/A"}
-            </p>
-            <p>
+              <br />
               <strong>Personal Email:</strong> {item.personalEmail}
-            </p>
-            <p>
+              <br />
               <strong>Address:</strong> {item.address}
-            </p>
-            <p>
+              <br />
               <strong>City:</strong> {item.city}
-            </p>
-            <p>
+              <br />
               <strong>Country:</strong> {item.country}
-            </p>
-            <p>
+              <br />
               <strong>WhatsApp:</strong> {item.whatsapp}
-            </p>
-            <p>
+              <br />
               <strong>Accommodation:</strong> {item.accommodation}
-            </p>
-            <p>
+              <br />
               <strong>With Family:</strong> {item.withFamily}
-            </p>
-            <p>
+              <br />
               <strong>Number of Persons:</strong> {item.numberOfPersons}
-            </p>
-            <p>
+              <br />
               <strong>Food Preference:</strong> {item.foodPreference}
-            </p>
-            <p>
+              <br />
               <strong>Transaction Reference:</strong> {item.transactionRef}
-            </p>
-            <p>
+              <br />
               <strong>Transaction Date:</strong> {item.transactionDate}
+              <br />
             </p>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn">Close</button>
+              </form>
+            </div>
           </div>
-          <div className="modal-action">
-            <form method="dialog">
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-    </div>
+        </dialog>
+      </div>
+    </>
   );
 }
 

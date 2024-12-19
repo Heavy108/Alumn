@@ -16,8 +16,21 @@
   border-radius: 0.8rem;
   font-weight: 500;
 }
-
-
+.modalstyle{
+  width: 80%;
+}
+.modalbox{
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.textd{
+  color :black;
+  font-size: medium;
+}
+.textd strong{
+  margin-top: 1rem;
+}
 .table {
   width: 100%;
   border-collapse: collapse;

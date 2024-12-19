@@ -39,7 +39,9 @@ margin: 4rem 2rem 2rem 2rem;
 }
 .Introduction p{
     color:black;
+    font-weight: 500;
     padding: 0;
+    text-align: center;
     font-size: 0.6rem;
     
 }

@@ -5,19 +5,15 @@ import Image from "next/image";
 
 
 const items = [
-    {
-        image:"/1.jpeg",
-       
-    },
-    {
-      image:"/cara1.jpg",
-       
-    },
-    {
-      image:'/cara3.jpg',
-       
-    }
-    
+  {
+    image: "/1.jpeg",
+  },
+  {
+    image: "/Carasoul2.jpeg",
+  },
+  {
+    image: "/Carasoul3.jpeg",
+  },
 ];
 
 const Card = (props) => {
@@ -26,18 +22,18 @@ const Card = (props) => {
       <li className="card" key={props.ind}>
         <div className="Introduction">
           <h2
-            style={{
-              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}
+            // style={{
+            //   textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+            //   backgroundColor: "rgba(0, 0, 0, 0.5)",
+            // }}
           >
             Together Again!
           </h2>
           <p
-            style={{
-              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            }}
+            // style={{
+            //   textShadow: "2px 2px 5px rgba(0, 0, 0, 0.7)",
+            //   backgroundColor: "rgba(0, 0, 0, 0.5)",
+            // }}
           >
             Welcome Home, Tezpur University Alumni! Let's celebrate our shared
             journey, rekindle cherished memories, and envision a brighter future

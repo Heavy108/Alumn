@@ -131,7 +131,7 @@
   /* padding: 2rem; */
   position: absolute;
   height: 25rem;
-  /* margin: var(--card-margin); */
+  margin: var(--card-margin);
   width: calc(var(--cardWidth) - var(--card-margin)*7.4);
   z-index: 2;
   display: flex;

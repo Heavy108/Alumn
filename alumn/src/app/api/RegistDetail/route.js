@@ -12,7 +12,7 @@ export async function fetchRegistData() {
     const encodedData = data.map((item) => ({
       ...item,
       transactionDate: item.transactionDate.toLocaleString(),
-
+      _id:item._id.toString("base64"),
       dob: item.dob.toLocaleString(),
 
       paymentScreenshot: item.paymentScreenshot.toString("base64"),

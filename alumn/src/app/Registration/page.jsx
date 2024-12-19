@@ -27,7 +27,12 @@ function AlumniRegistrationForm() {
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // const imageUrl = URL.createObjectURL(file);
+       const validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+       if (!validExtensions.includes(file.type)) {
+         alert("Only .jpeg, .jpg, or .png files are allowed.");
+         event.target.value = ""; 
+         return;
+       }
       setSelectedImage(file);
     }
   };
@@ -326,16 +331,18 @@ function AlumniRegistrationForm() {
             </div>
           </div>
           <div className={styl.Input_field}>
-            <label>Please upload a screenshot of the payment details(jpg/jpeg)* </label>
+            <label>
+              Please upload a screenshot of the payment details (jpg/jpeg/png)*
+            </label>
             <input
               type="file"
-              
-              accept="image/*"
+              accept="image/jpeg, image/png"
               ref={fileInputRef}
               onChange={handleFileInputChange}
               required
             />
           </div>
+
           <Input
             label="Transaction Reference No.*"
             type="text"

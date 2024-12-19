@@ -8,6 +8,7 @@ export const revalidate = 0;
 
 async function RegistrationDetails() {
   const data = await fetchRegistData();
+  // console.log(data)
    const cleanData = data.map((item) => ({
      ...item,
      _id: item._id?.buffer?.toString("base64") || item._id, // Convert Buffer to base64 string
@@ -38,19 +39,10 @@ async function RegistrationDetails() {
             <tr key={item._id + index}>
               <td className={styles.serialNumberCell}>{index + 1}</td>
               <td>
-                {/* {item.paymentScreenshot ? (
-                  <Image
-                    src={`data:image/jpeg;base64,${item.paymentScreenshot}`}
-                    alt="Payment Screenshot"
-                    className={styles.image}
-                    width={120}
-                    height={120}
-                    priority
-                  />
-                ) : (
-                  <span>No Screenshot</span>
-                )} */}
-                <PictureModal image={item.paymentScreenshot} caption="Payment Screenshot" />
+                <PictureModal
+                  image={item.paymentScreenshot}
+                  caption="Payment Screenshot"
+                />
               </td>
               <td>
                 {item.firstName} {item.lastName}
@@ -60,8 +52,7 @@ async function RegistrationDetails() {
               <td>{item.mobile}</td>
               <td>{item.personalEmail}</td>
               <td>
-                {/* <button className={styles.edit}>Edit</button> */}
-                <Modal item={item} />
+                <Modal item={item} modalId={`modal-${item._id}`} />
               </td>
             </tr>
           ))}
