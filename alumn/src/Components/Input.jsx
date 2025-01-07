@@ -1,13 +1,20 @@
 import style from '@/css/Input.module.css';
 export function Input(props){
-    return(
-        <>
+    return (
+      <>
         <div className={style.Input_field}>
-            <label htmlFor={props.label}>{props.label}</label>
-            <input type={props.type} name={props.label} placeholder={props.placeholder} />
+          <label htmlFor={props.label}>
+            {props.label}
+            <span className={style.astreik}>*</span>
+          </label>
+          <input
+            type={props.type}
+            name={props.label}
+            placeholder={props.placeholder}
+          />
         </div>
-        </>
-    )
+      </>
+    );
 }
 
 export function Textarea(props){

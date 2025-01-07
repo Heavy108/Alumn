@@ -264,4 +264,31 @@
   .invalid {
     color: red;
   }
-  
+
+
+
+/* not that importnat */
+.selectDropdown {
+  width: 65%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: Black;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.selectDropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.rating span{
+    font-size: large;
+}
+
+.astreik{
+    color: red;
+}

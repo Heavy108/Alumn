@@ -7,7 +7,7 @@ const DigitalCard_Schema = new mongoose.Schema({
   Email: { type: String, required: true },
   Programme: { type: String, required: true },
   Passout_Year: { type: Number, required: true },
-  Linkedin_Profile: { type: String, required: true },
+  Linkedin_Profile: { type: String },
   Profile: { type: Buffer, required: true  },
   IsVerified: Boolean,
   verifyToken: String

@@ -48,7 +48,7 @@ function PictureModal({ image, caption }) {
       )}
 
       {/* Modal for enlarging the image */}
-      {isOpen && fileType !== "pdf" && (
+      {isOpen && imageType !== "pdf" && (
         <div className={styles.lightbox_overlay} onClick={closeModal}>
           <div
             className={styles.lightbox_content}

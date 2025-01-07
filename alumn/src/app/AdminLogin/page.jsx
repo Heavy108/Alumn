@@ -8,8 +8,8 @@ import Link from "next/link";
 function AdminLogin() {
   const router = useRouter();
   const [user, setUser] = useState({
-    username: "Admin",
-    password: "Admin@123",
+    username: "",
+    password: "",
     type: "admin", // Default type is admin
   });
   const [buttonDisabled, setButtonDisabled] = useState(false);
