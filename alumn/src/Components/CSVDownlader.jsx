@@ -11,20 +11,18 @@ function downloadFile(content, fileName, mimeType) {
 }
 
 export function Modal({ item, modalId }) {
-  // console.log(item)
   return (
     <>
       <div className={styles.modalstyle}>
         <button
           className={styles.edit}
-          onClick={() => document.getElementById( modalId ).showModal()}
+          onClick={() => document.getElementById(modalId).showModal()}
         >
           Details
         </button>
         <dialog id={modalId} className="modal modal-bottom sm:modal-middle">
           <div className={styles.modalbox}>
             <h3 className="font-bold text-lg">Alumni Details</h3>
-
             <p className={`py-4 ${styles.textd}`}>
               <strong>ID:</strong> {item._id}
               <br />
@@ -88,15 +86,35 @@ export function Modal({ item, modalId }) {
 }
 
 export function DownloadButtons({ data }) {
-  const handleDownloadJSON = () => {
-    const jsonContent = JSON.stringify(data, null, 2);
-    downloadFile(jsonContent, "registration_details.json", "application/json");
+  const handleDownloadCSV = () => {
+    if (!Array.isArray(data) || data.length === 0) {
+      alert("No data available to download");
+      return;
+    }
+
+    // Create CSV headers from keys of the first object
+    const csvHeaders = Object.keys(data[0]).join(",") + "\n";
+
+    // Map data to CSV rows
+    const csvRows = data
+      .map((item) =>
+        Object.values(item)
+          .map((value) => `"${value}"`) // Escape values with quotes
+          .join(",")
+      )
+      .join("\n");
+
+    // Combine headers and rows
+    const csvContent = csvHeaders + csvRows;
+
+    // Trigger file download
+    downloadFile(csvContent, "registration_details.csv", "text/csv");
   };
 
   return (
     <div className={styles.container2}>
-      <button onClick={handleDownloadJSON} className={styles.downloadButton}>
-        Download JSON
+      <button onClick={handleDownloadCSV} className={styles.downloadButton}>
+        Download CSV
       </button>
     </div>
   );

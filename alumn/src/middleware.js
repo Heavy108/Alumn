@@ -65,7 +65,7 @@ export async function middleware(request) {
     return NextResponse.redirect(new URL('/AdminLogin', request.url));
   }
 
-  // Role-based access control for authenticated users
+  
   if (!isPublicPath && token) {
     try {
       const decoded = await verifyJWT(token, process.env.JWT_SECRET);

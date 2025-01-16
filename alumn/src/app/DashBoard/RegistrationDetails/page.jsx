@@ -1,7 +1,7 @@
 import styles from "@/css/DashRegist.module.css";
 import { fetchRegistData } from "@/app/api/RegistDetail/route";
 import Image from "next/image";
-import {DownloadButtons,Modal} from "@/Components/jsonDownlader";
+import {DownloadButtons,Modal} from "@/Components/CSVDownlader";
 import PictureModal from "@/Components/EnlargeImage";
 
 export const revalidate = 0;
