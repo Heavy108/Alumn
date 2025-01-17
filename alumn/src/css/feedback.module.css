@@ -1,0 +1,206 @@
+.feedback_feedback_container{
+    margin: 2rem;
+}
+
+
+
+.Input_field{
+    margin-bottom: 1rem  ;
+    border: 2px solid #d9d9d9;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    background-color: #fafafa;
+}
+
+
+
+.Input_field label{
+    font-weight: 700;
+    align-content: center;
+    font-size: 0.8rem;
+}
+.Input_field input {
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.2rem 0.2rem 0.2rem 0.8rem;
+    width: 60%;
+}
+.Input_field textarea{
+    background-color: black;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.4rem 0.2rem 0.2rem 1rem;
+    /* align-content: center; */
+    /* width: fit-content%; */
+    margin-top: 0.4rem;
+    height: 4rem;
+}
+.feedback_container {
+    margin: 1rem;
+}
+.text{
+    margin: 1rem;
+    font-size: 0.8rem;
+}
+
+@media only screen and (min-width:768px){
+   
+    
+    .text{
+        font-size: 1rem;
+        margin: 0rem 2rem 0rem 2rem;
+    }
+    .form{
+        width: 45%;
+    }
+    .feedback_container{
+        display: flex;
+        /* justify-content: space-between; */
+        justify-content: center;
+        /* margin: 2rem; */
+        align-content: center;
+        
+    }
+    
+    
+}
+@media only  screen and (min-width:1024px){
+    .feedback_container{
+        margin: 5rem;
+    }
+    .texts{
+        margin: 0rem 5rem 0rem 5rem;
+        font-size: 1.25rem;
+    }
+    .Input_field input{
+        font-size:1rem;
+    }
+    .Input_field textarea{
+        font-size:1rem;
+        height: 5rem;
+
+    }
+    .Input_field label{
+        font-size: 1rem;
+    }
+    .Input_field{
+        padding-left: 1rem;
+    }
+    .lable2{
+        margin-top: 1rem;
+    }
+    
+}
+@media only screen and (min-width:1440px){
+   
+    .feedback_container{
+        margin: 0rem 10rem 5rem 10rem;
+    }
+    .text{
+        margin: 0rem 10rem 2rem 10rem;
+        font-size: 1.5rem;
+    }
+    .Input_field textarea{
+        font-size:1rem;
+        
+    }
+    
+    .form h4{
+        font-size: 1.5rem;
+    }
+    /* .img_conatiner{
+        border: 2px solid yellow;
+    } */
+}
+@media only screen and (min-width:2560px){
+    .texts{
+        font-size: 2rem;
+        margin: 0rem 20rem 4rem 20rem;
+    }
+    .Input_field input{
+        font-size:2rem;
+        border-radius: 2rem;
+        padding: 1rem;
+    }
+    .Input_field textarea{
+        font-size:2rem;
+        border-radius: 2rem;
+    }
+    .Input_field label{
+        font-size: 2rem;
+    }
+    .Input_field{
+        padding: 2rem;
+        border-radius: 4rem;
+    }
+   
+    .form h4{
+        font-size: 3rem;
+    }
+    .feedback_container{
+        margin: 5rem 20rem 5rem 20rem;
+    }
+}
+
+.Button{
+    display: flex;
+    justify-content: flex-end;
+}
+.Button button{
+    color: white;
+    background-color: black;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+@media only screen and (min-width:1024px) {
+    .Button button{
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width:2560px){
+    .Button button{
+        font-size: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
+        border-radius: 2rem;
+    }
+    .Button{
+      
+        margin-top: 3rem;
+
+    }
+}
+
+
+
+/* not that importnat */
+.selectDropdown {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: Black;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+.selectDropdown option:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.rating span{
+    font-size: large;
+}
+
+.astreik{
+    color: red;
+}

@@ -24,6 +24,7 @@
 
 .list{
   list-style-type: none;
+  padding-left: 2.25rem;
 }
 .list li{
   font-size: 0.6rem;
@@ -41,6 +42,7 @@
   }
   .Footer h1{
     width: auto;
+    font-size: 1rem;
   }
   .list li{
     font-size: 0.8rem;
@@ -61,6 +63,10 @@
   .list li:first-child{
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
+  }
+  .Footer h1{
+    font-size: 1.5rem;
+
   }
 }
 @media only screen and (min-width:1440px){
