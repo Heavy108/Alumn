@@ -69,32 +69,7 @@ export const Admin_details =[
     "email": "arindam@tezu.ernet.in"
   },
 
-  {
-    "img": "/admin-photo/Akhilesh.jpg",
-    "name": "Akhilesh Kumar",
-    "designation": "Student Convener",
-    "programme": "MCA",
-    "roll_no": "CSM22046",
-    "email": "csm22046@tezu.ac.in"
-  },
-
-   {
-    "img": "/admin-photo/admin.jpg",
-    "name": "Swapnil Das",
-    "designation": "Student Member",
-    "programme": "MCA",
-    "roll_no": "CSM23004",
-    "email": "csm23004@tezu.ac.in"
-  },
-
-   {
-    "img": "/admin-photo/admin.jpg",
-    "name": "Roshan Kharel",
-    "designation": "Student Member",
-    "programme": "M.Tech",
-    "roll_no": "CSE23018",
-    "email": "cse23018@tezu.ac.in"
-  },
+  // 
 
   //  {
   //   "img": "/admin-photo/dkp-image.webp",
