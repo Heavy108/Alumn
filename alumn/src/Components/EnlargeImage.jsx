@@ -17,7 +17,7 @@ function PictureModal({ image, caption }) {
   const closeModal = () => setIsOpen(false);
 
   const imageType = determineImageType(image);
-  console.log(imageType)
+  
 
   if (!imageType) {
     console.error("Unsupported image format");
