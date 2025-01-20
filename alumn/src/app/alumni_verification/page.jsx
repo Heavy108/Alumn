@@ -69,7 +69,7 @@ function Verification() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className={styles.container}>
         <div className={styles.header}>
           <h4>Registration Details</h4>
@@ -98,7 +98,9 @@ function Verification() {
               <th>Transaction Ref</th>
               <th>FoodPref</th>
               <th>Programme</th>
-              <th>Number of Persons</th>
+              <th>Department</th>
+
+              <th>No. of Persons</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -113,6 +115,7 @@ function Verification() {
                 <td>{item.transactionRef}</td>
                 <td>{item.foodPreference}</td>
                 <td>{item.programme}</td>
+                <td>{item.department}</td>
                 <td>{item.numberOfPersons}</td>
                 <td>
                   <button
@@ -152,7 +155,7 @@ function Verification() {
         </table>
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

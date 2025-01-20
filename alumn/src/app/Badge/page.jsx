@@ -164,7 +164,7 @@ function Band({ maxSpeed = 50, minSpeed = 10, name, uniqueID, passoutYear }) {
             <Text position={[0, 0.5, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
               {name}
             </Text>
-            <Text position={[0, 0.4, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">
+            <Text position={[0, 0.4, 0.01]} fontSize={0.04} color="white" anchorX="center" anchorY="middle">
               ID: {uniqueID}
             </Text>
             <Text position={[0, 0.3, 0.01]} fontSize={0.05} color="white" anchorX="center" anchorY="middle">

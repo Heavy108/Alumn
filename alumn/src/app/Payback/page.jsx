@@ -8,6 +8,7 @@ import qr from "@/Assets/QR.svg";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { useEffect,useState } from "react";
+import Link from "next/link";
 
 function Donation() {
   const [isLoading, setIsLoading] = useState(false);
@@ -89,63 +90,116 @@ function Donation() {
   }, [debounceTimeout]);
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Title title="GiveBack" />
       <div className={style.container}>
-        
         <form onSubmit={onSubmit} className={style.form}>
-        <h4>PayBack</h4>
-          <Input 
-            label="Name" 
-            type="text" 
-            placeholder="Enter your name" />
-           <div className={style.Input_field}>
-            <label htmlFor="Alumni ID">Alumni ID
-            {alumniIdValid === true && <span className={style.valid}>✔️</span>}
-            {alumniIdValid === false && <span className={style.invalid}>❌</span>}
+          <h4>PayBack</h4>
+          <Input label="Name" type="text" placeholder="Enter your name" />
+          <div className={style.Input_field}>
+            <label htmlFor="Alumni ID">
+              Alumni ID<span className={style.astreik}>*</span>
+              <Link href="/Digital_Card">?</Link>
+              {alumniIdValid === true && (
+                <span className={style.valid}>✔️</span>
+              )}
+              {alumniIdValid === false && (
+                <span className={style.invalid}>❌</span>
+              )}
             </label>
-            <input 
-              name="Alumni ID" 
-              type="text" 
-              placeholder="Enter your ID" 
+            <input
+              name="Alumni ID"
+              type="text"
+              placeholder="Enter your ID"
               value={alumniId}
-              onChange={handleAlumniIdChange} />
-            
+              onChange={handleAlumniIdChange}
+            />
           </div>
-          <Input 
-            label="Email" 
-            type="email" 
-            placeholder="Enter your Email" />
+          <Input label="Email" type="email" placeholder="Enter your Email" />
           <Input
             label="Transaction ID/UPI Reference ID"
             type="text"
             placeholder="Enter text here"
           />
-          <Input
-            label="Attachments"
-            type="file"
-            placeholder="Add Attachment"
-          />
-         
-         <div className={style.Button}>
-            <button type="submit" disabled={isLoading || alumniIdValid !== true}>
-              {isLoading ? 'Submitting...' : 'Submit'}
+          <Input label="Attachments" type="file" placeholder="Add Attachment" />
+
+          <div className={style.Button}>
+            <button
+              type="submit"
+              disabled={isLoading || alumniIdValid !== true}
+            >
+              {isLoading ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>
         <div className={style.img_conatiner2}>
-        <center>QR Code</center>
-        <Image 
+          <center>Bank detail</center>
+          {/* <Image 
             src={qr}
             alt="PayBack"
-            />
-        <Image 
-            src={Don}
-            alt="PayBack"
-            />
-            </div>
+            /> */}
+          <div>
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <li
+              className="text-blue-500 underline decoration-none cursor-pointer list-none"
+              onClick={() => document.getElementById("my_modal_1").showModal()}
+            >
+              Bank Details
+            </li>
+
+            {/* <center>Click the above Image for Bank details</center> */}
+
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box bg-white">
+                <h3 className="font-bold text-lg">Bank Account Details</h3>
+                <p className={`py-4 ${style.text2}`}>
+                  <strong>Name of Account Holder:</strong> Tezpur University
+                  Alumni Assoc.
+                  <br />
+                  <strong>Complete Contact Address:</strong> Tezpur University,
+                  Napaam, Tezpur, Assam
+                  <br />
+                  <strong>Telephone Number:</strong> 267285
+                  <br />
+                  <strong>Email:</strong> sbi.14259@sbi.co.in
+                  <br />
+                  <strong>Bank Name:</strong> State Bank of India
+                  <br />
+                  <strong>Branch Name:</strong> Tezpur University Branch,
+                  Napaam, Tezpur, Assam
+                  <br />
+                  <strong>Branch Telephone:</strong> 267285
+                  <br />
+                  <strong>RTGS Enabled:</strong> YES (IFS Code: SBIN0014259)
+                  <br />
+                  <strong>NEFT Enabled:</strong> YES
+                  <br />
+                  <strong>Type of Bank Account:</strong> Savings
+                  <br />
+                  <strong>Account Number:</strong> 10501585524
+                  <br />
+                  <strong>MICR Code:</strong> 784002005
+                  <br />
+                 
+                </p>
+                <div className="modal-action">
+                  <button
+                    className="btn"
+                    onClick={() =>
+                      document.getElementById("my_modal_1").close()
+                    }
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </dialog>
+          </div>
+
+          <Image src={Don} alt="PayBack" />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
