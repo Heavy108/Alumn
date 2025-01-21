@@ -165,21 +165,7 @@ export const AlumniData =
     "transactionRef": "472218869151",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "6766d900588397f4b5161192"
-    },
-    "firstName": "SEMIM",
-    "lastName": "AFRUJA",
-    "department": "PHYSICS",
-    "programme": "M.SC.",
-    "graduationYear": 2004,
-    "accommodation": "No",
-    "numberOfPersons": 3,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "IHS8178979",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "6766d94c588397f4b5161196"
@@ -195,21 +181,7 @@ export const AlumniData =
     "transactionRef": "IHS8178979",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "67681e14588397f4b516122c"
-    },
-    "firstName": "Nilamani",
-    "lastName": "Haloi",
-    "department": "PHYSICS",
-    "programme": "M.SC.",
-    "graduationYear": 2002,
-    "accommodation": "Yes",
-    "numberOfPersons": 1,
-    "foodPreference": "Vegetarian",
-    "transactionRef": "435723880413",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "67681e2a588397f4b516122e"
@@ -360,36 +332,8 @@ export const AlumniData =
     "transactionRef": "142831253101",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "676fc02ded437a2940f180f9"
-    },
-    "firstName": "Dr. Khirapada",
-    "lastName": "Dutta",
-    "department": "ENGLISH",
-    "programme": "M.A.",
-    "graduationYear": 2000,
-    "accommodation": "Yes",
-    "numberOfPersons": 1,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "142831253101",
-    "verification": 0
-  },
-  {
-    "_id": {
-      "$oid": "676fc550ed437a2940f180fd"
-    },
-    "firstName": "Dr. Mita",
-    "lastName": "Hazarika",
-    "department": "ENGLISH",
-    "programme": "M.A.",
-    "graduationYear": 2000,
-    "accommodation": "Yes",
-    "numberOfPersons": 2,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "145616391939",
-    "verification": 0
-  },
+  
+  
   {
     "_id": {
       "$oid": "676fc55aed437a2940f180ff"
@@ -435,21 +379,7 @@ export const AlumniData =
     "transactionRef": "IHS8296114",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "6770f34fed437a2940f181ec"
-    },
-    "firstName": "Dambarudhar",
-    "lastName": "Mohanta",
-    "department": "PHYSICS",
-    "programme": "PHD",
-    "graduationYear": 2004,
-    "accommodation": "No",
-    "numberOfPersons": 1,
-    "foodPreference": "Vegetarian",
-    "transactionRef": "IHS8296114",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "67715b6fed437a2940f1824a"
@@ -495,21 +425,7 @@ export const AlumniData =
     "transactionRef": "N365243478836699",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "67726455ed437a2940f182e5"
-    },
-    "firstName": "Ruma ",
-    "lastName": "Chakraborty",
-    "department": "MASS COMMUNICATION AND JOURNALISM",
-    "programme": "M.A.",
-    "graduationYear": 2005,
-    "accommodation": "Yes",
-    "numberOfPersons": 1,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "N365243478836699",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "67728acded437a2940f1832b"
@@ -570,21 +486,7 @@ export const AlumniData =
     "transactionRef": "436675180353",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "67738668ed437a2940f183af"
-    },
-    "firstName": "Anjuman",
-    "lastName": "Borah",
-    "department": "MASS COMMUNICATION AND JOURNALISM",
-    "programme": "M.A.",
-    "graduationYear": 2005,
-    "accommodation": "No",
-    "numberOfPersons": 1,
-    "foodPreference": "Vegetarian",
-    "transactionRef": "436675180353",
-    "verification": 0
-  },
+  
   {
     "_id": {
       "$oid": "677386c1ed437a2940f183b1"
@@ -600,21 +502,7 @@ export const AlumniData =
     "transactionRef": "N366243481095642",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "67739558ed437a2940f183b6"
-    },
-    "firstName": "Bhanita",
-    "lastName": "Saikia",
-    "department": "CULTURAL STUDIES",
-    "programme": "M.A.",
-    "graduationYear": 2005,
-    "accommodation": "No",
-    "numberOfPersons": 1,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "436679770728",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "6773957fed437a2940f183b8"
@@ -630,21 +518,7 @@ export const AlumniData =
     "transactionRef": "436679770728",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "677395cced437a2940f183ba"
-    },
-    "firstName": "Bhanita",
-    "lastName": "Saikia",
-    "department": "CULTURAL STUDIES",
-    "programme": "M.A.",
-    "graduationYear": 2005,
-    "accommodation": "No",
-    "numberOfPersons": 1,
-    "foodPreference": "Non-Vegetarian",
-    "transactionRef": "436679770728",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "677428f4ed437a2940f184e4"
@@ -870,21 +744,7 @@ export const AlumniData =
     "transactionRef": "500710128116",
     "verification": 0
   },
-  {
-    "_id": {
-      "$oid": "677cb4bf20cf3b2976c4e2b9"
-    },
-    "firstName": "Anindita",
-    "lastName": "Das",
-    "department": "ENGLISH",
-    "programme": "M.A.",
-    "graduationYear": 1995,
-    "accommodation": "No",
-    "numberOfPersons": 1,
-    "foodPreference": "Vegetarian",
-    "transactionRef": "500710128116",
-    "verification": 0
-  },
+ 
   {
     "_id": {
       "$oid": "677ce74a20cf3b2976c4e2cf"

@@ -70,15 +70,15 @@ function Donation() {
     setAlumniId(id);
     setAlumniIdValid(null);
 
-    if (debounceTimeout) {
-      clearTimeout(debounceTimeout);
-    }
+    // if (debounceTimeout) {
+    //   clearTimeout(debounceTimeout);
+    // }
 
-    setDebounceTimeout(setTimeout(() => {
-      if (id) {
-        checkAlumniId(id);
-      }
-    }, 2000)); // 3 seconds debounce
+    // setDebounceTimeout(setTimeout(() => {
+    //   if (id) {
+    //     checkAlumniId(id);
+    //   }
+    // }, 2000)); 
   };
 
   useEffect(() => {
@@ -98,14 +98,14 @@ function Donation() {
           <Input label="Name" type="text" placeholder="Enter your name" />
           <div className={style.Input_field}>
             <label htmlFor="Alumni ID">
-              Alumni ID<span className={style.astreik}>*</span>
+              Alumni ID
               <Link href="/Digital_Card">?</Link>
-              {alumniIdValid === true && (
+              {/* {alumniIdValid === true && (
                 <span className={style.valid}>✔️</span>
               )}
               {alumniIdValid === false && (
                 <span className={style.invalid}>❌</span>
-              )}
+              )} */}
             </label>
             <input
               name="Alumni ID"
@@ -126,7 +126,7 @@ function Donation() {
           <div className={style.Button}>
             <button
               type="submit"
-              disabled={isLoading || alumniIdValid !== true}
+              disabled={isLoading }
             >
               {isLoading ? "Submitting..." : "Submit"}
             </button>
@@ -154,33 +154,19 @@ function Donation() {
                 <h3 className="font-bold text-lg">Bank Account Details</h3>
                 <p className={`py-4 ${style.text2}`}>
                   <strong>Name of Account Holder:</strong> Tezpur University
-                  Alumni Assoc.
+                  Alumni Association.
                   <br />
-                  <strong>Complete Contact Address:</strong> Tezpur University,
-                  Napaam, Tezpur, Assam
-                  <br />
-                  <strong>Telephone Number:</strong> 267285
-                  <br />
-                  <strong>Email:</strong> sbi.14259@sbi.co.in
-                  <br />
+                  
                   <strong>Bank Name:</strong> State Bank of India
                   <br />
                   <strong>Branch Name:</strong> Tezpur University Branch,
                   Napaam, Tezpur, Assam
                   <br />
-                  <strong>Branch Telephone:</strong> 267285
+                  <strong>IFS Code:</strong> SBIN0014259
                   <br />
-                  <strong>RTGS Enabled:</strong> YES (IFS Code: SBIN0014259)
+                  <strong>Account Number:</strong> 10501586524
                   <br />
-                  <strong>NEFT Enabled:</strong> YES
-                  <br />
-                  <strong>Type of Bank Account:</strong> Savings
-                  <br />
-                  <strong>Account Number:</strong> 10501585524
-                  <br />
-                  <strong>MICR Code:</strong> 784002005
-                  <br />
-                 
+                
                 </p>
                 <div className="modal-action">
                   <button

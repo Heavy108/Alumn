@@ -12,6 +12,9 @@
   transition: border-color 0.3s ease-in-out;
   padding: 0.25rem 0.25rem 0.25rem 0.8rem;
 }
+.text2{
+    color:black
+}
 
 .select:focus {
   border-color: #676464; /* Highlight color on focus */

@@ -109,7 +109,7 @@ function Footer() {
         <ul className={style.list}>
           <li>Address</li>
           <li>
-            Alumni Plus Alumni Cell, Tezpur University, Napaam,
+            Tezpur University Alumni Association, Tezpur University, Napaam,
             Tezpur - 784028
           </li>
           <li className={style.icons}>
@@ -120,7 +120,33 @@ function Footer() {
               rel="noopener noreferrer"
               className={style.hyperlink}
             >
-              deena@tezu.ernet.in
+              alumni@tezu.ernet.in
+            </Link>
+          </li>
+          <li className={style.icons}>
+            <FaPhoneAlt />{" "}
+            <Link
+              href={"#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={style.hyperlink}
+            >
+              +91 9678004748
+            </Link>
+          </li>
+          <li>
+            Tezpur University Alumni Cell, Tezpur University, Napaam, Tezpur -
+            784028
+          </li>
+          <li className={style.icons}>
+            <MdEmail />{" "}
+            <Link
+              href={"#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={style.hyperlink}
+            >
+              alumnicell@tezu.ernet.in
             </Link>
           </li>
           <li className={style.icons}>
